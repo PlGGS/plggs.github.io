@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+article, aside, footer, header, main, nav, section {
+    display: block;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: center;
+}
+
+p {
+    font-family: "Comic Sans MS", Helvetica, sans-serif;
+}
+
+.banner {
+    background-color: #36922a;
+    color: white;
+    padding: 280px 20px;
+}
+
+body {
+    width: 1903px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #a7e4a0;
+    font-size: 18px;
+}
+
+header h1 {
+    font-size: 100px;
+}
+
+section h2 {
+    background-color: #7fc56d;
+    padding: 5px;
+}
+
+article header h4 {
+    padding: 12px;
+}
+
+article header h3 {
+    padding: 12px;
+}
+
+footer nav h4 {
+    padding: 12px;
+}
+
+section article header br li a {
+    padding: 5px;
+}
+
+.limit li {
+    padding: 12px;
+}
+
+img {
+    padding: 12px;
+}
+
+iframe {
+    padding: 12px;
+}
