@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 article, aside, footer, header, main, nav, section {
     display: block;
@@ -10,7 +10,7 @@ html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, fo
 }
 
 * {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-family: "Rubik", sans-serif;
     text-align: center;
 }
 
