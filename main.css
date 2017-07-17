@@ -29,8 +29,8 @@ p {
     font-size: 30px;
     padding-top: 1em;
     padding-bottom: 4.2em;
-    padding-left: 10em;
-    padding-right: 10em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 
 .bar_logo {
@@ -44,7 +44,7 @@ p {
 
 li a {
     text-decoration: none;
-    padding-left: 75px;
+    padding-left: 30px;
 }
 
 a:hover {
