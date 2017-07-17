@@ -13,6 +13,7 @@ html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, fo
 * {
     font-family: 'Rubik';
     text-align: center;
+    color: white;
 }
 
 ul {
@@ -24,38 +25,37 @@ p {
 }
 
 .bar {
-    background-color: #36922a;
+    background-color: #276f1e;
     font-size: 30px;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 4.2em;
     padding-left: 10em;
     padding-right: 10em;
 }
 
 .bar_logo {
-    min-height: 64px;
     float: left;
+    padding-top: 0.4em;
 }
 
 .bar_nav {
-    min-height: 64px;
     float: right;
 }
 
-a:hover, a:visited, a:link, a:active {
-    color: #ffffff;
+li a {
     text-decoration: none;
+    padding-left: 75px;
 }
 
 a:hover {
     cursor: pointer;
-    border-bottom: 2px solid #ffffff;
+    text-decoration: underline;
 }
 
 .banner {
     background-color: #36922a;
-    color: white;
-    padding: 100px 20px;
+    padding-top: 148px;
+    padding-bottom: 148px;
 }
 
 body {
@@ -65,40 +65,33 @@ body {
     font-size: 18px;
 }
 
-header h1 {
+h1 {
     font-size: 90px;
 }
 
-section h2 {
-    background-color: #7fc56d;
-    padding: 5px;
+h2 {
+    background-color: #276f1e;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
 }
 
-article header h4 {
-    padding: 12px;
-    background-color: #7fc56d;
-}
-
-article header h3 {
+h4 {
+    background-color: #36922a;
     padding: 12px;
 }
 
-footer nav h4 {
-    padding: 12px;
-}
-
-section article header br li a {
-    padding: 5px;
-}
-
-.limit li {
+h3 {
     padding: 12px;
 }
 
 img {
-    padding: 12px;
+
+}
+
+a img:hover {
+    transform: scale(1.1, 1.1);
 }
 
 iframe {
-    padding: 12px;
 }
