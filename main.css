@@ -76,17 +76,27 @@ h2 {
     font-size: 30px;
 }
 
-h4 {
-    background-color: #36922a;
-    padding: 12px;
-}
-
 h3 {
-    padding: 12px;
+    font-size: 30px;
 }
 
-img {
+table {
+    padding-top: 2em;
+    padding-bottom: 7em;
+}
 
+table td {
+    padding-top: 5em;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+table img {
+    transform: scale(0.9, 0.9);
+}
+
+table img:hover {
+    transform: scale(1.0, 1.0);
 }
 
 a img:hover {
