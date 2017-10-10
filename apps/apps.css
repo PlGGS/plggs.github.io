@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 @charset "UTF-8";
 
 article, aside, footer, header, main, nav, section {
@@ -77,26 +77,17 @@ h2 {
 }
 
 h3 {
-    font-size: 30px;
 }
 
-table {
+h4 {
+    text-align: left;
+    font-size: 26px;
     padding-top: 2em;
-    padding-bottom: 7em;
+    padding-bottom: 2em;
 }
 
-table td {
-    padding-top: 5em;
-    padding-left: 5em;
-    padding-right: 5em;
-}
-
-table img {
-    transform: scale(0.9, 0.9);
-}
-
-table a img:hover {
-    transform: scale(1.0, 1.0);
+td {
+    padding-right: 1em;
 }
 
 a img:hover {
@@ -104,4 +95,45 @@ a img:hover {
 }
 
 iframe {
+    /*TODO make video section look cool*/
+}
+
+.project {
+    padding-top: 5em;
+    padding-left: 3em;
+}
+
+div.gallery {
+    float: left;
+}
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.gallery a img {
+        padding-bottom: 1em;
+    }
+
+    div.gallery table tr td img:hover {
+        transform: scale(1.05, 1.05);
+    }
+
+.projectDesc {
+    padding-top: 20em;
+    padding-left: 3em;
+    width: 1000px;
+}
+
+div.code {
+    text-align: left;
+    font-size: small;
+    padding: 15px;
+    border: 5px solid #276f1e;
+    font-family: Consolas, Helvetica, sans-serif;
+}
+
+.codePreview {
+    background-color: #353535;
 }
