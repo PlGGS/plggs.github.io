@@ -1,0 +1,139 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Rubik');
+@charset "UTF-8";
+
+article, aside, footer, header, main, nav, section {
+    display: block;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: 'Rubik';
+    text-align: center;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    font-family: "Comic Sans MS", Helvetica, sans-serif;
+}
+
+.bar {
+    background-color: #276f1e;
+    font-size: 30px;
+    padding-top: 1em;
+    padding-bottom: 4.2em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.bar_logo {
+    float: left;
+    padding-top: 0.4em;
+}
+
+.bar_nav {
+    float: right;
+}
+
+li a {
+    text-decoration: none;
+    padding-left: 30px;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.banner {
+    background-color: #36922a;
+    padding-top: 148px;
+    padding-bottom: 148px;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #36922a;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 90px;
+}
+
+h2 {
+    background-color: #276f1e;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+}
+
+h3 {
+}
+
+h4 {
+    text-align: left;
+    font-size: 26px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+td {
+    padding-right: 1em;
+}
+
+a img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+iframe {
+    /*TODO make video section look cool*/
+}
+
+.project {
+    padding-top: 5em;
+    padding-left: 3em;
+}
+
+div.gallery {
+    float: left;
+    padding-bottom: 2em;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+
+}
+
+div.gallery a img {
+    padding-bottom: 1em;
+}
+
+div.gallery table tr td img:hover {
+    transform: scale(1.05, 1.05);
+}
+
+div.projectDesc {
+    width: 1000px;
+}
+
+div.code {
+    text-align: left;
+    font-size: small;
+    padding: 15px;
+    border: 5px solid #276f1e;
+    font-family: Consolas, Helvetica, sans-serif;
+}
+
+.codePreview {
+    background-color: #353535;
+}
