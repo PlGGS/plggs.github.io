@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik');
+﻿@import url('https://fonts.googleapis.com/css?family=Rubik');
 @charset "UTF-8";
 
 article, aside, footer, header, main, nav, section {
@@ -105,24 +105,24 @@ iframe {
 
 div.gallery {
     float: left;
+    padding-bottom: 2em;
 }
 
-    div.gallery img {
-        width: 100%;
-        height: auto;
-    }
+div.gallery img {
+    width: 100%;
+    height: auto;
 
-    div.gallery a img {
-        padding-bottom: 1em;
-    }
+}
 
-    div.gallery table tr td img:hover {
-        transform: scale(1.05, 1.05);
-    }
+div.gallery a img {
+    padding-bottom: 1em;
+}
 
-.projectDesc {
-    padding-top: 20em;
-    padding-left: 3em;
+div.gallery table tr td img:hover {
+    transform: scale(1.05, 1.05);
+}
+
+div.projectDesc {
     width: 1000px;
 }
 
