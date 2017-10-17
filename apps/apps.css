@@ -111,7 +111,6 @@ div.gallery {
 div.gallery img {
     width: 100%;
     height: auto;
-
 }
 
 div.gallery a img {
@@ -122,7 +121,7 @@ div.gallery table tr td img:hover {
     transform: scale(1.05, 1.05);
 }
 
-div.projectDesc {
+table.projectDesc h4 {
     width: 1000px;
 }
 
@@ -136,4 +135,38 @@ div.code {
 
 .codePreview {
     background-color: #353535;
+}
+
+.buttons {
+    float: right;
+    text-align: center;
+    padding-right: 3em;
+}
+
+.set:not(:last-child) {
+    border-bottom: 1px dotted #aaa;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 1px rgba(0,0,0,.1), inset 0 -10px 20px rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.btn.sec {
+    color: #777;
+    background: #fff;
+}
+
+.btn.sec:hover {
+    background: #f5f5f5
+}
+
+.btn.pri {
+    color: #fff;
+    background: #00ad13;
 }
