@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\apps",
-    "\\assets",
-    "\\games",
-    "\\mods"
+    "\\apps"
   ],
-  "SelectedNode": "\\apps\\apps.css",
+  "SelectedNode": "\\apps\\baseApp.html",
   "PreviewInSolutionExplorer": false
 }
