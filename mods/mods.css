@@ -99,8 +99,29 @@ a img:hover {
     padding-left: 3em;
 }
 
+div.gallery {
+    float: left;
+    padding-bottom: 2em;
+    padding-right: 2em;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.gallery a img {
+    padding-bottom: 1em;
+}
+
+div.gallery table tr td img:hover {
+    transform: scale(1.05, 1.05);
+}
+
 .projects table {
     padding-top: 1em;
+    padding-bottom: 1em;
+    width: 95%;
 }
 
 .projects table tr td {

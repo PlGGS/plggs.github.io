@@ -99,8 +99,29 @@ a img:hover {
     padding-left: 3em;
 }
 
+div.gallery {
+    float: left;
+    padding-bottom: 2em;
+    padding-right: 2em;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.gallery a img {
+    padding-bottom: 1em;
+}
+
+div.gallery table tr td img:hover {
+    transform: scale(1.05, 1.05);
+}
+
 .projects table {
     padding-top: 1em;
+    padding-bottom: 1em;
+    width: 95%;
 }
 
 .projects table tr td {
@@ -117,12 +138,8 @@ a img:hover {
     transform: scale(1.05, 1.05);
 }
 
-div.projectDesc h4 {
-    width: 1000px;
-}
-
 table.projectDesc h4 {
-    width: 1000px;
+    width: 95%;
 }
 
 div.code {
@@ -131,8 +148,7 @@ div.code {
     padding: 15px;
     border: 5px solid #276f1e;
     font-family: Consolas, Helvetica, sans-serif;
-    word-wrap: break-word; 
-    width: 97.9%;
+    word-wrap: break-word;
 }
 
 .codePreview {
