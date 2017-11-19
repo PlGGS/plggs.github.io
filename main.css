@@ -86,9 +86,13 @@ table {
 }
 
 table td {
-    padding-top: 5em;
-    padding-left: 5em;
-    padding-right: 5em;
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+    
+table td a h3{
+    padding-top: 1.5em;
 }
 
 table img {
