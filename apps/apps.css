@@ -121,6 +121,10 @@ iframe {
     transform: scale(1.05, 1.05);
 }
 
+div.projectDesc h4 {
+    width: 1000px;
+}
+
 table.projectDesc h4 {
     width: 1000px;
 }
@@ -131,6 +135,8 @@ div.code {
     padding: 15px;
     border: 5px solid #276f1e;
     font-family: Consolas, Helvetica, sans-serif;
+    word-wrap: break-word; 
+    width: 97.9%;
 }
 
 .codePreview {
@@ -138,7 +144,7 @@ div.code {
 }
 
 .buttons {
-    float: right;
+    height: auto;
     text-align: center;
     padding-right: 3em;
 }
