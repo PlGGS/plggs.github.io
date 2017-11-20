@@ -9,7 +9,7 @@
         <header class="bar">
             <div class="headerBar wrap clearfix">
                 <div class="bar_logo">
-                    <h2>Blake Voice Commands</h2>
+                    <h2>Projemu</h2>
                     <a href="https://plggs.github.io">
                         <img src="../assets/BlakeOutsideCircle.png" alt="blake" height="75" width="75">
                     </a>
@@ -51,19 +51,185 @@
                     </tr>
                 </table>
             </div>
-            <div class="projectDesc">
-                <h4>
-                    Blake Voice Commands is an application I worked on after gaining a very rudimentary understanding
-                    of Visual Basic. The project preceeded the creation of Microsoft's Cortana voice assistant, and
-                    allowed me to literally tell my computer to do all sorts of custom commands. This application
-                    was instrumental in helping me realize just how much was possible with rudimentury programming
-                    skills.
-                </h4>
-            </div>
+            <table class="projectDesc">
+                <tr>
+                    <td>
+                        <div class="buttons">
+                            <a href="https://github.com/PlGGS/Projemu" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
+                        </div>
+                    </td>
+                    <td>
+                        <h4>
+                            Projemu is an application I wrote spontaneously after viewing a reddit post in which someone 
+                            explained that they couldn't use Cemu's fullscreen mode on a second monitor. Using the same 
+                            method as Halo Online Split Screen, I was able to quickly create a simple application to 
+                            solved the user's issue. This application then went on to be downloaded over 1,800 times.
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </header>
         <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="Namespace">using</span>&nbsp;System;<br />
+                <span class="Namespace">using</span>&nbsp;IWshRuntimeLibrary;<br />
+                <span class="Namespace">using</span>&nbsp;System.Runtime.InteropServices;<br />
+                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+                <span class="Namespace">using</span>&nbsp;System.Diagnostics;<br />
+                <br />
+                <span class="Namespace">namespace</span>&nbsp;Projemu<br />
+                {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">partial</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;frmMain&nbsp;:&nbsp;Form<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//Import&nbsp;window&nbsp;changing&nbsp;function</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;SetWindowLong(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;nIndex,&nbsp;<span class="ValueType">int</span>&nbsp;dwNewLong);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//Import&nbsp;find&nbsp;window&nbsp;finding&nbsp;function</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>,&nbsp;EntryPoint&nbsp;=&nbsp;<span class="String">"FindWindow"</span>,&nbsp;SetLastError&nbsp;=&nbsp;<span class="Keyword">true</span>)]<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;FindWindowByCaption(IntPtr&nbsp;ZeroOnly,&nbsp;<span class="ReferenceType">string</span>&nbsp;lpWindowName);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//Import&nbsp;force&nbsp;window&nbsp;draw&nbsp;function</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;DrawMenuBar(IntPtr&nbsp;hWnd);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//Import&nbsp;window&nbsp;placement&nbsp;function</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>,&nbsp;EntryPoint&nbsp;=&nbsp;<span class="String">"SetWindowPos"</span>)]<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;SetWindowPos(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;hWndInsertAfter,&nbsp;<span class="ValueType">int</span>&nbsp;x,&nbsp;<span class="ValueType">int</span>&nbsp;Y,&nbsp;<span class="ValueType">int</span>&nbsp;cx,&nbsp;<span class="ValueType">int</span>&nbsp;cy,&nbsp;<span class="ValueType">int</span>&nbsp;wFlags);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;gwlStyle&nbsp;=&nbsp;-16;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;wsBorder&nbsp;=&nbsp;0x00800000;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;wsCaption&nbsp;=&nbsp;0x00C00000;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;wsSysMenu&nbsp;=&nbsp;0x00080000;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;wsMinimizeBox&nbsp;=&nbsp;0x00020000;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;wsMenuStrip&nbsp;=&nbsp;19;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">int</span>&nbsp;projectorScreen&nbsp;=&nbsp;Properties.Settings.Default.screenNum;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screen[]&nbsp;screens&nbsp;=&nbsp;Screen.AllScreens;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntPtr[]&nbsp;cemuWindows;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Creates&nbsp;a&nbsp;new&nbsp;shortcut&nbsp;of&nbsp;a&nbsp;selected&nbsp;program.&nbsp;In&nbsp;this&nbsp;case&nbsp;we&nbsp;use&nbsp;it&nbsp;to&nbsp;create&nbsp;Halo&nbsp;Online&nbsp;shortcuts&nbsp;that&nbsp;don't&nbsp;need&nbsp;to&nbsp;be&nbsp;run&nbsp;by&nbsp;the&nbsp;default&nbsp;launcher.</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutName"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutPath"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutTargetFileLocation"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutArguments"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutStartInDirectory"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutIconLocation"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="shortcutDescription"&gt;&lt;/param&gt;</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="ValueType">void</span>&nbsp;CreateShortcut(<span class="ReferenceType">string</span>&nbsp;shortcutName,&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutPath,&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutTargetFileLocation,&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutArguments,&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutStartInDirectory,&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutIconLocation,&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutDescription)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>&nbsp;shortcutLocation&nbsp;=&nbsp;System.IO.Path.Combine(shortcutPath,&nbsp;shortcutName&nbsp;+&nbsp;<span class="String">".lnk"</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WshShell&nbsp;shell&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;WshShell();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IWshShortcut&nbsp;shortcut&nbsp;=&nbsp;(IWshShortcut)shell.CreateShortcut(shortcutLocation);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortcut.Description&nbsp;=&nbsp;shortcutDescription;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortcut.IconLocation&nbsp;=&nbsp;shortcutIconLocation;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortcut.TargetPath&nbsp;=&nbsp;shortcutTargetFileLocation;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortcut.Arguments&nbsp;=&nbsp;shortcutArguments;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortcut.WorkingDirectory&nbsp;=&nbsp;shortcutStartInDirectory;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shortcut.Save();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;frmMain()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitializeComponent();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;frmMain_Load(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taskbar.Show();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">this</span>.Icon&nbsp;=&nbsp;Properties.Resources.Projemu;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cemuWindows&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;IntPtr[Process.GetProcessesByName(<span class="String">"cemu"</span>).Length&nbsp;+&nbsp;1];<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;screens.Length;&nbsp;i++)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cbxScreenNum.Items.Add(i&nbsp;+&nbsp;1);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cbxScreenNum.SelectedIndex&nbsp;=&nbsp;Properties.Settings.Default.screenNum;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(Properties.Settings.Default.appRunBefore&nbsp;==&nbsp;<span class="Keyword">false</span>)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreateShortcut(<span class="String">"Projemu"</span>,&nbsp;Environment.GetFolderPath(Environment.SpecialFolder.Desktop),&nbsp;Application.StartupPath&nbsp;+&nbsp;<span class="String">"\\Projemu.exe"</span>,&nbsp;<span class="String">""</span>,&nbsp;Application.StartupPath,&nbsp;Application.StartupPath&nbsp;+&nbsp;<span class="String">"\\Projemu.ico"</span>,&nbsp;<span class="String">"Cemu&nbsp;on&nbsp;your&nbsp;projector!&nbsp;Woah!"</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Properties.Settings.Default.appRunBefore&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Properties.Settings.Default.Save();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process.Start(Application.StartupPath&nbsp;+&nbsp;<span class="String">"\\Cemu"</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process.GetProcessesByName(<span class="String">"cemu"</span>)[0].WaitForInputIdle();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;Process.GetProcessesByName(<span class="String">"cemu"</span>).Length;&nbsp;i++)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cemuWindows[i]&nbsp;=&nbsp;Process.GetProcessesByName(<span class="String">"cemu"</span>)[i].MainWindowHandle;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;cemuWindows.Length;&nbsp;i++)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetWindowLong(cemuWindows[i],&nbsp;gwlStyle,&nbsp;wsSysMenu);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetWindowPos(cemuWindows[i],&nbsp;0,&nbsp;screens[projectorScreen].Bounds.X,&nbsp;screens[projectorScreen].Bounds.Y,&nbsp;screens[projectorScreen].Bounds.Width,&nbsp;screens[projectorScreen].Bounds.Height,&nbsp;0x0040);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DrawMenuBar(cemuWindows[i]);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;setWindow()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(chkShowMenuStrip.CheckState&nbsp;==&nbsp;CheckState.Checked)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">try</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;cemuWindows.Length;&nbsp;i++)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetWindowLong(cemuWindows[i],&nbsp;gwlStyle,&nbsp;wsSysMenu);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetWindowPos(cemuWindows[i],&nbsp;0,&nbsp;screens[projectorScreen].Bounds.X,&nbsp;screens[projectorScreen].Bounds.Y,&nbsp;screens[projectorScreen].Bounds.Width,&nbsp;screens[projectorScreen].Bounds.Height&nbsp;+&nbsp;wsMenuStrip,&nbsp;0x0040);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DrawMenuBar(cemuWindows[i]);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taskbar.Hide();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">catch</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="String">"Failed&nbsp;to&nbsp;properly&nbsp;place&nbsp;Cemu&nbsp;into&nbsp;borderless&nbsp;window&nbsp;mode."</span>,&nbsp;<span class="String">"Cemu&nbsp;Borderless&nbsp;Window"</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">try</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;cemuWindows.Length;&nbsp;i++)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetWindowLong(cemuWindows[i],&nbsp;gwlStyle,&nbsp;wsSysMenu);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetWindowPos(cemuWindows[i],&nbsp;0,&nbsp;screens[projectorScreen].Bounds.X,&nbsp;screens[projectorScreen].Bounds.Y&nbsp;-&nbsp;wsMenuStrip,&nbsp;screens[projectorScreen].Bounds.Width,&nbsp;screens[projectorScreen].Bounds.Height&nbsp;+&nbsp;wsMenuStrip,&nbsp;0x0040);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DrawMenuBar(cemuWindows[i]);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taskbar.Hide();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">catch</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="String">"Failed&nbsp;to&nbsp;properly&nbsp;place&nbsp;Cemu&nbsp;into&nbsp;borderless&nbsp;window&nbsp;mode."</span>,&nbsp;<span class="String">"Cemu&nbsp;Borderless&nbsp;Window"</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;chkShowMenuStrip_CheckedChanged(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setWindow();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;frmMain_FormClosed(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;FormClosedEventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taskbar.Show();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;cbxScreenNum_SelectionChangeCommitted(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;projectorScreen&nbsp;=&nbsp;cbxScreenNum.SelectedIndex;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Properties.Settings.Default.screenNum&nbsp;=&nbsp;cbxScreenNum.SelectedIndex;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Properties.Settings.Default.Save();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setWindow();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                }
+            </div>
         </header>
 	</body>
 </html>
