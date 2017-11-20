@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Blake Boris</title>
+        <title>Steal Like a Skeleton</title>
 		<link rel="stylesheet" type="text/css" href="apps.css">
     </head>
     <body>
         <header class="bar">
             <div class="headerBar wrap clearfix">
                 <div class="bar_logo">
-                    <h2>Blake Voice Commands</h2>
+                    <h2>Steal Like a Skeleton</h2>
                     <a href="https://plggs.github.io">
                         <img src="../assets/BlakeOutsideCircle.png" alt="blake" height="75" width="75">
                     </a>
@@ -51,19 +51,82 @@
                     </tr>
                 </table>
             </div>
-            <div class="projectDesc">
-                <h4>
-                    Blake Voice Commands is an application I worked on after gaining a very rudimentary understanding
-                    of Visual Basic. The project preceeded the creation of Microsoft's Cortana voice assistant, and
-                    allowed me to literally tell my computer to do all sorts of custom commands. This application
-                    was instrumental in helping me realize just how much was possible with rudimentury programming
-                    skills.
-                </h4>
-            </div>
+            <table class="projectDesc">
+                <tr>
+                    <td>
+                        <div class="buttons">
+                            <a href="https://github.com/PlGGS/Steal-Like-A-Skeleton" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
+                        </div>
+                    </td>
+                    <td>
+                        <h4>
+                            Steal Like a Skeleton is an application I wrote for Spanish class during my junior year of high
+                            school. It allowed each and every student in the class to create their own personal skeleton
+                            skull for the Spanish holiday, The Day of the Dead. The application's background music solved my
+                            teacher's problem of not having Spotify premium at the time. The class loved the idea, and I was 
+                            finally able to apply an object oriented application perspective to an application of my own!
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </header>
         <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="Namespace">using</span>&nbsp;System;<br />
+                <span class="Namespace">using</span>&nbsp;System.Drawing;<br />
+                <span class="Namespace">using</span>&nbsp;System.Linq;<br />
+                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+                <br />
+                <span class="Namespace">namespace</span>&nbsp;Steal_Like_a_Skeleton<br />
+                {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">partial</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;frmSkull&nbsp;:&nbsp;Form<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>&nbsp;skullName;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>&nbsp;skullEyes;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>&nbsp;skullNose;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>&nbsp;skullMouth;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;frmSkull(<span class="ReferenceType">string</span>&nbsp;name,&nbsp;<span class="ReferenceType">string</span>&nbsp;eyes,&nbsp;<span class="ReferenceType">string</span>&nbsp;nose,&nbsp;<span class="ReferenceType">string</span>&nbsp;mouth)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skullName&nbsp;=&nbsp;name;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skullEyes&nbsp;=&nbsp;eyes;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skullNose&nbsp;=&nbsp;nose;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skullMouth&nbsp;=&nbsp;mouth;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(name&nbsp;+&nbsp;<span class="String">",&nbsp;"</span>&nbsp;+&nbsp;eyes&nbsp;+&nbsp;<span class="String">",&nbsp;"</span>&nbsp;+&nbsp;nose&nbsp;+&nbsp;<span class="String">",&nbsp;"</span>&nbsp;+&nbsp;mouth);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InitializeComponent();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;frmSkull_Load(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSkullName.Text&nbsp;=&nbsp;skullName;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picEyes.Image&nbsp;=&nbsp;Dictionaries.EyeShapes().FirstOrDefault(x&nbsp;=&gt;&nbsp;x.Value&nbsp;==&nbsp;skullEyes).Key;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picNose.Image&nbsp;=&nbsp;Dictionaries.NoseShapes().FirstOrDefault(x&nbsp;=&gt;&nbsp;x.Value&nbsp;==&nbsp;skullNose).Key;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picMouth.Image&nbsp;=&nbsp;Dictionaries.MouthShapes().FirstOrDefault(x&nbsp;=&gt;&nbsp;x.Value&nbsp;==&nbsp;skullMouth).Key;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">this</span>.Location&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Point(Screen.PrimaryScreen.Bounds.Width&nbsp;/&nbsp;2&nbsp;-&nbsp;<span class="Keyword">this</span>.Bounds.Width&nbsp;/&nbsp;2,&nbsp;Screen.PrimaryScreen.Bounds.Height&nbsp;/&nbsp;2&nbsp;-&nbsp;<span class="Keyword">this</span>.Bounds.Height&nbsp;/&nbsp;2);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSkullName.Left&nbsp;=&nbsp;<span class="Keyword">this</span>.Bounds.Width&nbsp;/&nbsp;2&nbsp;-&nbsp;lblSkullName.Width&nbsp;/&nbsp;2;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">this</span>.Text&nbsp;=&nbsp;skullName;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;frmSkull_KeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;Keys.Space)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmMain&nbsp;main&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;frmMain(<span class="Keyword">true</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.Show();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;Keys.Escape)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.Exit();<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                }
+            </div>
         </header>
 	</body>
 </html>
