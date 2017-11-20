@@ -65,6 +65,10 @@ body {
     font-size: 18px;
 }
 
+body header div nav ul li a {
+    font-size: 75%;
+}
+
 h1 {
     font-size: 90px;
 }
