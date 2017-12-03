@@ -65,9 +65,9 @@ body {
     font-size: 18px;
 }
 
-body header div nav ul li a {
-    font-size: 75%;
-}
+    body header div nav ul li a {
+        font-size: 75%;
+    }
 
 h1 {
     font-size: 90px;
@@ -109,18 +109,18 @@ div.gallery {
     padding-right: 2em;
 }
 
-div.gallery img {
-    width: 100%;
-    height: auto;
-}
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
 
-div.gallery a img {
-    padding-bottom: 1em;
-}
+    div.gallery a img {
+        padding-bottom: 1em;
+    }
 
-div.gallery table tr td img:hover {
-    transform: scale(1.05, 1.05);
-}
+    div.gallery table tr td img:hover {
+        transform: scale(1.05, 1.05);
+    }
 
 .projects table {
     padding-top: 1em;
@@ -128,22 +128,22 @@ div.gallery table tr td img:hover {
     width: 95%;
 }
 
-.projects table tr td {
-    padding-left: 1em;
-    padding-right: 2em;
-    padding-top: 2em;
-}
+    .projects table tr td {
+        padding-left: 1em;
+        padding-right: 2em;
+        padding-top: 2em;
+    }
 
-.projects table tr td h3 {
-    padding-top: 1.5em;
-}
+        .projects table tr td h3 {
+            padding-top: 1.5em;
+        }
 
-.projects table tr td img:hover {
-    transform: scale(1.05, 1.05);
-}
+        .projects table tr td img:hover {
+            transform: scale(1.05, 1.05);
+        }
 
-div.projectDesc {
-    width: 1000px;
+table.projectDesc h4 {
+    width: 95%;
 }
 
 div.code {
@@ -152,8 +152,43 @@ div.code {
     padding: 15px;
     border: 5px solid #276f1e;
     font-family: Consolas, Helvetica, sans-serif;
+    word-wrap: break-word;
 }
 
 .codePreview {
     background-color: #353535;
 }
+
+.buttons {
+    height: auto;
+    text-align: center;
+    padding-right: 3em;
+}
+
+.set:not(:last-child) {
+    border-bottom: 1px dotted #aaa;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 110px;
+    margin: 15px 5px;
+    padding: 10px 15px 12px;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 1px rgba(0,0,0,.1), inset 0 -10px 20px rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+    .btn.sec {
+        color: #777;
+        background: #fff;
+    }
+
+        .btn.sec:hover {
+            background: #f5f5f5
+        }
+
+    .btn.pri {
+        color: #fff;
+        background: #00ad13;
+    }
