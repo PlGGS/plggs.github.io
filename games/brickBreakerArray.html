@@ -51,19 +51,402 @@
                     </tr>
                 </table>
             </div>
-            <div class="projectDesc">
-                <h4>
-                    Blake Voice Commands is an application I worked on after gaining a very rudimentary understanding
-                    of Visual Basic. The project preceeded the creation of Microsoft's Cortana voice assistant, and
-                    allowed me to literally tell my computer to do all sorts of custom commands. This application
-                    was instrumental in helping me realize just how much was possible with rudimentury programming
-                    skills.
-                </h4>
-            </div>
+            <table class="projectDesc">
+                <tr>
+                    <td>
+                        <div class="buttons">
+                            <a href="https://github.com/PlGGS/Brick-Breaker-Array" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
+                        </div>
+                    </td>
+                    <td>
+                        <h4>
+                            Brick Breaker Array is a simple Brick Breaker Style game that used 'randomly' generated Minecraft blocks 
+                            as bricks. This application combined many programming skills that were quite new to me at the time 
+                            such as loops, mouse tracking, and file access. Each layer of blocks has a 'randomly' generated 
+                            amount of ores that count for more points. Each block in the array has different states that 
+                            correspond to their winforms backcolor properties, because winforms isn't able to compare images.
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </header>
         <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="InlineComment">'Diamond&nbsp;=&nbsp;Blue</span><br />
+                <span class="InlineComment">'Redstone&nbsp;=&nbsp;Red</span><br />
+                <span class="InlineComment">'Gold&nbsp;=&nbsp;Yellow</span><br />
+                <span class="InlineComment">'Iron&nbsp;=&nbsp;PaleGreen</span><br />
+                <span class="InlineComment">'Coal&nbsp;=&nbsp;Black</span><br />
+                <span class="InlineComment">'Stone&nbsp;=&nbsp;Gray</span><br />
+                <span class="InlineComment">'Cobblestone&nbsp;=&nbsp;DrakGray</span><br />
+                <br />
+                <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;frmBrickBreaker<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;ballSpeedX&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;3<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;ballSpeedY&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;-3<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;blocks(12,&nbsp;18)&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;block&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;xBlock&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;5<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;yBlock&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;10<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;blockVisible&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Score&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Time&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Lives&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;3<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;frmBrickBreaker_MouseMove(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;System.Windows.Forms.MouseEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">Me</span>.MouseMove<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPaddle.<span class="Function">Left</span>&nbsp;=&nbsp;e.X&nbsp;-&nbsp;picPaddle.Width&nbsp;/&nbsp;2<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Sub</span>&nbsp;BallMove(<span class="Keyword">ByRef</span>&nbsp;ball&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox,&nbsp;<span class="Keyword">ByVal</span>&nbsp;xSpeed&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;ySpeed&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.<span class="Function">Left</span>&nbsp;+=&nbsp;xSpeed<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;ySpeed<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Sub</span>&nbsp;checkWallCollision(<span class="Keyword">ByRef</span>&nbsp;ball&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Top&nbsp;&lt;&nbsp;0&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bottom&nbsp;&gt;&nbsp;<span class="Keyword">Me</span>.Height&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;=&nbsp;<span class="Keyword">Me</span>.Height&nbsp;-&nbsp;ball.Height<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Lives&nbsp;=&nbsp;3&nbsp;<span class="Operator">Or</span>&nbsp;Lives&nbsp;=&nbsp;2&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lives&nbsp;-=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblLives.Text&nbsp;=&nbsp;<span class="String">"Lives:&nbsp;"</span>&nbsp;&amp;&nbsp;Lives<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timScoreAndLives.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timTime.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallCollision.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallMove.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.<span class="Function">Left</span>&nbsp;=&nbsp;300<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;=&nbsp;540<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;Lives&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picBall.Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timScoreAndLives.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timTime.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallCollision.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallMove.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblScore.Text&nbsp;=&nbsp;<span class="String">"Score"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTime.Text&nbsp;=&nbsp;<span class="String">"Time"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblLives.Text&nbsp;=&nbsp;<span class="String">"Lives"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Function">MsgBox</span>(Title:=<span class="String">"Try&nbsp;again!&nbsp;"</span>,&nbsp;Prompt:=<span class="String">"You&nbsp;scored:&nbsp;"</span>&nbsp;&amp;&nbsp;Score&nbsp;&amp;&nbsp;<span class="String">"&nbsp;in&nbsp;"</span>&nbsp;&amp;&nbsp;Time&nbsp;&amp;&nbsp;<span class="String">"&nbsp;seconds!"</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Score&nbsp;&gt;&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt"</span>)&nbsp;<span class="Operator">And</span>&nbsp;Score&nbsp;&lt;&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>)&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore3.Text&nbsp;=&nbsp;Score<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.FileSystem.WriteAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt"</span>,&nbsp;Score,&nbsp;<span class="Keyword">False</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Score&nbsp;&gt;&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>)&nbsp;<span class="Operator">And</span>&nbsp;Score&nbsp;&lt;&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\1.txt"</span>)&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore2.Text&nbsp;=&nbsp;Score<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.FileSystem.WriteAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt"</span>,&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>),&nbsp;<span class="Keyword">False</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.FileSystem.WriteAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>,&nbsp;Score,&nbsp;<span class="Keyword">False</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore3.Text&nbsp;=&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt"</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Score&nbsp;&gt;&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\1.txt"</span>)&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore1.Text&nbsp;=&nbsp;Score<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.FileSystem.WriteAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>,&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\1.txt"</span>),&nbsp;<span class="Keyword">False</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.FileSystem.WriteAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\1.txt"</span>,&nbsp;Score,&nbsp;<span class="Keyword">False</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore2.Text&nbsp;=&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'My.Computer.FileSystem.WriteAllText("C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt",&nbsp;My.Computer.FileSystem.ReadAllText("C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"),&nbsp;False)</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'lblTopScore3.Text&nbsp;=&nbsp;My.Computer.FileSystem.ReadAllText("C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt")</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lives&nbsp;=&nbsp;3<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.<span class="Function">Left</span>&nbsp;=&nbsp;300<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;=&nbsp;540<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.<span class="Function">Left</span>&nbsp;&lt;&nbsp;0&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.<span class="Function">Left</span>&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedX&nbsp;=&nbsp;-ballSpeedX<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.<span class="Function">Right</span>&nbsp;&gt;&nbsp;628&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.<span class="Function">Left</span>&nbsp;=&nbsp;628&nbsp;-&nbsp;ball.Width<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedX&nbsp;=&nbsp;-ballSpeedX<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Sub</span>&nbsp;paddleCollision(<span class="Keyword">ByRef</span>&nbsp;ball&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox,&nbsp;<span class="Keyword">ByRef</span>&nbsp;paddle&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(paddle.Bounds)&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Sub</span>&nbsp;placeBlocks(<span class="Keyword">ByRef</span>&nbsp;ray(,)&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Randomize</span>()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Chance&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">For</span>&nbsp;x&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;0&nbsp;<span class="Keyword">To</span>&nbsp;ray.GetUpperBound(0)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xBlock&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">For</span>&nbsp;y&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;0&nbsp;<span class="Keyword">To</span>&nbsp;ray.GetUpperBound(1)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chance&nbsp;=&nbsp;<span class="Function">Int</span>(<span class="Function">Rnd</span>()&nbsp;*&nbsp;20&nbsp;+&nbsp;1)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;PictureBox<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.Name&nbsp;=&nbsp;x&nbsp;&amp;&nbsp;y<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.Height&nbsp;=&nbsp;32<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.Width&nbsp;=&nbsp;32<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.Top&nbsp;=&nbsp;xBlock<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.<span class="Function">Left</span>&nbsp;=&nbsp;yBlock<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Gray<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;spawning&nbsp;ores</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;x&nbsp;&lt;=&nbsp;3&nbsp;<span class="Operator">And</span>&nbsp;Chance&nbsp;&lt;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.diamond_ore<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Blue<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.stone<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Gray<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;x&nbsp;&lt;=&nbsp;6&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;3&nbsp;<span class="Operator">And</span>&nbsp;Chance&nbsp;&lt;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.redstone_ore<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Red<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;x&nbsp;&lt;=&nbsp;6&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.stone<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Gray<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;x&nbsp;&lt;=&nbsp;9&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;6&nbsp;<span class="Operator">And</span>&nbsp;Chance&nbsp;&lt;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.gold_ore<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Yellow<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;x&nbsp;&lt;=&nbsp;9&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;6&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.stone<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Gray<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;x&nbsp;&lt;=&nbsp;11&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;9&nbsp;<span class="Operator">And</span>&nbsp;Chance&nbsp;&lt;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.iron_ore<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.PaleGreen<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;x&nbsp;&lt;=&nbsp;11&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;9&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.stone<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Gray<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;x&nbsp;&lt;=&nbsp;12&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;11&nbsp;<span class="Operator">And</span>&nbsp;Chance&nbsp;&lt;=&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.coal_ore<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Black<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;x&nbsp;&lt;=&nbsp;12&nbsp;<span class="Operator">And</span>&nbsp;x&nbsp;&gt;=&nbsp;11&nbsp;<span class="Keyword">Then</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImage&nbsp;=&nbsp;My.Resources.stone<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackColor&nbsp;=&nbsp;Color.Gray<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.BackgroundImageLayout&nbsp;=&nbsp;ImageLayout.Zoom<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y)&nbsp;=&nbsp;block<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controls.<span class="Method">Add</span>(block)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yBlock&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Next</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yBlock&nbsp;=&nbsp;10<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Next</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Sub</span>&nbsp;blockCollision(<span class="Keyword">ByRef</span>&nbsp;ray(,)&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox,&nbsp;<span class="Keyword">ByRef</span>&nbsp;ball&nbsp;<span class="Keyword">As</span>&nbsp;PictureBox)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">For</span>&nbsp;x&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;0&nbsp;<span class="Keyword">To</span>&nbsp;ray.GetUpperBound(0)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">For</span>&nbsp;y&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;0&nbsp;<span class="Keyword">To</span>&nbsp;ray.GetUpperBound(1)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;hitting&nbsp;stone&nbsp;and&nbsp;cobble</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.Gray&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;10<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).BackgroundImage&nbsp;=&nbsp;My.Resources.cobblestone<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).BackgroundImageLayout&nbsp;=&nbsp;ImageLayout.Zoom<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.DarkGray<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.DarkGray&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;10<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;hitting&nbsp;coal</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.Black&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;20<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.PaleGreen&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;30<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.Yellow&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;40<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.Red&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;50<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;ball.Bounds.IntersectsWith(ray(x,&nbsp;y).Bounds)&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).BackColor&nbsp;=&nbsp;Color.Blue&nbsp;<span class="Operator">And</span>&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Score&nbsp;+=&nbsp;100<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ballSpeedY&nbsp;=&nbsp;-ballSpeedY<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.Top&nbsp;+=&nbsp;32<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ray(x,&nbsp;y).Visible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Next</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Next</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;picBall_Click(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;System.<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;System.EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;picBall.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Lives&nbsp;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timScoreAndLives.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timTime.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallCollision.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallMove.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeBlocks(blocks)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;Lives&nbsp;=&nbsp;2&nbsp;<span class="Operator">Or</span>&nbsp;Lives&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timScoreAndLives.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timTime.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallCollision.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timBallMove.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;tmeBallMove_Tick(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;System.<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;System.EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timBallMove.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BallMove(picBall,&nbsp;ballSpeedX,&nbsp;ballSpeedY)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;tmeBallCollision_Tick(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;System.<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;System.EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timBallCollision.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checkWallCollision(picBall)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paddleCollision(picBall,&nbsp;picPaddle)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blockCollision(blocks,&nbsp;picBall)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timTime_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timTime.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTime.Text&nbsp;=&nbsp;<span class="String">"Time:&nbsp;"</span>&nbsp;&amp;&nbsp;Time<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timScoreAndLives_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timScoreAndLives.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblScore.Text&nbsp;=&nbsp;<span class="String">"Score:&nbsp;"</span>&nbsp;&amp;&nbsp;Score<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblLives.Text&nbsp;=&nbsp;<span class="String">"Lives:&nbsp;"</span>&nbsp;&amp;&nbsp;Lives<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;frmBrickBreaker_Load(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.Load<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore1.Text&nbsp;=&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\1.txt"</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore2.Text&nbsp;=&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\2.txt"</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblTopScore3.Text&nbsp;=&nbsp;My.Computer.FileSystem.ReadAllText(<span class="String">"C:\Users\Acer\Desktop\brickBreakerArray\brickBreakerArray\High&nbsp;Scores\3.txt"</span>)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
+            </div>
         </header>
 	</body>
 </html>
