@@ -55,20 +55,16 @@
                 <tr>
                     <td>
                         <div class="buttons">
-                            <a href="https://github.com/PlGGS/Olah-2" class="btn pri">GitHub Project Page (Coming soon)</a><!--TODO update location and move to all project files-->
+                            <a href="https://github.com/PlGGS/Olah-2" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
                         </div>
                     </td>
                     <td>
                         <h4>
-                            Olah 2 is 
-                            
-                            Olah is the first real game that I ever created. It was also the first game in our Computer Science
-                            class to make use of controllers of any kind. After asking our teacher for an extra night to work on
-                            the project to figure out the few remaining bugs, we gave a live demo of our game for not only the
-                            teacher to play, but for four of our classmates to play using wireless Xbox 360 controller. The reception
-                            was incredible. Since we were the last group to present, our class spent the rest of the period having
-                            different groups of students test out the game without a single crash! This was definitely the moment in
-                            which I decided I wanted to pursue Computer Science as a career.
+                            Olah 2 is the successor to Olah, the first real game I ever created. The sequel improved on every 
+                            aspect of the original, and added features that we simply couldn't have implemented while writing the 
+                            original. It added seamless keyboard support that allowed for simulatious keyboard and controller players! 
+                            Somehow, we were able to truly surpass expectations for a sequel to a game that had already surpassed 
+                            expectations.
                         </h4>
                     </td>
                 </tr>
@@ -76,7 +72,809 @@
         </header>
             <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="Statement">Imports</span>&nbsp;Microsoft.Xna.Framework<br />
+                <span class="Statement">Imports</span>&nbsp;Microsoft.Xna.Framework.<span class="Function">Input</span><br />
+                <br />
+                <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;frmMainMenu<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Friend</span>&nbsp;<span class="Statement">Event</span>&nbsp;loadMainMenu&nbsp;<span class="Keyword">As</span>&nbsp;EventHandler<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Friend</span>&nbsp;P1Color&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Single</span>&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Friend</span>&nbsp;P2Color&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Single</span>&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Friend</span>&nbsp;P3Color&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Single</span>&nbsp;=&nbsp;0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Friend</span>&nbsp;P4Color&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Single</span>&nbsp;=&nbsp;0<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Friend</span>&nbsp;blnKeyboard&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;frmMainMenu_KeyDown(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.KeyDown<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;lblOlah2.Text&nbsp;=&nbsp;<span class="String">"Olah&nbsp;2"</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.Enter&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Text&nbsp;=&nbsp;vbNewLine&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;Main&nbsp;Menu"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Location&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Drawing.Point(-50,&nbsp;-50)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Font&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Font(<span class="String">"halo"</span>,&nbsp;70)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer1.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer2.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState1&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.One)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState2&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Two)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.Q&nbsp;<span class="Operator">And</span>&nbsp;currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P1Color&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P1Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P1Color&nbsp;=&nbsp;2<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Blue_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P1Color&nbsp;=&nbsp;3<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Green_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P1Color&nbsp;=&nbsp;4<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Yellow_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P1Color&nbsp;&gt;&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P1Color&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P1Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.Y&nbsp;<span class="Operator">And</span>&nbsp;currentState2.IsConnected&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2Color&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P2Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P2Color&nbsp;=&nbsp;2<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Blue_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P2Color&nbsp;=&nbsp;3<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Green_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P2Color&nbsp;=&nbsp;4<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Yellow_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P2Color&nbsp;&gt;&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2Color&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P2Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;frmMainMenu_Load(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;System.<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;System.EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.Load<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmLoading.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.Icon&nbsp;=&nbsp;My.Resources.Icon<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.Audio.Play(My.Resources.Olah_2_Theme,&nbsp;AudioPlayMode.BackgroundLoop)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Top&nbsp;=&nbsp;(<span class="Keyword">Me</span>.ClientSize.Height&nbsp;/&nbsp;2)&nbsp;-&nbsp;(lblOlah2.Height&nbsp;/&nbsp;2&nbsp;+&nbsp;50)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.<span class="Function">Left</span>&nbsp;=&nbsp;(<span class="Keyword">Me</span>.ClientSize.Width&nbsp;/&nbsp;2)&nbsp;-&nbsp;(lblOlah2.Width&nbsp;/&nbsp;2)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.Top&nbsp;=&nbsp;(<span class="Keyword">Me</span>.ClientSize.Height&nbsp;/&nbsp;2)&nbsp;-&nbsp;(lblStartorEnter.Height&nbsp;/&nbsp;2&nbsp;-&nbsp;100)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.<span class="Function">Left</span>&nbsp;=&nbsp;(<span class="Keyword">Me</span>.ClientSize.Width&nbsp;/&nbsp;2)&nbsp;-&nbsp;(lblStartorEnter.Width&nbsp;/&nbsp;2)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnSavePlayer1_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnSavePlayer1.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState1&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.One)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;players&nbsp;signing&nbsp;out</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer1.Text&nbsp;=&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Text&nbsp;=&nbsp;<span class="String">"Not&nbsp;signed&nbsp;in"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer1.Text&nbsp;&lt;&gt;&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Text&nbsp;=&nbsp;<span class="String">"Signed&nbsp;in&nbsp;as:"</span>&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;txtPlayer1.Text<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blnKeyboard&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer1.Text&nbsp;&lt;&gt;&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Text&nbsp;=&nbsp;<span class="String">"Signed&nbsp;in&nbsp;as:"</span>&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;txtPlayer1.Text<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blnKeyboard&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnSavePlayer2_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnSavePlayer2.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState1&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.One)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState2&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Two)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer2.Text&nbsp;=&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Text&nbsp;=&nbsp;<span class="String">"Not&nbsp;signed&nbsp;in"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer2.Text&nbsp;&lt;&gt;&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState2.IsConnected&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Text&nbsp;=&nbsp;<span class="String">"Signed&nbsp;in&nbsp;as:"</span>&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;txtPlayer2.Text<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blnKeyboard&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer2.Text&nbsp;&lt;&gt;&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState2.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Text&nbsp;=&nbsp;<span class="String">"Signed&nbsp;in&nbsp;as:"</span>&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;txtPlayer2.Text<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blnKeyboard&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnSavePlayer3_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnSavePlayer3.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState3&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Three)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer3.Text&nbsp;=&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Text&nbsp;=&nbsp;<span class="String">"Not&nbsp;signed&nbsp;in"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer3.Text&nbsp;&lt;&gt;&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState3.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Text&nbsp;=&nbsp;<span class="String">"Signed&nbsp;in&nbsp;as:"</span>&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;txtPlayer3.Text<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blnKeyboard&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnSavePlayer4_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnSavePlayer4.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState4&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Four)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer4.Text&nbsp;=&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Text&nbsp;=&nbsp;<span class="String">"Not&nbsp;signed&nbsp;in"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;txtPlayer4.Text&nbsp;&lt;&gt;&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState4.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Text&nbsp;=&nbsp;<span class="String">"Signed&nbsp;in&nbsp;as:"</span>&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;txtPlayer4.Text<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blnKeyboard&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timChangeTem_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timChangeTem.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState1&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.One)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState2&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Two)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState3&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Three)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState4&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Four)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(P1Color)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState2.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState3.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState4.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer1.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer2.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState3.IsConnected&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Text&nbsp;=&nbsp;<span class="Keyword">Nothing</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Text&nbsp;=&nbsp;<span class="String">"Not&nbsp;signed&nbsp;in"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.BackgroundImage&nbsp;=&nbsp;<span class="Keyword">Nothing</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState4.IsConnected&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Text&nbsp;=&nbsp;<span class="Keyword">Nothing</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Text&nbsp;=&nbsp;<span class="String">"Not&nbsp;signed&nbsp;in"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.BackgroundImage&nbsp;=&nbsp;<span class="Keyword">Nothing</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Enabled&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState1.Buttons.X&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P1Color&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P1Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P1Color&nbsp;=&nbsp;2&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Blue_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P1Color&nbsp;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Green_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P1Color&nbsp;=&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Yellow_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P1Color&nbsp;&gt;&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P1Color&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P1Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState2.Buttons.X&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2Color&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P2Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P2Color&nbsp;=&nbsp;2&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Blue_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P2Color&nbsp;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Green_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P2Color&nbsp;=&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Yellow_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P2Color&nbsp;&gt;&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2Color&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P2Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState3.Buttons.X&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P3Color&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P3Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P3Color&nbsp;=&nbsp;2&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.BackgroundImage&nbsp;=&nbsp;My.Resources.Blue_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P3Color&nbsp;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.BackgroundImage&nbsp;=&nbsp;My.Resources.Green_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P3Color&nbsp;=&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.BackgroundImage&nbsp;=&nbsp;My.Resources.Yellow_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P3Color&nbsp;&gt;&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P3Color&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P3Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;currentState4.Buttons.X&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P4Color&nbsp;+=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P4Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P4Color&nbsp;=&nbsp;2&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.BackgroundImage&nbsp;=&nbsp;My.Resources.Blue_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P4Color&nbsp;=&nbsp;3&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.BackgroundImage&nbsp;=&nbsp;My.Resources.Green_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">ElseIf</span>&nbsp;P4Color&nbsp;=&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.BackgroundImage&nbsp;=&nbsp;My.Resources.Yellow_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P4Color&nbsp;&gt;&nbsp;4&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P4Color&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;P4Color&nbsp;=&nbsp;1&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.BackgroundImage&nbsp;=&nbsp;My.Resources.Red_Spartan<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnPlay_Click_1(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnPlay.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmGameSetup.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnStats_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnInstructions.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnFairUse_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnFairUse.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnExit_Click_1(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnExit.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.<span class="Statement">Exit</span>()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timControllers_Tick(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;System.<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;System.EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timControllers.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState1&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.One)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState2&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Two)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState3&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Three)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;currentState4&nbsp;<span class="Keyword">As</span>&nbsp;GamePadState&nbsp;=&nbsp;GamePad.GetState(PlayerIndex.Four)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;btnPlay.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;P1Color&nbsp;=&nbsp;0&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP3Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP4Con.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;btnPlay.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;P2Color&nbsp;=&nbsp;0&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP3Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP4Con.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;btnPlay.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;(currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">Or</span>&nbsp;currentState2.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">Or</span>&nbsp;currentState3.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">Or</span>&nbsp;currentState4.IsConnected)&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Con.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Con.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP3Con.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP4Con.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP3Con.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP4Con.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState1.IsConnected&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Con.Text&nbsp;=&nbsp;<span class="String">"P1:&nbsp;&nbsp;Connected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Con.Text&nbsp;=&nbsp;<span class="String">"P1:&nbsp;&nbsp;Disconnected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState2.IsConnected&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Con.Text&nbsp;=&nbsp;<span class="String">"P2:&nbsp;Connected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Con.Text&nbsp;=&nbsp;<span class="String">"P2:&nbsp;Disconnected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState3.IsConnected&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP3Con.Text&nbsp;=&nbsp;<span class="String">"P3:&nbsp;Connected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP3Con.Text&nbsp;=&nbsp;<span class="String">"P3:&nbsp;Disconnected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState4.IsConnected&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP4Con.Text&nbsp;=&nbsp;<span class="String">"P4:&nbsp;Connected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP4Con.Text&nbsp;=&nbsp;<span class="String">"P4:&nbsp;Disconnected"</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState1.IsConnected&nbsp;<span class="Operator">And</span>&nbsp;lblOlah2.Text&nbsp;=&nbsp;<span class="String">"Olah&nbsp;2"</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState1.Buttons.Start&nbsp;<span class="Operator">Or</span>&nbsp;currentState1.Buttons.A&nbsp;=&nbsp;ButtonState.Pressed&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Text&nbsp;=&nbsp;vbNewLine&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;Main&nbsp;Menu"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Location&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Drawing.Point(-50,&nbsp;-50)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Font&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Font(<span class="String">"halo"</span>,&nbsp;70)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer1.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer2.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState2.IsConnected&nbsp;<span class="Operator">And</span>&nbsp;lblOlah2.Text&nbsp;=&nbsp;<span class="String">"Olah&nbsp;2"</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState2.Buttons.Start&nbsp;<span class="Operator">Or</span>&nbsp;currentState2.Buttons.A&nbsp;=&nbsp;ButtonState.Pressed&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Text&nbsp;=&nbsp;vbNewLine&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;Main&nbsp;Menu"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Location&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Drawing.Point(-50,&nbsp;-50)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Font&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Font(<span class="String">"halo"</span>,&nbsp;70)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer1.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer2.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState3.IsConnected&nbsp;<span class="Operator">And</span>&nbsp;lblOlah2.Text&nbsp;=&nbsp;<span class="String">"Olah&nbsp;2"</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState3.Buttons.Start&nbsp;<span class="Operator">Or</span>&nbsp;currentState3.Buttons.A&nbsp;=&nbsp;ButtonState.Pressed&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Text&nbsp;=&nbsp;vbNewLine&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;Main&nbsp;Menu"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Location&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Drawing.Point(-50,&nbsp;-50)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Font&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Font(<span class="String">"halo"</span>,&nbsp;70)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer1.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer2.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState4.IsConnected&nbsp;<span class="Operator">And</span>&nbsp;lblOlah2.Text&nbsp;=&nbsp;<span class="String">"Olah&nbsp;2"</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;currentState4.Buttons.Start&nbsp;<span class="Operator">Or</span>&nbsp;currentState4.Buttons.A&nbsp;=&nbsp;ButtonState.Pressed&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Text&nbsp;=&nbsp;vbNewLine&nbsp;&amp;&nbsp;vbNewLine&nbsp;&amp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;Main&nbsp;Menu"</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Location&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Drawing.Point(-50,&nbsp;-50)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblOlah2.Font&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Font(<span class="String">"halo"</span>,&nbsp;70)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblStartorEnter.Hide()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblSignInPlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP1Press.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblP2Press.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPlay.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnInstructions.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnFairUse.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnExit.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer1.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer1.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer2.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer2.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer3.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer3.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtPlayer4.Show()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnSavePlayer4.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
+            </div>
         </header>
 	</body>
 </html>
