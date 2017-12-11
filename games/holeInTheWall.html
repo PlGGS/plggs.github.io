@@ -72,7 +72,250 @@
         </header>
         <h2>Code Preview</h2>
         <header class="codePreview">
-            <!--TODO upload files to github-->
+            <div class="code">
+                <span class="Statement">Imports</span>&nbsp;Microsoft.Kinect<br />
+                <br />
+                <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;frmMainMenu<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;GHead&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;GHandRight&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;GHandLeft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;kinz&nbsp;<span class="Keyword">As</span>&nbsp;KinectSensor<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;imagez&nbsp;<span class="Keyword">As</span>&nbsp;ColorImageFrame<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;skeletonz&nbsp;<span class="Keyword">As</span>&nbsp;SkeletonFrame<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;piccolor&nbsp;<span class="Keyword">As</span>&nbsp;Bitmap&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Bitmap(640,&nbsp;480,&nbsp;Imaging.PixelFormat.Format32bppRgb)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;gfx&nbsp;<span class="Keyword">As</span>&nbsp;Graphics&nbsp;=&nbsp;Graphics.FromImage(piccolor)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;frmMainMenu_Load(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.Load<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My.Computer.Audio.Play(My.Resources.Hole_in_the_wall_,&nbsp;AudioPlayMode.BackgroundLoop)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">For</span>&nbsp;<span class="Keyword">Each</span>&nbsp;potentialSensor&nbsp;<span class="Keyword">In</span>&nbsp;KinectSensor.KinectSensors<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;potentialSensor.Status&nbsp;=&nbsp;KinectStatus.Connected&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kinz&nbsp;=&nbsp;potentialSensor<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Exit</span>&nbsp;<span class="Keyword">For</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Next</span>&nbsp;potentialSensor<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kinz.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kinz.SkeletonStream.Enable()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kinz.Start()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kinz.SkeletonStream.TrackingMode&nbsp;=&nbsp;SkeletonTrackingMode.<span class="Keyword">Default</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kinz.ElevationAngle&nbsp;=&nbsp;-10<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Function">rnd</span>&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Keyword">New</span>&nbsp;Random<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.BackColor&nbsp;=&nbsp;Color.FromArgb(255,&nbsp;<span class="Function">rnd</span>.<span class="Keyword">Next</span>(255),&nbsp;<span class="Function">rnd</span>.<span class="Keyword">Next</span>(255),&nbsp;<span class="Function">rnd</span>.<span class="Keyword">Next</span>(255))<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;colorready(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;ColorImageFrameReadyEventArgs)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imagez&nbsp;=&nbsp;e.OpenColorImageFrame<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;skeletonready(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;SkeletonFrameReadyEventArgs)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skeletonz&nbsp;=&nbsp;e.OpenSkeletonFrame<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Color&nbsp;Video</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;colormethod()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;pixz(kinz.ColorStream.FramePixelDataLength&nbsp;-&nbsp;1)&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Byte</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;imagez&nbsp;IsNot&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imagez.CopyPixelDataTo(pixz)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;rect&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(0,&nbsp;0,&nbsp;piccolor.Width,&nbsp;piccolor.Height)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;bmpData&nbsp;<span class="Keyword">As</span>&nbsp;System.Drawing.Imaging.BitmapData&nbsp;=&nbsp;piccolor.LockBits(rect,&nbsp;_<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drawing.Imaging.ImageLockMode.ReadWrite,&nbsp;Imaging.PixelFormat.Format32bppRgb)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;ptr&nbsp;<span class="Keyword">As</span>&nbsp;IntPtr&nbsp;=&nbsp;bmpData.Scan0<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;bytes&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span>&nbsp;=&nbsp;bmpData.Stride&nbsp;*&nbsp;piccolor.Height<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;rgbValues(bytes&nbsp;-&nbsp;1)&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Byte</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Runtime.InteropServices.Marshal.Copy(ptr,&nbsp;rgbValues,&nbsp;0,&nbsp;bytes)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;secondcounter&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;tempred&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;tempblue&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;tempgreen&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;tempalpha&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;tempx&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;tempy&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Integer</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secondcounter&nbsp;=&nbsp;0<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">While</span>&nbsp;secondcounter&nbsp;&lt;&nbsp;rgbValues.Length<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempblue&nbsp;=&nbsp;rgbValues(secondcounter)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempgreen&nbsp;=&nbsp;rgbValues(secondcounter&nbsp;+&nbsp;1)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempred&nbsp;=&nbsp;rgbValues(secondcounter&nbsp;+&nbsp;2)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempalpha&nbsp;=&nbsp;rgbValues(secondcounter&nbsp;+&nbsp;3)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempalpha&nbsp;=&nbsp;255<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempy&nbsp;=&nbsp;((secondcounter&nbsp;*&nbsp;0.25)&nbsp;/&nbsp;640)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempx&nbsp;=&nbsp;(secondcounter&nbsp;*&nbsp;0.25)&nbsp;-&nbsp;(tempy&nbsp;*&nbsp;640)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;tempx&nbsp;&lt;&nbsp;0&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempx&nbsp;=&nbsp;tempx&nbsp;+&nbsp;640<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempred&nbsp;=&nbsp;pixz(secondcounter&nbsp;+&nbsp;2)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempgreen&nbsp;=&nbsp;pixz(secondcounter&nbsp;+&nbsp;1)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempblue&nbsp;=&nbsp;pixz(secondcounter&nbsp;+&nbsp;0)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbValues(secondcounter)&nbsp;=&nbsp;tempblue<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbValues(secondcounter&nbsp;+&nbsp;1)&nbsp;=&nbsp;tempgreen<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbValues(secondcounter&nbsp;+&nbsp;2)&nbsp;=&nbsp;tempred<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbValues(secondcounter&nbsp;+&nbsp;3)&nbsp;=&nbsp;tempalpha<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secondcounter&nbsp;=&nbsp;secondcounter&nbsp;+&nbsp;4<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Keyword">While</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Runtime.InteropServices.Marshal.Copy(rgbValues,&nbsp;0,&nbsp;ptr,&nbsp;bytes)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;piccolor.UnlockBits(bmpData)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Skeleton&nbsp;display</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;skeletonmethod()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;penz&nbsp;<span class="Keyword">As</span>&nbsp;Pen&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Pen(Brushes.LimeGreen,&nbsp;3)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;skeletons(-1)&nbsp;<span class="Keyword">As</span>&nbsp;Skeleton<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;skeletonz&nbsp;IsNot&nbsp;<span class="Keyword">Nothing</span>&nbsp;<span class="Operator">And</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skeletons&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Skeleton(skeletonz.SkeletonArrayLength&nbsp;-&nbsp;1)&nbsp;{}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skeletonz.CopySkeletonDataTo(skeletons)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;skeletons.Length&nbsp;&lt;&gt;&nbsp;0&nbsp;<span class="Operator">And</span>&nbsp;<span class="Keyword">Me</span>.Visible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">For</span>&nbsp;<span class="Keyword">Each</span>&nbsp;skel&nbsp;<span class="Keyword">As</span>&nbsp;Skeleton&nbsp;<span class="Keyword">In</span>&nbsp;skeletons<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Right&nbsp;Arm</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;shoulderright&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.ShoulderRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;elbowright&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.ElbowRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;wristright&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.WristRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;handright&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.HandRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(shoulderright.X,&nbsp;shoulderright.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(elbowright.X,&nbsp;elbowright.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(elbowright.X,&nbsp;elbowright.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(wristright.X,&nbsp;wristright.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(wristright.X,&nbsp;wristright.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(handright.X,&nbsp;handright.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Left&nbsp;Arm</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;shoulderleft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.ShoulderLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;elbowleft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.ElbowLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;wristleft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.WristLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;handleft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.HandLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(shoulderleft.X,&nbsp;shoulderleft.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(elbowleft.X,&nbsp;elbowleft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(elbowleft.X,&nbsp;elbowleft.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(wristleft.X,&nbsp;wristleft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(wristleft.X,&nbsp;wristleft.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(handleft.X,&nbsp;handleft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Right&nbsp;Leg</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;FootRight&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.FootRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;AnkleRight&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.AnkleRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;KneeRight&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.KneeRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;HipRight&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.HipRight).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipRight.X,&nbsp;HipRight.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(KneeRight.X,&nbsp;KneeRight.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(KneeRight.X,&nbsp;KneeRight.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(AnkleRight.X,&nbsp;AnkleRight.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(AnkleRight.X,&nbsp;AnkleRight.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(FootRight.X,&nbsp;FootRight.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Left&nbsp;Leg</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;FootLeft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.FootLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;AnkleLeft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.AnkleLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;KneeLeft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.KneeLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;HipLeft&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.HipLeft).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipLeft.X,&nbsp;HipLeft.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(KneeLeft.X,&nbsp;KneeLeft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(KneeLeft.X,&nbsp;KneeLeft.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(AnkleLeft.X,&nbsp;AnkleLeft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(AnkleLeft.X,&nbsp;AnkleLeft.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(FootLeft.X,&nbsp;FootLeft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Body</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Head&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.Head).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Shouldercenter&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.ShoulderCenter).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;Spine&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.Spine).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;HipCenter&nbsp;<span class="Keyword">As</span>&nbsp;DepthImagePoint&nbsp;=&nbsp;kinz.MapSkeletonPointToDepth(skel.Joints(JointType.HipCenter).Position,&nbsp;DepthImageFormat.Resolution640x480Fps30)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(Head.X,&nbsp;Head.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(Shouldercenter.X,&nbsp;Shouldercenter.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(Shouldercenter.X,&nbsp;Shouldercenter.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(shoulderright.X,&nbsp;shoulderright.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(Shouldercenter.X,&nbsp;Shouldercenter.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(shoulderleft.X,&nbsp;shoulderleft.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(Shouldercenter.X,&nbsp;Shouldercenter.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(Spine.X,&nbsp;Spine.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipCenter.X,&nbsp;HipCenter.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(Spine.X,&nbsp;Spine.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipCenter.X,&nbsp;HipCenter.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipRight.X,&nbsp;HipRight.Y))<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gfx.DrawLine(penz,&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipCenter.X,&nbsp;HipCenter.Y),&nbsp;<span class="Keyword">New</span>&nbsp;Point(HipLeft.X,&nbsp;HipLeft.Y))<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GHead&nbsp;=&nbsp;Head<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GHandRight&nbsp;=&nbsp;handright<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GHandLeft&nbsp;=&nbsp;handleft<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Next</span>&nbsp;skel<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timBackColor_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timBackColor.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Function">rnd</span>&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Keyword">New</span>&nbsp;Random<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.BackColor&nbsp;=&nbsp;Color.FromArgb(255,&nbsp;<span class="Function">rnd</span>.<span class="Keyword">Next</span>(255),&nbsp;<span class="Function">rnd</span>.<span class="Keyword">Next</span>(255),&nbsp;<span class="Function">rnd</span>.<span class="Keyword">Next</span>(255))<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;kinz_ColorFrameReady(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;ColorImageFrameReadyEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;kinz.ColorFrameReady<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imagez&nbsp;=&nbsp;e.OpenColorImageFrame<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;kinz_SkeletonFrameReady(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;SkeletonFrameReadyEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;kinz.SkeletonFrameReady<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skeletonz&nbsp;=&nbsp;e.OpenSkeletonFrame<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnPlay_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnPlay.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.Hide()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmLevelSelect.Show()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;btnExit_Click(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;btnExit.Click<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.<span class="Statement">Exit</span>()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timKinect_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timKinect.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colormethod()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skeletonmethod()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PictureBox1.Image&nbsp;=&nbsp;piccolor<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
+            </div>
         </header>
 	</body>
 </html>

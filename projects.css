@@ -31,6 +31,10 @@ p {
     padding-bottom: 4.2em;
     padding-left: 1.5em;
     padding-right: 1.5em;
+    position: fixed;
+    width: calc(100% - 20px);
+    height: calc(1% - 20px);
+    z-index: 1;
 }
 
 .bar_logo {
@@ -39,7 +43,8 @@ p {
 }
 
 .bar_nav {
-    float: right;
+    position: fixed;
+    right: 1.5em;
 }
 
 li a {
