@@ -55,11 +55,16 @@ a:hover {
 }
 
 .banner {
+    text-align: right;
     background-color: #36922a;
     padding-left: 3.5em;
     padding-top: 12em;
     padding-bottom: 3.5em;
     padding-right: 3.5em;
+}
+
+.banner h1 {
+    padding-bottom: 0.75em;
 }
 
 .skills ul {
@@ -141,7 +146,6 @@ body {
 
     body header div nav ul li a {
         font-size: 50%;
-        padding-left: 5px;
     }
 
     body header div nav ul li {
@@ -188,18 +192,6 @@ table {
         table td a h3 {
             padding-top: 1.5em;
         }
-
-    table img {
-        transform: scale(0.9, 0.9);
-    }
-
-    table a img:hover {
-        transform: scale(1.0, 1.0);
-    }
-
-a img:hover {
-    transform: scale(1.1, 1.1);
-}
 
 iframe {
 }

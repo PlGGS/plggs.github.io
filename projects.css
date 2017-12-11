@@ -79,6 +79,12 @@ body {
         font-size: 30px;
     }
 
+    .projects table tr {
+        padding-bottom: 1em;
+        width: 90%;
+        height: 180px;
+    }
+
     /* CSS rules here for screens above px */
 }
 
@@ -93,11 +99,14 @@ body {
         font-size: 25px;
     }
 
-    .projects table tr td a img {
-        padding-top: 12em;
+    .projects table tr a img {
         padding-bottom: 1em;
-        width: 75%;
-        height: auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    .projects table tr td a h3 {
+        padding-top: 0;
     }
 
     /* CSS rules here for screens lower than px */
@@ -107,7 +116,6 @@ body {
 
     body header div nav ul li a {
         font-size: 50%;
-        padding-left: 5px;
     }
 
     body header div nav ul li {
@@ -119,10 +127,11 @@ body {
     }
 
     .projects table tr td a img {
-        padding-top: 12em;
         padding-bottom: 1em;
-        width: 55%;
-        height: auto;
+    }
+
+    .projects table tr td a {
+        padding: 0;
     }
 
     /* CSS rules here for screens lower than px */
@@ -184,14 +193,18 @@ div.gallery {
 .projects table tr {
     padding-top: 1em;
     padding-bottom: 1em;
-    width: 95%;
     height: auto;
 }
 
-    .projects table tr td {
+    .projects table tr td a {
+        width: 100%;
         padding-left: 1em;
         padding-right: 2em;
     }
+    
+    .projects table tr td a h3 {
+        padding-bottom: 2em;
+   }
 
         .projects table tr td h3 {
             padding-top: 1.5em;
