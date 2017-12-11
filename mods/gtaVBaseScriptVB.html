@@ -51,19 +51,52 @@
                     </tr>
                 </table>
             </div>
-            <div class="projectDesc">
-                <h4>
-                    Blake Voice Commands is an application I worked on after gaining a very rudimentary understanding
-                    of Visual Basic. The project preceeded the creation of Microsoft's Cortana voice assistant, and
-                    allowed me to literally tell my computer to do all sorts of custom commands. This application
-                    was instrumental in helping me realize just how much was possible with rudimentury programming
-                    skills.
-                </h4>
-            </div>
+            <table class="projectDesc">
+                <tr>
+                    <td>
+                        <div class="buttons">
+                            <a href="https://github.com/PlGGS/GTA-V-Base-Script-VB" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
+                        </div>
+                    </td>
+                    <td>
+                        <h4>
+                            <!--TODO write project description-->
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </header>
             <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="Statement">Imports</span>&nbsp;GTA<br />
+                <span class="Statement">Imports</span>&nbsp;System.Windows.Forms<br />
+                <br />
+                <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;BaseScript<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Inherits</span>&nbsp;Script<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Load</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;<span class="Keyword">New</span>()<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;1<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Update&nbsp;(Runs&nbsp;every&nbsp;'Interval')</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;Update(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.Tick<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;OnKeyDown(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.KeyDown<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;OnKeyUp(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.KeyUp<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+                <br />
+                <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
+            </div>
         </header>
 	</body>
 </html>

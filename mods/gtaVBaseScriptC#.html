@@ -51,19 +51,70 @@
                     </tr>
                 </table>
             </div>
-            <div class="projectDesc">
-                <h4>
-                    Blake Voice Commands is an application I worked on after gaining a very rudimentary understanding
-                    of Visual Basic. The project preceeded the creation of Microsoft's Cortana voice assistant, and
-                    allowed me to literally tell my computer to do all sorts of custom commands. This application
-                    was instrumental in helping me realize just how much was possible with rudimentury programming
-                    skills.
-                </h4>
-            </div>
+            <table class="projectDesc">
+                <tr>
+                    <td>
+                        <div class="buttons">
+                            <a href="https://github.com/PlGGS/GTA-V-Base-Script-C-Sharp" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
+                        </div>
+                    </td>
+                    <td>
+                        <h4>
+                            <!--TODO write project description-->
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </header>
             <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="Namespace">using</span>&nbsp;GTA;<br />
+                <span class="Namespace">using</span>&nbsp;System;<br />
+                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+                <br />
+                <span class="BlockComment">
+                    /*<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;properly&nbsp;use&nbsp;this&nbsp;application&nbsp;as&nbsp;a&nbsp;starting&nbsp;point&nbsp;for<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;your&nbsp;own&nbsp;work,&nbsp;please&nbsp;reference&nbsp;a&nbsp;scripthookdotnet&nbsp;dll&nbsp;file.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;obtain&nbsp;the&nbsp;newest&nbsp;build&nbsp;from&nbsp;here:&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;https://github.com/crosire/scripthookvdotnet/releases&nbsp;<br />
+                    */
+                </span><br />
+                <br />
+                <span class="Modifier">public</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;BaseScript&nbsp;:&nbsp;Script&nbsp;{<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;BaseScript()&nbsp;{<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tick&nbsp;+=&nbsp;OnTick;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyDown&nbsp;+=&nbsp;OnKeyDown;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyUp&nbsp;+=&nbsp;OnKeyUp;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;1;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnTick(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;{<br />
+                <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyDown(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)&nbsp;{<br />
+                <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)&nbsp;{<br />
+                <br />
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                }
+            </div>
         </header>
 	</body>
 </html>
