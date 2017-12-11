@@ -12,7 +12,7 @@ html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, fo
 
 * {
     font-family: 'Rubik';
-    text-align: right;
+    text-align: center;
     color: white;
 }
 
@@ -41,10 +41,8 @@ ul {
 }
 
 .bar_nav {
-    text-align: center;
     position: fixed;
     right: 1.5em;
-    left: 5em;
 }
 
 .bar li a {
@@ -118,6 +116,10 @@ body {
         padding-left: 30px;
     }
 
+    .bar h2 {
+        font-size: 30px;
+    }
+
     /* CSS rules here for screens above px */
 }
 
@@ -126,6 +128,10 @@ body {
     body header div nav ul li a {
         font-size: 70%;
         padding-left: 10px;
+    }
+
+    .bar h2 {
+        font-size: 25px;
     }
 
     /* CSS rules here for screens lower than px */
@@ -139,7 +145,11 @@ body {
     }
 
     body header div nav ul li {
-        padding-left: 4em;
+        padding-left: 5em;
+    }
+
+    .bar h2 {
+        font-size: 20px;
     }
 
     /* CSS rules here for screens lower than px */

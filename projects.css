@@ -45,7 +45,6 @@ p {
 .bar_nav {
     position: fixed;
     right: 1.5em;
-    left: 5em;
 }
 
 li a {
@@ -76,6 +75,10 @@ body {
         padding-left: 30px;
     }
 
+    .bar h2 {
+        font-size: 30px;
+    }
+
     /* CSS rules here for screens above px */
 }
 
@@ -84,6 +87,17 @@ body {
     body header div nav ul li a {
         font-size: 70%;
         padding-left: 10px;
+    }
+
+    .bar h2 {
+        font-size: 25px;
+    }
+
+    .projects table tr td a img {
+        padding-top: 12em;
+        padding-bottom: 1em;
+        width: 75%;
+        height: auto;
     }
 
     /* CSS rules here for screens lower than px */
@@ -98,6 +112,17 @@ body {
 
     body header div nav ul li {
         padding-left: 5em;
+    }
+
+    .bar h2 {
+        font-size: 20px;
+    }
+
+    .projects table tr td a img {
+        padding-top: 12em;
+        padding-bottom: 1em;
+        width: 55%;
+        height: auto;
     }
 
     /* CSS rules here for screens lower than px */
@@ -156,16 +181,16 @@ div.gallery {
         transform: scale(1.05, 1.05);
     }
 
-.projects table {
-    padding-top: 12em;
+.projects table tr {
+    padding-top: 1em;
     padding-bottom: 1em;
     width: 95%;
+    height: auto;
 }
 
     .projects table tr td {
         padding-left: 1em;
         padding-right: 2em;
-        padding-top: 2em;
     }
 
         .projects table tr td h3 {

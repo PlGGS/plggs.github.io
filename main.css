@@ -45,7 +45,6 @@ p {
 .bar_nav {
     position: fixed;
     right: 1.5em;
-    left: 5em;
 }
 
 li a {
@@ -82,6 +81,14 @@ body {
         padding-left: 30px;
     }
 
+    body header div nav ul li {
+        padding-left: auto;
+    }
+
+    .bar h2 {
+        font-size: 30px;
+    }
+
     /* CSS rules here for screens above px */
 }
 
@@ -92,6 +99,10 @@ body {
         padding-left: 10px;
     }
 
+    .bar h2 {
+        font-size: 25px;
+    }
+
     /* CSS rules here for screens lower than px */
 }
 
@@ -100,6 +111,14 @@ body {
     body header div nav ul li a {
         font-size: 50%;
         padding-left: 5px;
+    }
+
+    body header div nav ul li {
+        padding-left: 5em;
+    }
+
+    .bar h2 {
+        font-size: 20px;
     }
 
     /* CSS rules here for screens lower than px */
