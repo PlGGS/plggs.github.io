@@ -45,11 +45,11 @@ p {
 .bar_nav {
     position: fixed;
     right: 1.5em;
+    left: 5em;
 }
 
 li a {
     text-decoration: none;
-    padding-left: 30px;
 }
 
 a:hover {
@@ -65,8 +65,43 @@ body {
 }
 
     body header div nav ul li a {
-        font-size: 90%;
+        font-size: 40%;
+        padding-left: 5px;
     }
+
+@media (min-width: 1024px) {
+
+    body header div nav ul li a {
+        font-size: 90%;
+        padding-left: 30px;
+    }
+
+    /* CSS rules here for screens above px */
+}
+
+@media (max-width: 1024px) {
+
+    body header div nav ul li a {
+        font-size: 70%;
+        padding-left: 10px;
+    }
+
+    /* CSS rules here for screens lower than px */
+}
+
+@media (max-width: 800px) {
+
+    body header div nav ul li a {
+        font-size: 50%;
+        padding-left: 5px;
+    }
+
+    body header div nav ul li {
+        padding-left: 5em;
+    }
+
+    /* CSS rules here for screens lower than px */
+}
 
 h1 {
     font-size: 90px;

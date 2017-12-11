@@ -44,11 +44,11 @@ ul {
     text-align: center;
     position: fixed;
     right: 1.5em;
+    left: 5em;
 }
 
 .bar li a {
     text-decoration: none;
-    padding-left: 30px;
 }
 
 a:hover {
@@ -111,8 +111,38 @@ body {
     font-size: 18px;
 }
 
-body header div nav ul li a {
-    font-size: 90%;
+@media (min-width: 1024px) {
+
+    body header div nav ul li a {
+        font-size: 90%;
+        padding-left: 30px;
+    }
+
+    /* CSS rules here for screens above px */
+}
+
+@media (max-width: 1024px) {
+
+    body header div nav ul li a {
+        font-size: 70%;
+        padding-left: 10px;
+    }
+
+    /* CSS rules here for screens lower than px */
+}
+
+@media (max-width: 800px) {
+
+    body header div nav ul li a {
+        font-size: 50%;
+        padding-left: 5px;
+    }
+
+    body header div nav ul li {
+        padding-left: 4em;
+    }
+
+    /* CSS rules here for screens lower than px */
 }
 
 h1 {
@@ -122,7 +152,6 @@ h1 {
 }
 
 h2 {
-    text-align: center;
     background-color: #276f1e;
     color: white;
     padding: 20px;
