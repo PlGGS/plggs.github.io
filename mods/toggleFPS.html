@@ -9,7 +9,7 @@
         <header class="bar">
             <div class="headerBar wrap clearfix">
                 <div class="bar_logo">
-                    <h2>Blake Voice Commands</h2>
+                    <h2>Toggle FPS</h2>
                     <a href="https://plggs.github.io">
                         <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
                     </a>
@@ -51,19 +51,75 @@
                     </tr>
                 </table>
             </div>
-            <div class="projectDesc">
-                <h4>
-                    Blake Voice Commands is an application I worked on after gaining a very rudimentary understanding
-                    of Visual Basic. The project preceeded the creation of Microsoft's Cortana voice assistant, and
-                    allowed me to literally tell my computer to do all sorts of custom commands. This application
-                    was instrumental in helping me realize just how much was possible with rudimentury programming
-                    skills.
-                </h4>
-            </div>
+            <table class="projectDesc">
+                <tr>
+                    <td>
+                        <div class="buttons">
+                            <a href="https://github.com/PlGGS/ToggleFPS" class="btn pri">GitHub Project Page</a>
+                        </div>
+                    </td>
+                    <td>
+                        <h4>
+                            Toggle FPS was my first attempt at modding GTA V. Originally, I had written the
+                            application in VB.NET, but after growing tired of VB, I decided to rewrite it in
+                            C# for fun. In the process, I made the mod more stable and fixed an issue that I
+                            previously hadn't noticed. I uploaded the mod to a surprising amount of positive 
+                            feedback that encouraged me to write a couple more mods for the game.
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </header>
             <h2>Code Preview</h2>
         <header class="codePreview">
-            
+            <div class="code">
+                <span class="Namespace">using</span>&nbsp;GTA;<br />
+                <span class="Namespace">using</span>&nbsp;System;<br />
+                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+                <br />
+                <span class="ReferenceType">class</span>&nbsp;ToggleFPS&nbsp;:&nbsp;Script<br />
+                {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">bool</span>&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Keys&nbsp;toggle_fps;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;update;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;ToggleFPS()<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ScriptSettings&nbsp;config&nbsp;=&nbsp;ScriptSettings.Load(@<span class="String">"scripts\ToggleFPS.config"</span>);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toggle_fps&nbsp;=&nbsp;config.GetValue&lt;Keys&gt;(<span class="String">"SETTINGS"</span>,&nbsp;<span class="String">"toggle_fps"</span>,&nbsp;Keys.F7);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update&nbsp;=&nbsp;config.GetValue&lt;<span class="ValueType">int</span>&gt;(<span class="String">"SETTINGS"</span>,&nbsp;<span class="String">"counter_update_speed"</span>,&nbsp;100);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyUp&nbsp;+=&nbsp;OnKeyUp;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tick&nbsp;+=&nbsp;OnTick;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;update;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;toggle_fps)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(boolKey)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(!boolKey)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;OnTick(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;fps&nbsp;=&nbsp;Convert.ToInt32(Game.FPS);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(boolKey)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"FPS:&nbsp;"</span>&nbsp;+&nbsp;fps,&nbsp;update);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<br />
+                }
+            </div>
         </header>
 	</body>
 </html>
