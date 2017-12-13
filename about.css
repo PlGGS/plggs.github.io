@@ -59,12 +59,17 @@ a:hover {
     background-color: #36922a;
     padding-left: 3.5em;
     padding-top: 12em;
-    padding-bottom: 3.5em;
+    padding-bottom: 2em;
     padding-right: 3.5em;
 }
 
 .banner h1 {
     padding-bottom: 0.75em;
+}
+
+.skills {
+    padding-left: 3.5em;
+    padding-right: 3.5em;
 }
 
 .skills ul {
@@ -80,18 +85,8 @@ a:hover {
     text-align: left;
 }
 
-.socialMedia ul {
-    padding: 1.5em;
-}
-
-.socialMedia ul h3 {
-    padding-bottom: 0.3em;
-}
-
-.socialMedia ul li {
-    padding-bottom: 0.1em;
-    padding-left: 1em;
-    text-align: left;
+.skills table tr td {
+    width: 50%;
 }
 
 div.gallery {
@@ -177,21 +172,21 @@ h3 {
     font-size: 27px;
 }
 
-table {
+.media table {
     padding-top: 2em;
     padding-bottom: 3.5em;
     width: 95%;
 }
 
-    table td {
-        padding-top: 2em;
-        padding-left: 1em;
-        padding-right: 2em;
-    }
+.media table td {
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 2em;
+}
 
-        table td a h3 {
-            padding-top: 1.5em;
-        }
+.media table td a h3 {
+    padding-top: 1.5em;
+}
 
 iframe {
 }
