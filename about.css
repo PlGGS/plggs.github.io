@@ -172,6 +172,10 @@ h3 {
     font-size: 27px;
 }
 
+h4 {
+    text-align: left;
+}
+
 .media table {
     padding-top: 2em;
     padding-bottom: 3.5em;
