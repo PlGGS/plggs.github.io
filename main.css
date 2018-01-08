@@ -5,7 +5,7 @@ article, aside, footer, header, main, nav, section {
     display: block;
 }
 
-html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
+html, body, footer, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
     padding: 0;
     margin: 0;
 }
@@ -144,27 +144,33 @@ table {
     width: 95%;
 }
 
-    table td {
-        padding-top: 2em;
-        padding-left: 1em;
-        padding-right: 2em;
-    }
+table td {
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 2em;
+}
 
-        table td a h3 {
-            padding-top: 1.5em;
-        }
+table td a h3 {
+    padding-top: 1.5em;
+}
 
-    table img {
-        transform: scale(0.9, 0.9);
-    }
+table img {
+    transform: scale(0.9, 0.9);
+}
 
-    table a img:hover {
-        transform: scale(1.0, 1.0);
-    }
+table a img:hover {
+    transform: scale(1.0, 1.0);
+}
 
 a img:hover {
     transform: scale(1.1, 1.1);
 }
 
 iframe {
+}
+
+footer {
+    background-color: #276f1e;
+    font-size: 12px;
+    padding: 0.1em;
 }
