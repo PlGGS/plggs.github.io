@@ -19,8 +19,6 @@
                         var img = new Image();
                         img.setAttribute("class", "album-img");
                         img.setAttribute("alt", "album");
-                        img.setAttribute("height", "300");
-                        img.setAttribute("width", "300");
                         document.getElementById("album-art-div").appendChild(img);
                         img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
                     }
