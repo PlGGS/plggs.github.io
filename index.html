@@ -17,7 +17,7 @@
                 $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
                     function (data, status) {
                         var img = new Image();
-                        img.setAttribute("class", "album-img");
+                        img.setAttribute("id", "album-img");
                         img.setAttribute("alt", "album");
                         document.getElementById("album-art-div").appendChild(img);
                         img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
@@ -32,7 +32,7 @@
 
                     $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
                         function (data, status) {
-                            img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
+                            document.getElementById("album-img").setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
                         }
                     );  
                 }, 1000);
