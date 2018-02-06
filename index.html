@@ -13,23 +13,30 @@
                     $("#music-span").html(data["recenttracks"]["track"][0]["name"] + "<br/>By: " + data["recenttracks"]["track"][0]["artist"]["#text"]);
                 });
 
+                var img = new Image();
+                $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
+                    function (data, status) {
+                        var img = new Image();
+                        img.setAttribute("class", "album-img");
+                        img.setAttribute("alt", "album");
+                        img.setAttribute("height", "300");
+                        img.setAttribute("width", "300");
+                        document.getElementById("album-art-div").appendChild(img);
+                        img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
+                    }
+                );
+
                 setInterval(function ()
                 {
                     $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
                         $("#music-span").html(data["recenttracks"]["track"][0]["name"] + "<br/>By: " + data["recenttracks"]["track"][0]["artist"]["#text"]);
                     });
 
-                    var img = new Image();
-                    img = $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
-                        $("#album-art").html(data["recenttracks"]["track"][0]["image"][2]);
-                    });
-                    img.src = $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
-                        $("#album-art").html(data["recenttracks"]["track"][0]["image"][2]['#text']);
-                    });
-                    //img.setAttribute("class", "album-img");
-                    //img.setAttribute("alt", "album");
-                    //document.getElementById("album-art-div").appendChild(img);
-                    $('.album-art').append(img);
+                    $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
+                        function (data, status) {
+                            img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
+                        }
+                    );  
                 }, 1000);
             });
         </script>
@@ -74,7 +81,7 @@
                     <td>
                         <ul>
                             <div id="album-art-div">
-                                <img class="album-art" alt="album" />
+                                
                             </div>
                         </ul>
                     </td>
