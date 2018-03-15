@@ -72,7 +72,7 @@ body {
 
     body header div nav ul li a {
         font-size: 90%;
-        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .bar h2 {
@@ -92,7 +92,7 @@ body {
 
     body header div nav ul li a {
         font-size: 70%;
-        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .bar h2 {

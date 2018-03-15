@@ -78,11 +78,11 @@ body {
 
     body header div nav ul li a {
         font-size: 90%;
-        padding-left: 30px;
+        padding-right: 30px;
     }
 
     body header div nav ul li {
-        padding-left: auto;
+        padding-right: auto;
     }
 
     .bar h2 {
