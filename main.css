@@ -69,10 +69,10 @@ body {
     font-size: 18px;
 }
 
-    body header div nav ul li a {
-        font-size: 40%;
-        padding-left: 5px;
-    }
+body header div nav ul li a {
+    font-size: 40%;
+    padding-left: 5px;
+}
 
 @media (min-width: 1024px) {
 
