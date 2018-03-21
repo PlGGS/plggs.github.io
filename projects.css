@@ -39,7 +39,6 @@ p {
 
 .bar_logo {
     float: left;
-    padding-top: 0.4em;
 }
 
 .bar_nav {
@@ -95,14 +94,15 @@ body header div nav ul li a {
         padding-right: 10px;
     }
 
-    .bar h2 {
-        padding-top: 0px;
-        padding-bottom: 6px;
+    .bar_logo {
+        float: left;
+        max-width: 35%;
+        padding-bottom: 0px;
     }
 
-    .bar_logo {
-        font-size: 20px;
-        width: calc(30%);
+    .bar_logo h2 {
+        font-size: 25px;
+        padding-bottom: 7px;
     }
 
     .projects table tr a img {
@@ -129,7 +129,7 @@ body header div nav ul li a {
     }
 
     .bar h2 {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .projects table tr td a img {
@@ -234,7 +234,7 @@ div.code {
 }
 
 .codePreview {
-    background-color: #1c1c1c;
+    background-color: #353535;
 }
 
 .buttons {
