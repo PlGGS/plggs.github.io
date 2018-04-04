@@ -1,4 +1,4 @@
-var page = window.location.hash;
+var page = window.location.hash.substr(0);
 
 $.get("/sites/"+page+".html", function(data) {
     $(function() {
