@@ -8,10 +8,13 @@ the layout file containing the `<head>`, footer, and navbar is saved in `_layout
 ```
 ---
 layout: default
-title: [TITLE]
+title: Title
+css: [css, file, names, from, /css/, without, .html]
+js: [js, file, names, from, /script/, without, .js]
 ---
 ```
 will be wrapped in it.
+*Note: variables can be left blank when not used*
 
 <style>
     blockquote {
