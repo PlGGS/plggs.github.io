@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\apps",
-    "\\assets",
-    "\\games",
-    "\\mods"
+    "\\css",
+    "\\script",
+    "\\sites",
+    "\\sites\\about",
+    "\\sites\\apps",
+    "\\sites\\assets",
+    "\\sites\\gallery",
+    "\\sites\\games",
+    "\\sites\\mods"
   ],
-  "SelectedNode": "\\mods\\gtaVBaseScriptCS.html",
+  "SelectedNode": "\\_config.yml",
   "PreviewInSolutionExplorer": false
 }
