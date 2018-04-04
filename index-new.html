@@ -6,9 +6,9 @@
         <meta charset="UTF-8">
         <title>Blake Boris</title>
         <link rel="favicon" type="image/x-icon" href="assets/BlakeSurprisedCircle.png" />
-        <link rel="stylesheet" type="text/css" href='{{ "/css/main.css" | prepend: site.baseurl }}'>
+        <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | prepend: site.baseurl }}">
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src='{{ "/script/page-loader.js" | prepend: site.baseurl }}'></script>
+        <script src="{{ "/script/page-loader.js" | prepend: site.baseurl }}"></script>
         <script>
             $(document).ready(function () {
                 $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
