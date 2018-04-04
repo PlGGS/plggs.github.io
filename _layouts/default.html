@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{{ layout.title}} - Blake Boris</title>
+        <title>{{ page.title}} - Blake Boris</title>
         <link rel="favicon" type="image/x-icon" href="assets/BlakeSurprisedCircle.png" />
         <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}">
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -12,7 +12,7 @@
         <header class="bar">
             <div class="headerBar wrap clearfix">
                 <div class="bar_logo">
-                    <h2>{{ layout.title }}</h2>
+                    <h2>{{ page.title }}</h2>
                     <a href="#home">
                         <img src="/sites/assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75" />
                     </a>
