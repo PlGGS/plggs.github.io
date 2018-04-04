@@ -13,7 +13,7 @@ css: [css, file, names, from, /css/, without, .html]
 js: [js, file, names, from, /script/, without, .js]
 ---
 ```
-will be wrapped in it.
+will be wrapped in it.<br>
 *Note: variables can be left blank when not used*
 
 <style>
