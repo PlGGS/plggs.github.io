@@ -22,3 +22,7 @@ $.get("/sites/"+page+".html", function(data) {
         $("div.content").html(data);
     })
 })
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.substr(1);
+}
