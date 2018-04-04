@@ -9,6 +9,9 @@
         <!--<script src="{{ "/script/page-loader.js" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}"></script>-->
     </head>
     <body>
+        {% for item in page.array %}
+            {{ item }}
+        {% endfor %}
         <header class="bar">
             <div class="headerBar wrap clearfix">
                 <div class="bar_logo">
