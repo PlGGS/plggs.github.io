@@ -1,11 +1,14 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Rubik');
+﻿---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 @charset "UTF-8";
 
 article, aside, footer, header, main, nav, section {
     display: block;
 }
 
-html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
+html, body, footer, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
     padding: 0;
     margin: 0;
 }
@@ -18,6 +21,10 @@ html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, fo
 
 ul {
     list-style-type: none;
+}
+
+p {
+    font-family: "Comic Sans MS", Helvetica, sans-serif;
 }
 
 .bar {
@@ -53,64 +60,22 @@ a:hover {
 }
 
 .banner {
-    text-align: right;
     background-color: #36922a;
-    padding-left: 3.5em;
-    padding-top: 12em;
-    padding-bottom: 2em;
-    padding-right: 3.5em;
-}
-
-.banner h1 {
-    padding-bottom: 0.75em;
-}
-
-.skills {
-    padding-left: 3.5em;
-    padding-right: 3.5em;
-}
-
-.skills ul {
-    padding: 1.5em;
-}
-
-.skills ul h3 {
-    padding-bottom: 0.3em;
-}
-
-.skills ul li {
-    padding-bottom: 0.1em;
-    text-align: left;
-}
-
-.skills table tr td {
-    width: 50%;
-}
-
-div.gallery {
-    float: left;
-    padding-bottom: 2em;
-    padding-right: 2em;
-}
-
-.media table tr td article iframe {
-    width: 100%;
-    height: 220px;
-}
-
-.media table tr td h3 {
-    text-align: center;
+    padding-top: 304px;
+    padding-bottom: 148px;
 }
 
 body {
+    margin-left: auto;
+    margin-right: auto;
     background-color: #36922a;
     font-size: 18px;
 }
 
-body header div nav ul li a {
-    font-size: 40%;
-    padding-left: 5px;
-}
+    body header div nav ul li a {
+        font-size: 40%;
+        padding-left: 5px;
+    }
 
 @media (min-width: 1024px) {
 
@@ -120,7 +85,7 @@ body header div nav ul li a {
     }
 
     body header div nav ul li {
-        padding-left: auto;
+        padding-right: auto;
     }
 
     .bar h2 {
@@ -134,7 +99,7 @@ body header div nav ul li a {
 
     body header div nav ul li a {
         font-size: 70%;
-        padding-right: 10px;
+        padding-left: 10px;
     }
 
     .bar h2 {
@@ -162,9 +127,7 @@ body header div nav ul li a {
 }
 
 h1 {
-    font-size: 70px;
-    padding-bottom: 0.3em;
-    text-align: right;
+    font-size: 90px;
 }
 
 h2 {
@@ -175,28 +138,35 @@ h2 {
 }
 
 h3 {
-    text-align: left;
-    font-size: 21px;
+    font-size: 30px;
 }
 
-h4 {
-    text-align: left;
-}
-
-.media table {
+body header table {
     padding-top: 2em;
-    padding-bottom: 3.5em;
+    padding-bottom: 7em;
     width: 95%;
 }
 
-.media table td {
+body header table td {
     padding-top: 2em;
     padding-left: 1em;
     padding-right: 2em;
 }
 
-.media table td a h3 {
+body header table td a h3 {
     padding-top: 1.5em;
+}
+
+body header table img {
+    transform: scale(0.9, 0.9);
+}
+
+body header table a img:hover {
+    transform: scale(1.0, 1.0);
+}
+
+a img:hover {
+    transform: scale(1.1, 1.1);
 }
 
 iframe {
@@ -206,7 +176,7 @@ iframe {
     font-size: 12px;
     padding-top: 3em;
     padding-right: 4em;
-    margin-left: auto;
+    margin-left: auto; 
     margin-right: 0px;
 }
 
