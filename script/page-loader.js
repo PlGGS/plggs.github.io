@@ -3,7 +3,7 @@
 $(function() {
     window.onhashchange = function() {
         console.log(window.location.hash)
-        history.pushState({page:window.location.hash}, $("head title").text(), "#"+window.location.hash);
+        history.pushState({page:window.location.hash}, $("head title").text(), window.location.hash);
         window.location.reload();
     }
 })
