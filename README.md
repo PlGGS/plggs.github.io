@@ -9,3 +9,4 @@ To create a new page, just add the content as `html` file into `/sites/` (you ca
 To create a link to that page, just make the `href` `#path/to/file/within/sites/filename` (filename without `.html`).
 
 - `main.scss` is included in ALL pages, as well as `page-loader.js`
+- the `---` in the `.scss` files are necessary for some reason for jekyll to render them
