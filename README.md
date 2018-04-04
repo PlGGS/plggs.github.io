@@ -1,5 +1,5 @@
 # plggs.github.io
-## By: Blake Boris & Sebastion Strempfer
+## By: Blake Boris & Sebastian Strempfer
 ### Also available at https://bblake.info
 A site for displaying bits of my information in a more appealing fashion than ones and zeros.
 
