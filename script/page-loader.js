@@ -14,7 +14,11 @@ page = (page)?page:"home";
 
 $.get("/sites/"+page+".html", function(data) {
     console.log(data)
+    if(data.indexOf("[TITLE]") != -1) {
+        var title = data.substring(data.indexOf("[TITLE]")+7, data.indexOf("[/TITLE]"));
+    }
     $(function() {
+        $("head title").text((title)?title:(page.split("/")[page.split("/").length-1].capitalize() + " - Blake Boris"))
         $("div.content").html(data);
     })
 })
