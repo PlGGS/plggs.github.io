@@ -16,13 +16,6 @@ js: [js, file, names, from, /script/, without, .js]
 will be wrapped in it.<br>
 *Note: variables can be left blank when not used*
 
-<style>
-    blockquote {
-        border-color: red !important;
-        background-color: #ffeeee !important;
-    }
-</style>
-
 > Be careful what file encoding you use. `UTF-8 with BOM` will NOT work. 
 > I would suggest using `UTF-8`.
 
