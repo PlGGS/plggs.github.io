@@ -9,36 +9,6 @@
         <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}">
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="{{ "/script/page-loader.js" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}"></script>
-        <script>
-            $(document).ready(function () {
-                $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
-                    $("#music-span").html(data["recenttracks"]["track"][0]["name"] + "<br/>By: " + data["recenttracks"]["track"][0]["artist"]["#text"]);
-                });
-
-                var img = new Image();
-                $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
-                    function (data, status) {
-                        var img = new Image();
-                        img.setAttribute("id", "album-img");
-                        img.setAttribute("alt", "album");
-                        document.getElementById("album-art-div").appendChild(img);
-                        img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
-                    }
-                );
-
-                setInterval(function () {
-                    $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
-                        $("#music-span").html(data["recenttracks"]["track"][0]["name"] + "<br/>By: " + data["recenttracks"]["track"][0]["artist"]["#text"]);
-                    });
-
-                    $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
-                        function (data, status) {
-                            document.getElementById("album-img").setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
-                        }
-                    );
-                }, 1000);
-            });
-        </script>
     </head>
     <body>
         <header class="bar">
