@@ -9,7 +9,7 @@ the layout file containing the `<head>`, footer, and navbar is saved in `_layout
 ---
 layout: default
 title: Title
-css: [css, file, names, from, /css/, without, .html]
+css: [css, file, names, from, /css/, without, .scss]
 js: [js, file, names, from, /script/, without, .js]
 ---
 ```
