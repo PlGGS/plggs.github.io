@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\about",
+    "\\apps",
+    "\\assets",
     "\\css",
+    "\\games",
+    "\\mods",
     "\\script",
     "\\sites",
-    "\\sites\\about",
-    "\\sites\\apps",
-    "\\sites\\assets",
-    "\\sites\\gallery",
-    "\\sites\\games",
-    "\\sites\\mods"
+    "\\_layouts"
   ],
-  "SelectedNode": "\\_config.yml",
+  "SelectedNode": "\\games\\brickBreakerArray.html",
   "PreviewInSolutionExplorer": false
 }
