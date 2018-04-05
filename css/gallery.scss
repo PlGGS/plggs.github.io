@@ -1,4 +1,4 @@
----
+﻿---
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
@@ -103,7 +103,7 @@ body {
     }
 
     .bar h2 {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     /* CSS rules here for screens lower than px */
@@ -120,7 +120,8 @@ body {
     }
 
     .bar h2 {
-        font-size: 20px;
+        font-size: 30px;
+        /*TODO set lower text size and lower image sizes here*/
     }
 
     /* CSS rules here for screens lower than px */

@@ -1,4 +1,4 @@
----
+﻿---
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
@@ -122,12 +122,12 @@ body header div nav ul li a {
         padding-right: 30px;
     }
 
-    body header div nav ul li {
-        padding-left: auto;
-    }
-
     .bar h2 {
         font-size: 30px;
+    }
+
+    body header div nav ul li {
+        padding-left: auto;
     }
 
     /* CSS rules here for screens above px */
@@ -158,7 +158,8 @@ body header div nav ul li a {
     }
 
     .bar h2 {
-        font-size: 20px;
+        font-size: 30px;
+        /*TODO set lower text size and lower image sizes here*/
     }
 
     /* CSS rules here for screens lower than px */
@@ -187,8 +188,8 @@ h4 {
 }
 
 .media table {
-    padding-top: 2em;
-    padding-bottom: 3.5em;
+    padding-top: 1em;
+    padding-bottom: 2em;
     width: 95%;
 }
 

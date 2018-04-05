@@ -1,4 +1,4 @@
----
+﻿---
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
@@ -42,6 +42,7 @@ p {
 
 .bar_logo {
     float: left;
+    padding-top: 0.4em;
 }
 
 .bar_nav {
@@ -132,7 +133,8 @@ body header div nav ul li a {
     }
 
     .bar h2 {
-        font-size: 20px;
+        font-size: 30px;
+        /*TODO set lower text size and lower image sizes here*/
     }
 
     .projects table tr td a img {
