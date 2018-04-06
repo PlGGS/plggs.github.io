@@ -1,621 +1,590 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Top Quit Bit</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>Top Quit Bit</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: TQB
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/quitbit" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/quitbit" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            Top Quit Bit is an application that I forked from GitHub user longjoel in order to implement 
-                            features necessary for my retro TV project. After changing a few minor strings, renaming a console 
-                            parameter, and adding a new way to close the ROM using MouseKeyHook, I used this application 
-                            to send the user back to the Attract Mode front end that my retro TV project uses. This is the 
-                            first project that I've ever forked and updated in order to truly add functionality.
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-        <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                <span class="InlineComment">//&nbsp;Copyright&nbsp;(c)&nbsp;2016,&nbsp;Joel&nbsp;Longanecker</span><br />
-                <span class="InlineComment">//&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
-                <span class="InlineComment">//</span><br />
-                <span class="InlineComment">//&nbsp;Redistribution&nbsp;and&nbsp;use&nbsp;in&nbsp;source&nbsp;and&nbsp;binary&nbsp;forms,&nbsp;with&nbsp;or&nbsp;without&nbsp;modification,&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;are&nbsp;permitted&nbsp;provided&nbsp;that&nbsp;the&nbsp;following&nbsp;conditions&nbsp;are&nbsp;met:</span><br />
-                <span class="InlineComment">//&nbsp;1.&nbsp;Redistributions&nbsp;of&nbsp;source&nbsp;code&nbsp;must&nbsp;retain&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer.</span><br />
-                <span class="InlineComment">//</span><br />
-                <span class="InlineComment">//&nbsp;2.&nbsp;Redistributions&nbsp;in&nbsp;binary&nbsp;form&nbsp;must&nbsp;reproduce&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;disclaimer&nbsp;in&nbsp;the&nbsp;documentation&nbsp;and/or&nbsp;other&nbsp;materials&nbsp;provided&nbsp;with&nbsp;the&nbsp;distribution.</span><br />
-                <span class="InlineComment">//</span><br />
-                <span class="InlineComment">//&nbsp;THIS&nbsp;SOFTWARE&nbsp;IS&nbsp;PROVIDED&nbsp;BY&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDERS&nbsp;AND&nbsp;CONTRIBUTORS&nbsp;"AS&nbsp;IS"&nbsp;AND&nbsp;ANY&nbsp;EXPRESS&nbsp;OR&nbsp;IMPLIED&nbsp;WARRANTIES,&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO,&nbsp;THE&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANTABILITY&nbsp;AND&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE&nbsp;ARE&nbsp;DISCLAIMED.&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDER&nbsp;OR&nbsp;CONTRIBUTORS&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;DIRECT,&nbsp;INDIRECT,&nbsp;INCIDENTAL,&nbsp;SPECIAL,&nbsp;EXEMPLARY,&nbsp;OR&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;(INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO,&nbsp;PROCUREMENT&nbsp;OF&nbsp;SUBSTITUTE&nbsp;GOODS&nbsp;OR&nbsp;SERVICES;&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA,&nbsp;OR&nbsp;PROFITS;&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;OR&nbsp;BUSINESS&nbsp;INTERRUPTION)&nbsp;HOWEVER&nbsp;CAUSED&nbsp;AND&nbsp;ON&nbsp;ANY&nbsp;THEORY&nbsp;OF&nbsp;LIABILITY,&nbsp;WHETHER&nbsp;IN&nbsp;CONTRACT,&nbsp;STRICT&nbsp;LIABILITY,&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;OR&nbsp;TORT&nbsp;(INCLUDING&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHERWISE)&nbsp;ARISING&nbsp;IN&nbsp;ANY&nbsp;WAY&nbsp;OUT&nbsp;OF&nbsp;THE&nbsp;USE&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE,&nbsp;</span><br />
-                <span class="InlineComment">//&nbsp;EVEN&nbsp;IF&nbsp;ADVISED&nbsp;OF&nbsp;THE&nbsp;POSSIBILITY&nbsp;OF&nbsp;SUCH&nbsp;DAMAGE.</span><br />
-                <br />
-                <span class="InlineComment">//&nbsp;QuitBit</span><br />
-                <span class="InlineComment">//&nbsp;Emulator&nbsp;Killer&nbsp;written&nbsp;by&nbsp;Joel&nbsp;Longanecker</span><br />
-                <span class="InlineComment">//&nbsp;2015</span><br />
-                <span class="InlineComment">//</span><br />
-                <span class="InlineComment">//TopQuitBit</span><br />
-                <span class="InlineComment">//Updated&nbsp;by&nbsp;Blake&nbsp;Boris&nbsp;for&nbsp;personal&nbsp;use</span><br />
-                <span class="InlineComment">//2017</span><br />
-                <span class="InlineComment">//</span><br />
-                <span class="InlineComment">//&nbsp;Usage:</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopQuitBit.exe&nbsp;--controller=2&nbsp;--buttons=2+0+1&nbsp;--load=c:\emulators\nes\nes.exe&nbsp;--params=c:\roms\nes\mario.nes</span><br />
-                <span class="InlineComment">//</span><br />
-                <br />
-                <span class="InlineComment">//&nbsp;Example&nbsp;emulation&nbsp;station&nbsp;usage:</span><br />
-                <span class="InlineComment">//&nbsp;&lt;system&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;genesis&lt;/name&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullname&gt;Sega&nbsp;Genesis&lt;/fullname&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&gt;C:\Roms\genesis&lt;/path&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;extension&gt;.bin&nbsp;.zip&lt;/extension&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;command&gt;TopQuitBit.exe&nbsp;--buttons=6&nbsp;--l=c:\retroarch\retroarch.exe&nbsp;--p=-D&nbsp;-L&nbsp;C:\retroarch\cores\genesis_plus_gx_libretro.dll&nbsp;"%ROM_RAW%"&lt;/command&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;platform&gt;genesis&lt;/platform&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;theme&gt;genesis&lt;/theme&gt;</span><br />
-                <span class="InlineComment">//&nbsp;&lt;/system&gt;</span><br />
-                <span class="InlineComment">//</span><br />
-                <span class="InlineComment">//&nbsp;Note:&nbsp;--controller&nbsp;and&nbsp;--params&nbsp;are&nbsp;not&nbsp;necessary</span><br />
-                <br />
-                <span class="Namespace">using</span>&nbsp;Gma.System.MouseKeyHook;<br />
-                <span class="Namespace">using</span>&nbsp;System;<br />
-                <span class="Namespace">using</span>&nbsp;System.Collections.Generic;<br />
-                <span class="Namespace">using</span>&nbsp;System.Diagnostics;<br />
-                <span class="Namespace">using</span>&nbsp;System.Runtime.InteropServices;<br />
-                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
-                <br />
-                <span class="Namespace">namespace</span>&nbsp;QuitBit<br />
-                {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;[StructLayout(LayoutKind.Sequential)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">struct</span>&nbsp;JOYINFOEX<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwSize;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwFlags;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwXpos;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwYpos;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwZpos;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwRpos;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwUpos;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwVpos;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwButtons;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwButtonNumber;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwPOV;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwReserved1;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwReserved2;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;This&nbsp;class&nbsp;is&nbsp;used&nbsp;to&nbsp;un-screw&nbsp;with&nbsp;the&nbsp;screen&nbsp;resolution&nbsp;if&nbsp;a&nbsp;game&nbsp;is&nbsp;being&nbsp;naughty.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;WindowManager&nbsp;:&nbsp;IDisposable<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">struct</span>&nbsp;POINTL<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;x;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;y;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Flags()]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">enum</span>&nbsp;DM&nbsp;:&nbsp;<span class="ValueType">int</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orientation&nbsp;=&nbsp;0x1,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PaperSize&nbsp;=&nbsp;0x2,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PaperLength&nbsp;=&nbsp;0x4,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PaperWidth&nbsp;=&nbsp;0x8,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scale&nbsp;=&nbsp;0x10,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position&nbsp;=&nbsp;0x20,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUP&nbsp;=&nbsp;0x40,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayOrientation&nbsp;=&nbsp;0x80,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copies&nbsp;=&nbsp;0x100,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DefaultSource&nbsp;=&nbsp;0x200,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrintQuality&nbsp;=&nbsp;0x400,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color&nbsp;=&nbsp;0x800,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Duplex&nbsp;=&nbsp;0x1000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YResolution&nbsp;=&nbsp;0x2000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TTOption&nbsp;=&nbsp;0x4000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collate&nbsp;=&nbsp;0x8000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FormName&nbsp;=&nbsp;0x10000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LogPixels&nbsp;=&nbsp;0x20000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BitsPerPixel&nbsp;=&nbsp;0x40000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PelsWidth&nbsp;=&nbsp;0x80000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PelsHeight&nbsp;=&nbsp;0x100000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayFlags&nbsp;=&nbsp;0x200000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayFrequency&nbsp;=&nbsp;0x400000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICMMethod&nbsp;=&nbsp;0x800000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICMIntent&nbsp;=&nbsp;0x1000000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MediaType&nbsp;=&nbsp;0x2000000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DitherType&nbsp;=&nbsp;0x4000000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanningWidth&nbsp;=&nbsp;0x8000000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanningHeight&nbsp;=&nbsp;0x10000000,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayFixedOutput&nbsp;=&nbsp;0x20000000<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[StructLayout(LayoutKind.Explicit,&nbsp;CharSet&nbsp;=&nbsp;CharSet.Ansi)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">struct</span>&nbsp;DEVMODE<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CCHDEVICENAME&nbsp;=&nbsp;32;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CCHFORMNAME&nbsp;=&nbsp;32;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MarshalAs(UnmanagedType.ByValTStr,&nbsp;SizeConst&nbsp;=&nbsp;CCHDEVICENAME)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(0)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ReferenceType">string</span>&nbsp;dmDeviceName;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(32)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmSpecVersion;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(34)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmDriverVersion;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(36)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmSize;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(38)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmDriverExtra;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(40)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;DM&nbsp;dmFields;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(44)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmOrientation;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(46)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPaperSize;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(48)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPaperLength;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(50)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPaperWidth;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(52)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmScale;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(54)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmCopies;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(56)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmDefaultSource;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(58)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPrintQuality;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(44)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;POINTL&nbsp;dmPosition;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(52)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayOrientation;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(56)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayFixedOutput;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(60)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmColor;&nbsp;<span class="InlineComment">//&nbsp;See&nbsp;note&nbsp;below!</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(62)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmDuplex;&nbsp;<span class="InlineComment">//&nbsp;See&nbsp;note&nbsp;below!</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(64)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmYResolution;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(66)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmTTOption;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(68)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmCollate;&nbsp;<span class="InlineComment">//&nbsp;See&nbsp;note&nbsp;below!</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(72)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MarshalAs(UnmanagedType.ByValTStr,&nbsp;SizeConst&nbsp;=&nbsp;CCHFORMNAME)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ReferenceType">string</span>&nbsp;dmFormName;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(102)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmLogPixels;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(104)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmBitsPerPel;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(108)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmPelsWidth;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(112)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmPelsHeight;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(116)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayFlags;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(116)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmNup;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(120)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayFrequency;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;EnumDisplaySettings(<span class="ReferenceType">string</span>&nbsp;deviceName,&nbsp;<span class="ValueType">int</span>&nbsp;modeNum,&nbsp;<span class="MethodParameter">ref</span>&nbsp;DEVMODE&nbsp;devMode);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;ChangeDisplaySettings(<span class="MethodParameter">ref</span>&nbsp;DEVMODE&nbsp;devMode,&nbsp;<span class="ValueType">int</span>&nbsp;flags);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;SendMessage(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;Msg,&nbsp;IntPtr&nbsp;wParam,&nbsp;IntPtr&nbsp;lParam);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>,&nbsp;SetLastError&nbsp;=&nbsp;<span class="Keyword">true</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;MoveWindow(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;X,&nbsp;<span class="ValueType">int</span>&nbsp;Y,&nbsp;<span class="ValueType">int</span>&nbsp;nWidth,&nbsp;<span class="ValueType">int</span>&nbsp;nHeight,&nbsp;<span class="ValueType">bool</span>&nbsp;bRepaint);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;SetForegroundWindow(IntPtr&nbsp;hwnd);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span class="Statement">return</span>:&nbsp;MarshalAs(UnmanagedType.Bool)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;ShowWindow(IntPtr&nbsp;hWnd,&nbsp;ShowWindowEnum&nbsp;flags);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">enum</span>&nbsp;ShowWindowEnum<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hide&nbsp;=&nbsp;0,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowNormal&nbsp;=&nbsp;1,&nbsp;ShowMinimized&nbsp;=&nbsp;2,&nbsp;ShowMaximized&nbsp;=&nbsp;3,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximize&nbsp;=&nbsp;3,&nbsp;ShowNormalNoActivate&nbsp;=&nbsp;4,&nbsp;Show&nbsp;=&nbsp;5,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimize&nbsp;=&nbsp;6,&nbsp;ShowMinNoActivate&nbsp;=&nbsp;7,&nbsp;ShowNoActivate&nbsp;=&nbsp;8,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore&nbsp;=&nbsp;9,&nbsp;ShowDefault&nbsp;=&nbsp;10,&nbsp;ForceMinimized&nbsp;=&nbsp;11<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;IKeyboardMouseEvents&nbsp;m_GlobalHook;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;ENUM_CURRENT_SETTINGS&nbsp;=&nbsp;-1;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CDS_UPDATEREGISTRY&nbsp;=&nbsp;0x01;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CDS_TEST&nbsp;=&nbsp;0x02;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;DISP_CHANGE_SUCCESSFUL&nbsp;=&nbsp;0;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;DISP_CHANGE_RESTART&nbsp;=&nbsp;1;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;DISP_CHANGE_FAILED&nbsp;=&nbsp;-1;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;List&lt;DEVMODE&gt;&nbsp;_resolutions;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Save&nbsp;all&nbsp;the&nbsp;settings&nbsp;in&nbsp;the&nbsp;constructor</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;WindowManager()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_resolutions&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;List&lt;DEVMODE&gt;();<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEVMODE&nbsp;vDevMode&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;DEVMODE();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">while</span>&nbsp;(EnumDisplaySettings(<span class="Keyword">null</span>,&nbsp;i,&nbsp;<span class="MethodParameter">ref</span>&nbsp;vDevMode)&nbsp;==&nbsp;1)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_resolutions.Add(vDevMode);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Restore&nbsp;it&nbsp;all&nbsp;in&nbsp;the&nbsp;dispose</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Dispose()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEVMODE&nbsp;dMode;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">foreach</span>&nbsp;(<span class="Linq">var</span>&nbsp;d&nbsp;<span class="Statement">in</span>&nbsp;_resolutions)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dMode&nbsp;=&nbsp;d;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChangeDisplaySettings(<span class="MethodParameter">ref</span>&nbsp;dMode,&nbsp;CDS_UPDATEREGISTRY);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;Controller<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"winmm.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;joyGetPosEx(<span class="ValueType">int</span>&nbsp;uJoyID,&nbsp;<span class="MethodParameter">ref</span>&nbsp;JOYINFOEX&nbsp;pji);&nbsp;<span class="InlineComment">//Get&nbsp;the&nbsp;state&nbsp;of&nbsp;a&nbsp;controller&nbsp;with&nbsp;their&nbsp;ID</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"winmm.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;Int32&nbsp;joyGetNumDevs();&nbsp;<span class="InlineComment">//How&nbsp;many&nbsp;controllers&nbsp;are&nbsp;plugged&nbsp;in</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">int</span>&nbsp;controllerNum;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">int</span>&nbsp;combo;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;JOYINFOEX&nbsp;state&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;JOYINFOEX();<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Controller(<span class="ValueType">int</span>&nbsp;n,&nbsp;<span class="ValueType">int</span>&nbsp;c)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllerNum&nbsp;=&nbsp;n;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;combo&nbsp;=&nbsp;c;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state.dwFlags&nbsp;=&nbsp;128;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state.dwSize&nbsp;=&nbsp;System.Runtime.InteropServices.Marshal.SizeOf(<span class="Keyword">typeof</span>(JOYINFOEX));<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">bool</span>&nbsp;comboPressed()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(controllerNum&nbsp;&gt;&nbsp;-1)&nbsp;<span class="InlineComment">//Checking&nbsp;one&nbsp;controller</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;joyGetPosEx(controllerNum,&nbsp;<span class="MethodParameter">ref</span>&nbsp;state);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>&nbsp;(combo&nbsp;==&nbsp;state.dwButtons);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="InlineComment">//Checking&nbsp;all&nbsp;controllers</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;joyGetNumDevs();&nbsp;i++)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;joyGetPosEx(i,&nbsp;<span class="MethodParameter">ref</span>&nbsp;state);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(combo&nbsp;==&nbsp;state.dwButtons)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>&nbsp;<span class="Keyword">false</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;Keyboard<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;SendMessage(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;Msg,&nbsp;IntPtr&nbsp;wParam,&nbsp;IntPtr&nbsp;lParam);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>,&nbsp;SetLastError&nbsp;=&nbsp;<span class="Keyword">true</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;MoveWindow(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;X,&nbsp;<span class="ValueType">int</span>&nbsp;Y,&nbsp;<span class="ValueType">int</span>&nbsp;nWidth,&nbsp;<span class="ValueType">int</span>&nbsp;nHeight,&nbsp;<span class="ValueType">bool</span>&nbsp;bRepaint);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;SetForegroundWindow(IntPtr&nbsp;hwnd);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span class="Statement">return</span>:&nbsp;MarshalAs(UnmanagedType.Bool)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;ShowWindow(IntPtr&nbsp;hWnd,&nbsp;ShowWindowEnum&nbsp;flags);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">enum</span>&nbsp;ShowWindowEnum<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hide&nbsp;=&nbsp;0,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowNormal&nbsp;=&nbsp;1,&nbsp;ShowMinimized&nbsp;=&nbsp;2,&nbsp;ShowMaximized&nbsp;=&nbsp;3,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximize&nbsp;=&nbsp;3,&nbsp;ShowNormalNoActivate&nbsp;=&nbsp;4,&nbsp;Show&nbsp;=&nbsp;5,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimize&nbsp;=&nbsp;6,&nbsp;ShowMinNoActivate&nbsp;=&nbsp;7,&nbsp;ShowNoActivate&nbsp;=&nbsp;8,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore&nbsp;=&nbsp;9,&nbsp;ShowDefault&nbsp;=&nbsp;10,&nbsp;ForceMinimized&nbsp;=&nbsp;11<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;IKeyboardMouseEvents&nbsp;m_GlobalHook;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Process&nbsp;emu&nbsp;{&nbsp;get;&nbsp;set;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;WindowManager&nbsp;windowManager&nbsp;{&nbsp;get;&nbsp;set;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Subscribes&nbsp;to&nbsp;MouseKeyHook&nbsp;global&nbsp;events</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Subscribe()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Note:&nbsp;for&nbsp;the&nbsp;application&nbsp;hook,&nbsp;use&nbsp;the&nbsp;Hook.AppEvents()&nbsp;instead</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook&nbsp;=&nbsp;Hook.GlobalEvents();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook.KeyUp&nbsp;+=&nbsp;GlobalHookKeyUp;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Unsubscribes&nbsp;from&nbsp;MouseKeyHook&nbsp;events</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Unsubscribe()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook.KeyUp&nbsp;-=&nbsp;GlobalHookKeyUp;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook.Dispose();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Detects&nbsp;KeyUp&nbsp;events&nbsp;while&nbsp;outside&nbsp;of&nbsp;application</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="sender"&gt;&lt;/param&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="e"&gt;&lt;/param&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;GlobalHookKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;Keys.LWin&nbsp;||&nbsp;e.KeyCode&nbsp;==&nbsp;Keys.RWin)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KillProcess(windowManager,&nbsp;emu);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="ValueType">void</span>&nbsp;KillProcess(WindowManager&nbsp;winMngr,&nbsp;Process&nbsp;proc)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">try</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(winMngr&nbsp;!=&nbsp;<span class="Keyword">null</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;winMngr.Dispose();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;winMngr&nbsp;=&nbsp;<span class="Keyword">null</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proc.Kill();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="String">"TopQuitBit"</span>,&nbsp;<span class="String">"Tried&nbsp;to&nbsp;quit&nbsp;process!&nbsp;Did&nbsp;it&nbsp;work?"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">catch</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="String">"TopQuitBit"</span>,&nbsp;<span class="String">"Failed&nbsp;to&nbsp;quit&nbsp;process!"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;TopQuitBit<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[STAThread]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="ValueType">void</span>&nbsp;Main()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keyboard&nbsp;keys&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Keyboard();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controller&nbsp;controller;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WindowManager&nbsp;windowManager&nbsp;=&nbsp;<span class="Keyword">null</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process&nbsp;runProgram;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stopwatch&nbsp;timer&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Stopwatch();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;time;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllerString&nbsp;=&nbsp;<span class="String">"-1"</span>,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonsString&nbsp;=&nbsp;<span class="String">""</span>,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadString&nbsp;=&nbsp;<span class="String">""</span>,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paramsString&nbsp;=&nbsp;<span class="String">""</span>,<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeString&nbsp;=&nbsp;<span class="String">"0"</span>,<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clString&nbsp;=&nbsp;Environment.CommandLine;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>[]&nbsp;stringElements&nbsp;=&nbsp;clString.Split(<span class="Keyword">new</span>&nbsp;<span class="ReferenceType">string</span>[]&nbsp;{&nbsp;<span class="String">"--"</span>&nbsp;},&nbsp;StringSplitOptions.RemoveEmptyEntries);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;buttonCombo&nbsp;=&nbsp;0,&nbsp;controllerNum&nbsp;=&nbsp;-1;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">foreach</span>&nbsp;(<span class="Linq">var</span>&nbsp;s&nbsp;<span class="Statement">in</span>&nbsp;stringElements)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(s.Contains(<span class="String">"="</span>))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Linq">var</span>&nbsp;lSide&nbsp;=&nbsp;s.Split('=')[0];<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Linq">var</span>&nbsp;rSide&nbsp;=&nbsp;s.Split('=')[1];<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"buttons"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"b"</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonsString&nbsp;=&nbsp;rSide;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"load"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"l"</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadString&nbsp;=&nbsp;rSide;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"params"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"p"</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paramsString&nbsp;=&nbsp;rSide;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"time"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"t"</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeString&nbsp;=&nbsp;rSide;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"contoller"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"c"</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllerString&nbsp;=&nbsp;rSide;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(s&nbsp;==&nbsp;<span class="String">"rr"</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;windowManager&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;WindowManager();<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">bool</span>&nbsp;error&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;oVal&nbsp;=&nbsp;0;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Yellow;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">foreach</span>&nbsp;(<span class="Linq">var</span>&nbsp;b&nbsp;<span class="Statement">in</span>&nbsp;buttonsString.Split('+'))&nbsp;<span class="InlineComment">//Find&nbsp;Button&nbsp;Combo&nbsp;that&nbsp;is&nbsp;required</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(<span class="ValueType">int</span>.TryParse(b,&nbsp;<span class="MethodParameter">out</span>&nbsp;oVal))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonCombo&nbsp;+=&nbsp;(<span class="ValueType">int</span>)Math.Pow(2,&nbsp;oVal);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(buttonsString&nbsp;==&nbsp;<span class="ReferenceType">string</span>.Empty)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"A&nbsp;button&nbsp;combination&nbsp;is&nbsp;not&nbsp;specififed."</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;button&nbsp;argument&nbsp;is&nbsp;not&nbsp;used&nbsp;properly."</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">break</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!System.IO.File.Exists(loadString))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(loadString&nbsp;==&nbsp;<span class="ReferenceType">string</span>.Empty)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"An&nbsp;executable&nbsp;is&nbsp;not&nbsp;specififed."</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;executable&nbsp;does&nbsp;not&nbsp;exist,&nbsp;it's&nbsp;possibly&nbsp;an&nbsp;invalid&nbsp;path."</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!<span class="ValueType">int</span>.TryParse(timeString,&nbsp;<span class="MethodParameter">out</span>&nbsp;time))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;time&nbsp;argument&nbsp;not&nbsp;used&nbsp;properly."</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!<span class="ValueType">int</span>.TryParse(controllerString,&nbsp;<span class="MethodParameter">out</span>&nbsp;controllerNum))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;controller&nbsp;argument&nbsp;not&nbsp;used&nbsp;properly."</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(error)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Green;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alt&nbsp;&nbsp;&nbsp;Purpose"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.White;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"--rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore&nbsp;Resolution&nbsp;if&nbsp;your&nbsp;emulator&nbsp;is&nbsp;not&nbsp;respecting&nbsp;the&nbsp;desktop"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--buttons&nbsp;&nbsp;&nbsp;&nbsp;--b&nbsp;&nbsp;&nbsp;Button&nbsp;combination&nbsp;to&nbsp;close&nbsp;the&nbsp;program"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--b=0+8+6"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--e&nbsp;&nbsp;&nbsp;Full&nbsp;path&nbsp;to&nbsp;the&nbsp;executable&nbsp;to&nbsp;load"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--e=C:\\Emulators\\nestopia.exe"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--controller&nbsp;--c&nbsp;&nbsp;&nbsp;ID&nbsp;of&nbsp;specific&nbsp;controller&nbsp;to&nbsp;use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Optional]"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--c=0"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--t&nbsp;&nbsp;&nbsp;Milliseconds&nbsp;to&nbsp;hold&nbsp;down&nbsp;the&nbsp;combination&nbsp;&nbsp;[Optional]"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--t=2500"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--params&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--p&nbsp;&nbsp;&nbsp;Parameters&nbsp;when&nbsp;launching&nbsp;the&nbsp;program&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Optional]"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--p=C:\\roms\\NES\\Super&nbsp;Mario&nbsp;Bros..nes"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Gray;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Gray;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Controller(controllerNum,&nbsp;buttonCombo);&nbsp;<span class="InlineComment">//Controller&nbsp;class&nbsp;that&nbsp;handles&nbsp;button&nbsp;presses&nbsp;when&nbsp;checked</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Process();&nbsp;<span class="InlineComment">//Start&nbsp;up&nbsp;the&nbsp;program</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.StartInfo.FileName&nbsp;=&nbsp;loadString;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.StartInfo.Arguments&nbsp;=&nbsp;paramsString;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.StartInfo.WorkingDirectory&nbsp;=&nbsp;System.IO.Path.GetDirectoryName(loadString);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.Start();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BringToFront(loadString);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.emu&nbsp;=&nbsp;runProgram;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.windowManager&nbsp;=&nbsp;windowManager;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">while</span>&nbsp;(<span class="Keyword">true</span>)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!controller.comboPressed())<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer.Restart();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(timer.ElapsedMilliseconds&nbsp;&gt;=&nbsp;time)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.KillProcess(windowManager,&nbsp;runProgram);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.Sleep(35);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Bring's&nbsp;specified&nbsp;emulator&nbsp;to&nbsp;front</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="title"&gt;&lt;/param&gt;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="ValueType">void</span>&nbsp;BringToFront(<span class="ReferenceType">string</span>&nbsp;title)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Get&nbsp;a&nbsp;handle&nbsp;to&nbsp;the&nbsp;Calculator&nbsp;application.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntPtr&nbsp;handle&nbsp;=&nbsp;FindWindow(<span class="Keyword">null</span>,&nbsp;title);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Verify&nbsp;that&nbsp;Calculator&nbsp;is&nbsp;a&nbsp;running&nbsp;process.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(handle&nbsp;==&nbsp;IntPtr.Zero)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Make&nbsp;Calculator&nbsp;the&nbsp;foreground&nbsp;application</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetForegroundWindow(handle);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"USER32.DLL"</span>,&nbsp;CharSet&nbsp;=&nbsp;CharSet.Unicode)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;FindWindow(String&nbsp;lpClassName,&nbsp;String&nbsp;lpWindowName);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"USER32.DLL"</span>)]<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;SetForegroundWindow(IntPtr&nbsp;hWnd);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                }
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <h4>
+                    Top Quit Bit is an application that I forked from GitHub user longjoel in order to implement
+                    features necessary for my retro TV project. After changing a few minor strings, renaming a console
+                    parameter, and adding a new way to close the ROM using MouseKeyHook, I used this application
+                    to send the user back to the Attract Mode front end that my retro TV project uses. This is the
+                    first project that I've ever forked and updated in order to truly add functionality.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        <span class="InlineComment">//&nbsp;Copyright&nbsp;(c)&nbsp;2016,&nbsp;Joel&nbsp;Longanecker</span><br />
+        <span class="InlineComment">//&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+        <span class="InlineComment">//</span><br />
+        <span class="InlineComment">//&nbsp;Redistribution&nbsp;and&nbsp;use&nbsp;in&nbsp;source&nbsp;and&nbsp;binary&nbsp;forms,&nbsp;with&nbsp;or&nbsp;without&nbsp;modification,&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;are&nbsp;permitted&nbsp;provided&nbsp;that&nbsp;the&nbsp;following&nbsp;conditions&nbsp;are&nbsp;met:</span><br />
+        <span class="InlineComment">//&nbsp;1.&nbsp;Redistributions&nbsp;of&nbsp;source&nbsp;code&nbsp;must&nbsp;retain&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer.</span><br />
+        <span class="InlineComment">//</span><br />
+        <span class="InlineComment">//&nbsp;2.&nbsp;Redistributions&nbsp;in&nbsp;binary&nbsp;form&nbsp;must&nbsp;reproduce&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;disclaimer&nbsp;in&nbsp;the&nbsp;documentation&nbsp;and/or&nbsp;other&nbsp;materials&nbsp;provided&nbsp;with&nbsp;the&nbsp;distribution.</span><br />
+        <span class="InlineComment">//</span><br />
+        <span class="InlineComment">//&nbsp;THIS&nbsp;SOFTWARE&nbsp;IS&nbsp;PROVIDED&nbsp;BY&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDERS&nbsp;AND&nbsp;CONTRIBUTORS&nbsp;"AS&nbsp;IS"&nbsp;AND&nbsp;ANY&nbsp;EXPRESS&nbsp;OR&nbsp;IMPLIED&nbsp;WARRANTIES,&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO,&nbsp;THE&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANTABILITY&nbsp;AND&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE&nbsp;ARE&nbsp;DISCLAIMED.&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDER&nbsp;OR&nbsp;CONTRIBUTORS&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;DIRECT,&nbsp;INDIRECT,&nbsp;INCIDENTAL,&nbsp;SPECIAL,&nbsp;EXEMPLARY,&nbsp;OR&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;(INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO,&nbsp;PROCUREMENT&nbsp;OF&nbsp;SUBSTITUTE&nbsp;GOODS&nbsp;OR&nbsp;SERVICES;&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA,&nbsp;OR&nbsp;PROFITS;&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;OR&nbsp;BUSINESS&nbsp;INTERRUPTION)&nbsp;HOWEVER&nbsp;CAUSED&nbsp;AND&nbsp;ON&nbsp;ANY&nbsp;THEORY&nbsp;OF&nbsp;LIABILITY,&nbsp;WHETHER&nbsp;IN&nbsp;CONTRACT,&nbsp;STRICT&nbsp;LIABILITY,&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;OR&nbsp;TORT&nbsp;(INCLUDING&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHERWISE)&nbsp;ARISING&nbsp;IN&nbsp;ANY&nbsp;WAY&nbsp;OUT&nbsp;OF&nbsp;THE&nbsp;USE&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE,&nbsp;</span><br />
+        <span class="InlineComment">//&nbsp;EVEN&nbsp;IF&nbsp;ADVISED&nbsp;OF&nbsp;THE&nbsp;POSSIBILITY&nbsp;OF&nbsp;SUCH&nbsp;DAMAGE.</span><br />
+        <br />
+        <span class="InlineComment">//&nbsp;QuitBit</span><br />
+        <span class="InlineComment">//&nbsp;Emulator&nbsp;Killer&nbsp;written&nbsp;by&nbsp;Joel&nbsp;Longanecker</span><br />
+        <span class="InlineComment">//&nbsp;2015</span><br />
+        <span class="InlineComment">//</span><br />
+        <span class="InlineComment">//TopQuitBit</span><br />
+        <span class="InlineComment">//Updated&nbsp;by&nbsp;Blake&nbsp;Boris&nbsp;for&nbsp;personal&nbsp;use</span><br />
+        <span class="InlineComment">//2017</span><br />
+        <span class="InlineComment">//</span><br />
+        <span class="InlineComment">//&nbsp;Usage:</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TopQuitBit.exe&nbsp;--controller=2&nbsp;--buttons=2+0+1&nbsp;--load=c:\emulators\nes\nes.exe&nbsp;--params=c:\roms\nes\mario.nes</span><br />
+        <span class="InlineComment">//</span><br />
+        <br />
+        <span class="InlineComment">//&nbsp;Example&nbsp;emulation&nbsp;station&nbsp;usage:</span><br />
+        <span class="InlineComment">//&nbsp;&lt;system&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;genesis&lt;/name&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullname&gt;Sega&nbsp;Genesis&lt;/fullname&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;path&gt;C:\Roms\genesis&lt;/path&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;extension&gt;.bin&nbsp;.zip&lt;/extension&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;command&gt;TopQuitBit.exe&nbsp;--buttons=6&nbsp;--l=c:\retroarch\retroarch.exe&nbsp;--p=-D&nbsp;-L&nbsp;C:\retroarch\cores\genesis_plus_gx_libretro.dll&nbsp;"%ROM_RAW%"&lt;/command&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;platform&gt;genesis&lt;/platform&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;theme&gt;genesis&lt;/theme&gt;</span><br />
+        <span class="InlineComment">//&nbsp;&lt;/system&gt;</span><br />
+        <span class="InlineComment">//</span><br />
+        <span class="InlineComment">//&nbsp;Note:&nbsp;--controller&nbsp;and&nbsp;--params&nbsp;are&nbsp;not&nbsp;necessary</span><br />
+        <br />
+        <span class="Namespace">using</span>&nbsp;Gma.System.MouseKeyHook;<br />
+        <span class="Namespace">using</span>&nbsp;System;<br />
+        <span class="Namespace">using</span>&nbsp;System.Collections.Generic;<br />
+        <span class="Namespace">using</span>&nbsp;System.Diagnostics;<br />
+        <span class="Namespace">using</span>&nbsp;System.Runtime.InteropServices;<br />
+        <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+        <br />
+        <span class="Namespace">namespace</span>&nbsp;QuitBit<br />
+        {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;[StructLayout(LayoutKind.Sequential)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">struct</span>&nbsp;JOYINFOEX<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwSize;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwFlags;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwXpos;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwYpos;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwZpos;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwRpos;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwUpos;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwVpos;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwButtons;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwButtonNumber;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwPOV;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwReserved1;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">int</span>&nbsp;dwReserved2;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;This&nbsp;class&nbsp;is&nbsp;used&nbsp;to&nbsp;un-screw&nbsp;with&nbsp;the&nbsp;screen&nbsp;resolution&nbsp;if&nbsp;a&nbsp;game&nbsp;is&nbsp;being&nbsp;naughty.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;WindowManager&nbsp;:&nbsp;IDisposable<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">struct</span>&nbsp;POINTL<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;x;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;y;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Flags()]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">enum</span>&nbsp;DM&nbsp;:&nbsp;<span class="ValueType">int</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orientation&nbsp;=&nbsp;0x1,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PaperSize&nbsp;=&nbsp;0x2,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PaperLength&nbsp;=&nbsp;0x4,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PaperWidth&nbsp;=&nbsp;0x8,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scale&nbsp;=&nbsp;0x10,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position&nbsp;=&nbsp;0x20,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUP&nbsp;=&nbsp;0x40,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayOrientation&nbsp;=&nbsp;0x80,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copies&nbsp;=&nbsp;0x100,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DefaultSource&nbsp;=&nbsp;0x200,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrintQuality&nbsp;=&nbsp;0x400,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color&nbsp;=&nbsp;0x800,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Duplex&nbsp;=&nbsp;0x1000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YResolution&nbsp;=&nbsp;0x2000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TTOption&nbsp;=&nbsp;0x4000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collate&nbsp;=&nbsp;0x8000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FormName&nbsp;=&nbsp;0x10000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LogPixels&nbsp;=&nbsp;0x20000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BitsPerPixel&nbsp;=&nbsp;0x40000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PelsWidth&nbsp;=&nbsp;0x80000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PelsHeight&nbsp;=&nbsp;0x100000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayFlags&nbsp;=&nbsp;0x200000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayFrequency&nbsp;=&nbsp;0x400000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICMMethod&nbsp;=&nbsp;0x800000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICMIntent&nbsp;=&nbsp;0x1000000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MediaType&nbsp;=&nbsp;0x2000000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DitherType&nbsp;=&nbsp;0x4000000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanningWidth&nbsp;=&nbsp;0x8000000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PanningHeight&nbsp;=&nbsp;0x10000000,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DisplayFixedOutput&nbsp;=&nbsp;0x20000000<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[StructLayout(LayoutKind.Explicit,&nbsp;CharSet&nbsp;=&nbsp;CharSet.Ansi)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">struct</span>&nbsp;DEVMODE<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CCHDEVICENAME&nbsp;=&nbsp;32;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CCHFORMNAME&nbsp;=&nbsp;32;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MarshalAs(UnmanagedType.ByValTStr,&nbsp;SizeConst&nbsp;=&nbsp;CCHDEVICENAME)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(0)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ReferenceType">string</span>&nbsp;dmDeviceName;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(32)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmSpecVersion;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(34)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmDriverVersion;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(36)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmSize;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(38)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmDriverExtra;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(40)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;DM&nbsp;dmFields;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(44)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmOrientation;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(46)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPaperSize;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(48)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPaperLength;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(50)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPaperWidth;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(52)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmScale;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(54)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmCopies;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(56)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmDefaultSource;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(58)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Int16&nbsp;dmPrintQuality;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(44)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;POINTL&nbsp;dmPosition;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(52)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayOrientation;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(56)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayFixedOutput;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(60)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmColor;&nbsp;<span class="InlineComment">//&nbsp;See&nbsp;note&nbsp;below!</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(62)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmDuplex;&nbsp;<span class="InlineComment">//&nbsp;See&nbsp;note&nbsp;below!</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(64)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmYResolution;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(66)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmTTOption;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(68)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">short</span>&nbsp;dmCollate;&nbsp;<span class="InlineComment">//&nbsp;See&nbsp;note&nbsp;below!</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(72)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MarshalAs(UnmanagedType.ByValTStr,&nbsp;SizeConst&nbsp;=&nbsp;CCHFORMNAME)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ReferenceType">string</span>&nbsp;dmFormName;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(102)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int16&nbsp;dmLogPixels;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(104)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmBitsPerPel;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(108)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmPelsWidth;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(112)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmPelsHeight;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(116)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayFlags;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(116)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmNup;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.Runtime.InteropServices.FieldOffset(120)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Int32&nbsp;dmDisplayFrequency;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;EnumDisplaySettings(<span class="ReferenceType">string</span>&nbsp;deviceName,&nbsp;<span class="ValueType">int</span>&nbsp;modeNum,&nbsp;<span class="MethodParameter">ref</span>&nbsp;DEVMODE&nbsp;devMode);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;ChangeDisplaySettings(<span class="MethodParameter">ref</span>&nbsp;DEVMODE&nbsp;devMode,&nbsp;<span class="ValueType">int</span>&nbsp;flags);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;SendMessage(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;Msg,&nbsp;IntPtr&nbsp;wParam,&nbsp;IntPtr&nbsp;lParam);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>,&nbsp;SetLastError&nbsp;=&nbsp;<span class="Keyword">true</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;MoveWindow(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;X,&nbsp;<span class="ValueType">int</span>&nbsp;Y,&nbsp;<span class="ValueType">int</span>&nbsp;nWidth,&nbsp;<span class="ValueType">int</span>&nbsp;nHeight,&nbsp;<span class="ValueType">bool</span>&nbsp;bRepaint);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;SetForegroundWindow(IntPtr&nbsp;hwnd);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span class="Statement">return</span>:&nbsp;MarshalAs(UnmanagedType.Bool)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;ShowWindow(IntPtr&nbsp;hWnd,&nbsp;ShowWindowEnum&nbsp;flags);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">enum</span>&nbsp;ShowWindowEnum<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hide&nbsp;=&nbsp;0,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowNormal&nbsp;=&nbsp;1,&nbsp;ShowMinimized&nbsp;=&nbsp;2,&nbsp;ShowMaximized&nbsp;=&nbsp;3,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximize&nbsp;=&nbsp;3,&nbsp;ShowNormalNoActivate&nbsp;=&nbsp;4,&nbsp;Show&nbsp;=&nbsp;5,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimize&nbsp;=&nbsp;6,&nbsp;ShowMinNoActivate&nbsp;=&nbsp;7,&nbsp;ShowNoActivate&nbsp;=&nbsp;8,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore&nbsp;=&nbsp;9,&nbsp;ShowDefault&nbsp;=&nbsp;10,&nbsp;ForceMinimized&nbsp;=&nbsp;11<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;IKeyboardMouseEvents&nbsp;m_GlobalHook;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;ENUM_CURRENT_SETTINGS&nbsp;=&nbsp;-1;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CDS_UPDATEREGISTRY&nbsp;=&nbsp;0x01;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;CDS_TEST&nbsp;=&nbsp;0x02;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;DISP_CHANGE_SUCCESSFUL&nbsp;=&nbsp;0;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;DISP_CHANGE_RESTART&nbsp;=&nbsp;1;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">int</span>&nbsp;DISP_CHANGE_FAILED&nbsp;=&nbsp;-1;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;List&lt;DEVMODE&gt;&nbsp;_resolutions;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Save&nbsp;all&nbsp;the&nbsp;settings&nbsp;in&nbsp;the&nbsp;constructor</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;WindowManager()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_resolutions&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;List&lt;DEVMODE&gt;();<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEVMODE&nbsp;vDevMode&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;DEVMODE();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">while</span>&nbsp;(EnumDisplaySettings(<span class="Keyword">null</span>,&nbsp;i,&nbsp;<span class="MethodParameter">ref</span>&nbsp;vDevMode)&nbsp;==&nbsp;1)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_resolutions.Add(vDevMode);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Restore&nbsp;it&nbsp;all&nbsp;in&nbsp;the&nbsp;dispose</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Dispose()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEVMODE&nbsp;dMode;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">foreach</span>&nbsp;(<span class="Linq">var</span>&nbsp;d&nbsp;<span class="Statement">in</span>&nbsp;_resolutions)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dMode&nbsp;=&nbsp;d;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChangeDisplaySettings(<span class="MethodParameter">ref</span>&nbsp;dMode,&nbsp;CDS_UPDATEREGISTRY);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;Controller<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"winmm.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;joyGetPosEx(<span class="ValueType">int</span>&nbsp;uJoyID,&nbsp;<span class="MethodParameter">ref</span>&nbsp;JOYINFOEX&nbsp;pji);&nbsp;<span class="InlineComment">//Get&nbsp;the&nbsp;state&nbsp;of&nbsp;a&nbsp;controller&nbsp;with&nbsp;their&nbsp;ID</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"winmm.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;Int32&nbsp;joyGetNumDevs();&nbsp;<span class="InlineComment">//How&nbsp;many&nbsp;controllers&nbsp;are&nbsp;plugged&nbsp;in</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">int</span>&nbsp;controllerNum;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">int</span>&nbsp;combo;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;JOYINFOEX&nbsp;state&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;JOYINFOEX();<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Controller(<span class="ValueType">int</span>&nbsp;n,&nbsp;<span class="ValueType">int</span>&nbsp;c)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllerNum&nbsp;=&nbsp;n;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;combo&nbsp;=&nbsp;c;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state.dwFlags&nbsp;=&nbsp;128;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state.dwSize&nbsp;=&nbsp;System.Runtime.InteropServices.Marshal.SizeOf(<span class="Keyword">typeof</span>(JOYINFOEX));<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">bool</span>&nbsp;comboPressed()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(controllerNum&nbsp;&gt;&nbsp;-1)&nbsp;<span class="InlineComment">//Checking&nbsp;one&nbsp;controller</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;joyGetPosEx(controllerNum,&nbsp;<span class="MethodParameter">ref</span>&nbsp;state);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>&nbsp;(combo&nbsp;==&nbsp;state.dwButtons);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="InlineComment">//Checking&nbsp;all&nbsp;controllers</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;joyGetNumDevs();&nbsp;i++)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;joyGetPosEx(i,&nbsp;<span class="MethodParameter">ref</span>&nbsp;state);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(combo&nbsp;==&nbsp;state.dwButtons)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>&nbsp;<span class="Keyword">false</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;Keyboard<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;SendMessage(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;Msg,&nbsp;IntPtr&nbsp;wParam,&nbsp;IntPtr&nbsp;lParam);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>,&nbsp;SetLastError&nbsp;=&nbsp;<span class="Keyword">true</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;MoveWindow(IntPtr&nbsp;hWnd,&nbsp;<span class="ValueType">int</span>&nbsp;X,&nbsp;<span class="ValueType">int</span>&nbsp;Y,&nbsp;<span class="ValueType">int</span>&nbsp;nWidth,&nbsp;<span class="ValueType">int</span>&nbsp;nHeight,&nbsp;<span class="ValueType">bool</span>&nbsp;bRepaint);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">int</span>&nbsp;SetForegroundWindow(IntPtr&nbsp;hwnd);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"user32.dll"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span class="Statement">return</span>:&nbsp;MarshalAs(UnmanagedType.Bool)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;ShowWindow(IntPtr&nbsp;hWnd,&nbsp;ShowWindowEnum&nbsp;flags);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">enum</span>&nbsp;ShowWindowEnum<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hide&nbsp;=&nbsp;0,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowNormal&nbsp;=&nbsp;1,&nbsp;ShowMinimized&nbsp;=&nbsp;2,&nbsp;ShowMaximized&nbsp;=&nbsp;3,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximize&nbsp;=&nbsp;3,&nbsp;ShowNormalNoActivate&nbsp;=&nbsp;4,&nbsp;Show&nbsp;=&nbsp;5,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimize&nbsp;=&nbsp;6,&nbsp;ShowMinNoActivate&nbsp;=&nbsp;7,&nbsp;ShowNoActivate&nbsp;=&nbsp;8,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore&nbsp;=&nbsp;9,&nbsp;ShowDefault&nbsp;=&nbsp;10,&nbsp;ForceMinimized&nbsp;=&nbsp;11<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;IKeyboardMouseEvents&nbsp;m_GlobalHook;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;Process&nbsp;emu&nbsp;{&nbsp;get;&nbsp;set;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;WindowManager&nbsp;windowManager&nbsp;{&nbsp;get;&nbsp;set;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Subscribes&nbsp;to&nbsp;MouseKeyHook&nbsp;global&nbsp;events</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Subscribe()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Note:&nbsp;for&nbsp;the&nbsp;application&nbsp;hook,&nbsp;use&nbsp;the&nbsp;Hook.AppEvents()&nbsp;instead</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook&nbsp;=&nbsp;Hook.GlobalEvents();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook.KeyUp&nbsp;+=&nbsp;GlobalHookKeyUp;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Unsubscribes&nbsp;from&nbsp;MouseKeyHook&nbsp;events</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Unsubscribe()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook.KeyUp&nbsp;-=&nbsp;GlobalHookKeyUp;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GlobalHook.Dispose();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Detects&nbsp;KeyUp&nbsp;events&nbsp;while&nbsp;outside&nbsp;of&nbsp;application</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="sender"&gt;&lt;/param&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="e"&gt;&lt;/param&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;GlobalHookKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;Keys.LWin&nbsp;||&nbsp;e.KeyCode&nbsp;==&nbsp;Keys.RWin)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KillProcess(windowManager,&nbsp;emu);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="ValueType">void</span>&nbsp;KillProcess(WindowManager&nbsp;winMngr,&nbsp;Process&nbsp;proc)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">try</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(winMngr&nbsp;!=&nbsp;<span class="Keyword">null</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;winMngr.Dispose();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;winMngr&nbsp;=&nbsp;<span class="Keyword">null</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proc.Kill();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="String">"TopQuitBit"</span>,&nbsp;<span class="String">"Tried&nbsp;to&nbsp;quit&nbsp;process!&nbsp;Did&nbsp;it&nbsp;work?"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">catch</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(<span class="String">"TopQuitBit"</span>,&nbsp;<span class="String">"Failed&nbsp;to&nbsp;quit&nbsp;process!"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">internal</span>&nbsp;<span class="Modifier">sealed</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;TopQuitBit<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[STAThread]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="ValueType">void</span>&nbsp;Main()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keyboard&nbsp;keys&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Keyboard();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controller&nbsp;controller;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WindowManager&nbsp;windowManager&nbsp;=&nbsp;<span class="Keyword">null</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process&nbsp;runProgram;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stopwatch&nbsp;timer&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Stopwatch();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;time;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllerString&nbsp;=&nbsp;<span class="String">"-1"</span>,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonsString&nbsp;=&nbsp;<span class="String">""</span>,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadString&nbsp;=&nbsp;<span class="String">""</span>,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paramsString&nbsp;=&nbsp;<span class="String">""</span>,<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeString&nbsp;=&nbsp;<span class="String">"0"</span>,<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clString&nbsp;=&nbsp;Environment.CommandLine;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ReferenceType">string</span>[]&nbsp;stringElements&nbsp;=&nbsp;clString.Split(<span class="Keyword">new</span>&nbsp;<span class="ReferenceType">string</span>[]&nbsp;{&nbsp;<span class="String">"--"</span>&nbsp;},&nbsp;StringSplitOptions.RemoveEmptyEntries);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;buttonCombo&nbsp;=&nbsp;0,&nbsp;controllerNum&nbsp;=&nbsp;-1;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">foreach</span>&nbsp;(<span class="Linq">var</span>&nbsp;s&nbsp;<span class="Statement">in</span>&nbsp;stringElements)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(s.Contains(<span class="String">"="</span>))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Linq">var</span>&nbsp;lSide&nbsp;=&nbsp;s.Split('=')[0];<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Linq">var</span>&nbsp;rSide&nbsp;=&nbsp;s.Split('=')[1];<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"buttons"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"b"</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonsString&nbsp;=&nbsp;rSide;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"load"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"l"</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadString&nbsp;=&nbsp;rSide;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"params"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"p"</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paramsString&nbsp;=&nbsp;rSide;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"time"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"t"</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeString&nbsp;=&nbsp;rSide;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(lSide&nbsp;==&nbsp;<span class="String">"contoller"</span>&nbsp;||&nbsp;lSide&nbsp;==&nbsp;<span class="String">"c"</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllerString&nbsp;=&nbsp;rSide;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(s&nbsp;==&nbsp;<span class="String">"rr"</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;windowManager&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;WindowManager();<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">bool</span>&nbsp;error&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;oVal&nbsp;=&nbsp;0;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Yellow;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">foreach</span>&nbsp;(<span class="Linq">var</span>&nbsp;b&nbsp;<span class="Statement">in</span>&nbsp;buttonsString.Split('+'))&nbsp;<span class="InlineComment">//Find&nbsp;Button&nbsp;Combo&nbsp;that&nbsp;is&nbsp;required</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(<span class="ValueType">int</span>.TryParse(b,&nbsp;<span class="MethodParameter">out</span>&nbsp;oVal))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonCombo&nbsp;+=&nbsp;(<span class="ValueType">int</span>)Math.Pow(2,&nbsp;oVal);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(buttonsString&nbsp;==&nbsp;<span class="ReferenceType">string</span>.Empty)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"A&nbsp;button&nbsp;combination&nbsp;is&nbsp;not&nbsp;specififed."</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;button&nbsp;argument&nbsp;is&nbsp;not&nbsp;used&nbsp;properly."</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">break</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!System.IO.File.Exists(loadString))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(loadString&nbsp;==&nbsp;<span class="ReferenceType">string</span>.Empty)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"An&nbsp;executable&nbsp;is&nbsp;not&nbsp;specififed."</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;executable&nbsp;does&nbsp;not&nbsp;exist,&nbsp;it's&nbsp;possibly&nbsp;an&nbsp;invalid&nbsp;path."</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!<span class="ValueType">int</span>.TryParse(timeString,&nbsp;<span class="MethodParameter">out</span>&nbsp;time))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;time&nbsp;argument&nbsp;not&nbsp;used&nbsp;properly."</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!<span class="ValueType">int</span>.TryParse(controllerString,&nbsp;<span class="MethodParameter">out</span>&nbsp;controllerNum))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"The&nbsp;controller&nbsp;argument&nbsp;not&nbsp;used&nbsp;properly."</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(error)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Green;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alt&nbsp;&nbsp;&nbsp;Purpose"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.White;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="String">"--rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restore&nbsp;Resolution&nbsp;if&nbsp;your&nbsp;emulator&nbsp;is&nbsp;not&nbsp;respecting&nbsp;the&nbsp;desktop"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--buttons&nbsp;&nbsp;&nbsp;&nbsp;--b&nbsp;&nbsp;&nbsp;Button&nbsp;combination&nbsp;to&nbsp;close&nbsp;the&nbsp;program"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--b=0+8+6"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--load&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--e&nbsp;&nbsp;&nbsp;Full&nbsp;path&nbsp;to&nbsp;the&nbsp;executable&nbsp;to&nbsp;load"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--e=C:\\Emulators\\nestopia.exe"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--controller&nbsp;--c&nbsp;&nbsp;&nbsp;ID&nbsp;of&nbsp;specific&nbsp;controller&nbsp;to&nbsp;use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Optional]"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--c=0"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--t&nbsp;&nbsp;&nbsp;Milliseconds&nbsp;to&nbsp;hold&nbsp;down&nbsp;the&nbsp;combination&nbsp;&nbsp;[Optional]"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--t=2500"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"--params&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--p&nbsp;&nbsp;&nbsp;Parameters&nbsp;when&nbsp;launching&nbsp;the&nbsp;program&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Optional]"</span>&nbsp;+&nbsp;Environment.NewLine&nbsp;+<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="String">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--p=C:\\roms\\NES\\Super&nbsp;Mario&nbsp;Bros..nes"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Gray;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor&nbsp;=&nbsp;ConsoleColor.Gray;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Controller(controllerNum,&nbsp;buttonCombo);&nbsp;<span class="InlineComment">//Controller&nbsp;class&nbsp;that&nbsp;handles&nbsp;button&nbsp;presses&nbsp;when&nbsp;checked</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Process();&nbsp;<span class="InlineComment">//Start&nbsp;up&nbsp;the&nbsp;program</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.StartInfo.FileName&nbsp;=&nbsp;loadString;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.StartInfo.Arguments&nbsp;=&nbsp;paramsString;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.StartInfo.WorkingDirectory&nbsp;=&nbsp;System.IO.Path.GetDirectoryName(loadString);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runProgram.Start();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BringToFront(loadString);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.emu&nbsp;=&nbsp;runProgram;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.windowManager&nbsp;=&nbsp;windowManager;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">while</span>&nbsp;(<span class="Keyword">true</span>)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!controller.comboPressed())<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timer.Restart();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(timer.ElapsedMilliseconds&nbsp;&gt;=&nbsp;time)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keys.KillProcess(windowManager,&nbsp;runProgram);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Threading.Thread.Sleep(35);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;Bring's&nbsp;specified&nbsp;emulator&nbsp;to&nbsp;front</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;/summary&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="XmlComment">///&nbsp;&lt;param&nbsp;name="title"&gt;&lt;/param&gt;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="ValueType">void</span>&nbsp;BringToFront(<span class="ReferenceType">string</span>&nbsp;title)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Get&nbsp;a&nbsp;handle&nbsp;to&nbsp;the&nbsp;Calculator&nbsp;application.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntPtr&nbsp;handle&nbsp;=&nbsp;FindWindow(<span class="Keyword">null</span>,&nbsp;title);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Verify&nbsp;that&nbsp;Calculator&nbsp;is&nbsp;a&nbsp;running&nbsp;process.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(handle&nbsp;==&nbsp;IntPtr.Zero)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">return</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Make&nbsp;Calculator&nbsp;the&nbsp;foreground&nbsp;application</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetForegroundWindow(handle);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"USER32.DLL"</span>,&nbsp;CharSet&nbsp;=&nbsp;CharSet.Unicode)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;IntPtr&nbsp;FindWindow(String&nbsp;lpClassName,&nbsp;String&nbsp;lpWindowName);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DllImport(<span class="String">"USER32.DLL"</span>)]<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Modifier">static</span>&nbsp;<span class="Modifier">extern</span>&nbsp;<span class="ValueType">bool</span>&nbsp;SetForegroundWindow(IntPtr&nbsp;hWnd);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        }
+    </div>
+</header>

@@ -1,282 +1,251 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Global Final Voice Commands</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>Global Final Voice Commands</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: GFVC
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/Global-Final-Voice-Commands" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/Global-Final-Voice-Commands" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            Global Final Voice Commands is an application I wrote at the end of my freshman year of 
-                            high school for my final in Global Connections. The application added a whole other element 
-                            of realism to my Google Slides presentation on hacking by allowing me to illistrate how little privacy 
-                            we have with all of the microphones and cameras that surround us in our modern society.
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-        <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                Imports&nbsp;System.Runtime.InteropServices<br />
-                Imports&nbsp;System.Speech<br />
-                <br />
-                Public&nbsp;Class&nbsp;frmFinal<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;APPCOMMAND_VOLUME_MUTE&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;H80000<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;APPCOMMAND_VOLUME_UP&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;HA0000<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;APPCOMMAND_VOLUME_DOWN&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;H90000<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;WM_APPCOMMAND&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;H319<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;WithEvents&nbsp;reco&nbsp;As&nbsp;New&nbsp;Recognition.SpeechRecognitionEngine<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;destructCounter&nbsp;As&nbsp;Single&nbsp;=&nbsp;-1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;endCounter&nbsp;As&nbsp;Single<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;volTime&nbsp;As&nbsp;Single<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;vol&nbsp;As&nbsp;Single<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;Muted&nbsp;As&nbsp;Boolean&nbsp;=&nbsp;False<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;DllImport(<span class="String">"user32.dll"</span>)&gt;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Public&nbsp;Shared&nbsp;Function&nbsp;SendMessageW(ByVal&nbsp;hWnd&nbsp;As&nbsp;IntPtr,&nbsp;ByVal&nbsp;Msg&nbsp;As&nbsp;Integer,&nbsp;ByVal&nbsp;wParam&nbsp;As&nbsp;IntPtr,&nbsp;ByVal&nbsp;lParam&nbsp;As&nbsp;IntPtr)&nbsp;As&nbsp;IntPtr<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Function<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;Form1_Load(ByVal&nbsp;sender&nbsp;As&nbsp;System.Object,&nbsp;ByVal&nbsp;e&nbsp;As&nbsp;System.EventArgs)&nbsp;Handles&nbsp;MyBase.Load<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.SetInputToDefaultAudioDevice()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;gram&nbsp;As&nbsp;New&nbsp;Recognition.SrgsGrammar.SrgsDocument<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;grammerRule&nbsp;As&nbsp;New&nbsp;Recognition.SrgsGrammar.SrgsRule(<span class="String">"command"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;commandList&nbsp;As&nbsp;New&nbsp;Recognition.SrgsGrammar.SrgsOneOf(<span class="String">"hacking"</span>,&nbsp;<span class="String">"yes"</span>,&nbsp;<span class="String">"computer,&nbsp;end&nbsp;presentation"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grammerRule.Add(commandList)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gram.Rules.Add(grammerRule)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gram.Root&nbsp;=&nbsp;grammerRule<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.LoadGrammar(New&nbsp;Recognition.Grammar(gram))<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.RecognizeAsync()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endCounter&nbsp;=&nbsp;-1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volTime&nbsp;=&nbsp;-1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vol&nbsp;=&nbsp;0<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;reco_RecognizeCompleted(ByVal&nbsp;sender&nbsp;As&nbsp;Object,&nbsp;ByVal&nbsp;e&nbsp;As&nbsp;System.Speech.Recognition.RecognizeCompletedEventArgs)&nbsp;Handles&nbsp;reco.RecognizeCompleted<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.RecognizeAsync()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;timSelfDestruct_Tick(sender&nbsp;As&nbsp;Object,&nbsp;e&nbsp;As&nbsp;EventArgs)&nbsp;Handles&nbsp;timSelfDestruct.Tick<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destructCounter&nbsp;+=&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;destructCounter&nbsp;=&nbsp;6&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Stop()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destructCounter&nbsp;=&nbsp;-1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;destructCounter&nbsp;=&nbsp;-1&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timSelfDestruct.Stop()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Blake,&nbsp;that&nbsp;was&nbsp;terrible&nbsp;acting,&nbsp;my&nbsp;scans&nbsp;show&nbsp;that&nbsp;nobody&nbsp;thought&nbsp;I&nbsp;was&nbsp;actually&nbsp;going&nbsp;to&nbsp;explode."</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;1&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"five"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;2&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"four"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;3&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"three"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;4&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"two"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;5&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"one"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;timEndCounter_Tick(sender&nbsp;As&nbsp;Object,&nbsp;e&nbsp;As&nbsp;EventArgs)&nbsp;Handles&nbsp;timEndCounter.Tick<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endCounter&nbsp;+=&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;endCounter&nbsp;=&nbsp;6&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Stop()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endCounter&nbsp;=&nbsp;-1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;endCounter&nbsp;=&nbsp;-1&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Okay,&nbsp;nevermind"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;1&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"five"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;2&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"four"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;3&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"three"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;4&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"two"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;5&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"one"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;reco_SpeechRecognized(ByVal&nbsp;sender&nbsp;As&nbsp;Object,&nbsp;ByVal&nbsp;e&nbsp;As&nbsp;System.Speech.Recognition.RecognitionEventArgs)&nbsp;Handles&nbsp;reco.SpeechRecognized<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;chrome()&nbsp;As&nbsp;Process<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chrome&nbsp;=&nbsp;Process.GetProcessesByName(<span class="String">"chrome"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;e.Result.Text&nbsp;=&nbsp;<span class="String">"yes"</span>&nbsp;And&nbsp;timEndCounter.Enabled&nbsp;=&nbsp;True&nbsp;And&nbsp;endCounter&nbsp;&lt;=&nbsp;5&nbsp;And&nbsp;endCounter&nbsp;&lt;&gt;&nbsp;-1&nbsp;Then<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Stop()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;i&nbsp;As&nbsp;Integer&nbsp;=&nbsp;0&nbsp;To&nbsp;chrome.Count&nbsp;-&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chrome(i).CloseMainWindow()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next&nbsp;i<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.Exit()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select&nbsp;Case&nbsp;e.Result.Text<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case&nbsp;<span class="String">"hacking"</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"self&nbsp;destruct&nbsp;initiated"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timSelfDestruct.Start()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case&nbsp;<span class="String">"computer,&nbsp;end&nbsp;presentation"</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"are&nbsp;you&nbsp;sure?"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Start()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Select<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;btnTest_Click(sender&nbsp;As&nbsp;Object,&nbsp;e&nbsp;As&nbsp;EventArgs)&nbsp;Handles&nbsp;btnTest.Click<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Testing"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
-                End&nbsp;Class
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <h4>
+                    Global Final Voice Commands is an application I wrote at the end of my freshman year of
+                    high school for my final in Global Connections. The application added a whole other element
+                    of realism to my Google Slides presentation on hacking by allowing me to illistrate how little privacy
+                    we have with all of the microphones and cameras that surround us in our modern society.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        Imports&nbsp;System.Runtime.InteropServices<br />
+        Imports&nbsp;System.Speech<br />
+        <br />
+        Public&nbsp;Class&nbsp;frmFinal<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;APPCOMMAND_VOLUME_MUTE&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;H80000<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;APPCOMMAND_VOLUME_UP&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;HA0000<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;APPCOMMAND_VOLUME_DOWN&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;H90000<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Const&nbsp;WM_APPCOMMAND&nbsp;As&nbsp;Integer&nbsp;=&nbsp;&amp;H319<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;WithEvents&nbsp;reco&nbsp;As&nbsp;New&nbsp;Recognition.SpeechRecognitionEngine<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;destructCounter&nbsp;As&nbsp;Single&nbsp;=&nbsp;-1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;endCounter&nbsp;As&nbsp;Single<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;volTime&nbsp;As&nbsp;Single<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;vol&nbsp;As&nbsp;Single<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;Muted&nbsp;As&nbsp;Boolean&nbsp;=&nbsp;False<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;DllImport(<span class="String">"user32.dll"</span>)&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Public&nbsp;Shared&nbsp;Function&nbsp;SendMessageW(ByVal&nbsp;hWnd&nbsp;As&nbsp;IntPtr,&nbsp;ByVal&nbsp;Msg&nbsp;As&nbsp;Integer,&nbsp;ByVal&nbsp;wParam&nbsp;As&nbsp;IntPtr,&nbsp;ByVal&nbsp;lParam&nbsp;As&nbsp;IntPtr)&nbsp;As&nbsp;IntPtr<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Function<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;Form1_Load(ByVal&nbsp;sender&nbsp;As&nbsp;System.Object,&nbsp;ByVal&nbsp;e&nbsp;As&nbsp;System.EventArgs)&nbsp;Handles&nbsp;MyBase.Load<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.SetInputToDefaultAudioDevice()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;gram&nbsp;As&nbsp;New&nbsp;Recognition.SrgsGrammar.SrgsDocument<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;grammerRule&nbsp;As&nbsp;New&nbsp;Recognition.SrgsGrammar.SrgsRule(<span class="String">"command"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;commandList&nbsp;As&nbsp;New&nbsp;Recognition.SrgsGrammar.SrgsOneOf(<span class="String">"hacking"</span>,&nbsp;<span class="String">"yes"</span>,&nbsp;<span class="String">"computer,&nbsp;end&nbsp;presentation"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grammerRule.Add(commandList)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gram.Rules.Add(grammerRule)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gram.Root&nbsp;=&nbsp;grammerRule<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.LoadGrammar(New&nbsp;Recognition.Grammar(gram))<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.RecognizeAsync()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endCounter&nbsp;=&nbsp;-1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volTime&nbsp;=&nbsp;-1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vol&nbsp;=&nbsp;0<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;reco_RecognizeCompleted(ByVal&nbsp;sender&nbsp;As&nbsp;Object,&nbsp;ByVal&nbsp;e&nbsp;As&nbsp;System.Speech.Recognition.RecognizeCompletedEventArgs)&nbsp;Handles&nbsp;reco.RecognizeCompleted<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco.RecognizeAsync()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;timSelfDestruct_Tick(sender&nbsp;As&nbsp;Object,&nbsp;e&nbsp;As&nbsp;EventArgs)&nbsp;Handles&nbsp;timSelfDestruct.Tick<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destructCounter&nbsp;+=&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;destructCounter&nbsp;=&nbsp;6&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Stop()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destructCounter&nbsp;=&nbsp;-1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;destructCounter&nbsp;=&nbsp;-1&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timSelfDestruct.Stop()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Blake,&nbsp;that&nbsp;was&nbsp;terrible&nbsp;acting,&nbsp;my&nbsp;scans&nbsp;show&nbsp;that&nbsp;nobody&nbsp;thought&nbsp;I&nbsp;was&nbsp;actually&nbsp;going&nbsp;to&nbsp;explode."</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;1&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"five"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;2&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"four"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;3&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"three"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;4&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"two"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;destructCounter&nbsp;=&nbsp;5&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"one"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;timEndCounter_Tick(sender&nbsp;As&nbsp;Object,&nbsp;e&nbsp;As&nbsp;EventArgs)&nbsp;Handles&nbsp;timEndCounter.Tick<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endCounter&nbsp;+=&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;endCounter&nbsp;=&nbsp;6&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Stop()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endCounter&nbsp;=&nbsp;-1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;endCounter&nbsp;=&nbsp;-1&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Okay,&nbsp;nevermind"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;1&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"five"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;2&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"four"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;3&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"three"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;4&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"two"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf&nbsp;endCounter&nbsp;=&nbsp;5&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"one"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;reco_SpeechRecognized(ByVal&nbsp;sender&nbsp;As&nbsp;Object,&nbsp;ByVal&nbsp;e&nbsp;As&nbsp;System.Speech.Recognition.RecognitionEventArgs)&nbsp;Handles&nbsp;reco.SpeechRecognized<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;chrome()&nbsp;As&nbsp;Process<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chrome&nbsp;=&nbsp;Process.GetProcessesByName(<span class="String">"chrome"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;e.Result.Text&nbsp;=&nbsp;<span class="String">"yes"</span>&nbsp;And&nbsp;timEndCounter.Enabled&nbsp;=&nbsp;True&nbsp;And&nbsp;endCounter&nbsp;&lt;=&nbsp;5&nbsp;And&nbsp;endCounter&nbsp;&lt;&gt;&nbsp;-1&nbsp;Then<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Stop()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;i&nbsp;As&nbsp;Integer&nbsp;=&nbsp;0&nbsp;To&nbsp;chrome.Count&nbsp;-&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chrome(i).CloseMainWindow()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next&nbsp;i<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application.Exit()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;If<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select&nbsp;Case&nbsp;e.Result.Text<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case&nbsp;<span class="String">"hacking"</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"self&nbsp;destruct&nbsp;initiated"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timSelfDestruct.Start()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case&nbsp;<span class="String">"computer,&nbsp;end&nbsp;presentation"</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"are&nbsp;you&nbsp;sure?"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timEndCounter.Start()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Select<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Private&nbsp;Sub&nbsp;btnTest_Click(sender&nbsp;As&nbsp;Object,&nbsp;e&nbsp;As&nbsp;EventArgs)&nbsp;Handles&nbsp;btnTest.Click<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim&nbsp;synth&nbsp;As&nbsp;New&nbsp;Synthesis.SpeechSynthesizer<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Testing"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;Sub<br />
+        End&nbsp;Class
+    </div>
+</header>
