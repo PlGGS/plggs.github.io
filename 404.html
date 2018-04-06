@@ -3,5 +3,14 @@ layout: default
 title: Page not found
 css: main
 ---
-<h1>Error 404 - Page not found</h1>
-<p>While you're here, please enjoy some cake!</p>
+<div class="error-page">
+    <h1>Error 404 - Page not found</h1>
+    <p>While you're here, please enjoy some cake!</p>
+</div>
+<style>
+    div.error-page {
+        background-color: #36922a;
+        height: calc(100vh - 100px);
+        padding-top: calc(40vh - 100px);
+    }
+</style>
