@@ -5,12 +5,11 @@
     "\\apps",
     "\\assets",
     "\\css",
+    "\\gallery",
     "\\games",
-    "\\mods",
     "\\script",
-    "\\sites",
     "\\_layouts"
   ],
-  "SelectedNode": "\\games\\brickBreakerArray.html",
+  "SelectedNode": "\\_layouts\\default.html",
   "PreviewInSolutionExplorer": false
 }
