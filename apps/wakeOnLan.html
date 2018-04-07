@@ -1,0 +1,31 @@
+---
+layout: default
+title: Wake On LAN
+css: projects
+---
+
+<header class="project">
+    <div class="wake-on-lan">
+        <input type="password" placeholder="Password">
+        <button>Wake On LAN</button>
+    </div>
+</header>
+
+<script>
+    $(function() {
+        $("button").click(function() {
+            $.post("https://api.strempfer.works/blake/won",{token:$("input[type=password]").val(), value:1}, function(data) {
+                if(data == 1) {
+                    alert("Woke!");
+                }
+            })
+        })
+    })
+</script>
+<style>
+    div.wake-on-lan {
+        display: table;
+        margin: auto;
+        margin-top: calc(200px + 20vh);
+    }
+</style>
