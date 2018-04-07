@@ -14,7 +14,7 @@ css: projects
 <script>
     $(function() {
         $("button").click(function() {
-            $.post("https://api.strempfer.works/blake/won",{token:$("input[type=password]").val(), value:1}, function(data) {
+            $.post("https://api.strempfer.works/blake/wol",{token:$("input[type=password]").val(), value:'1'}, function(data) {
                 if(data == 1) {
                     alert("Woke!");
                 }
@@ -26,6 +26,9 @@ css: projects
     div.wake-on-lan {
         display: table;
         margin: auto;
-        margin-top: calc(200px + 20vh);
+        padding-top: calc(200px + 20vh);
+    }
+    header.project {
+        height: calc(100vh - 250px);
     }
 </style>
