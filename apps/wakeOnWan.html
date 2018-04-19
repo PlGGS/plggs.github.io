@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Wake On LAN
+title: Wake On WAN
 css: projects
 ---
 
 <header class="project">
     <div class="wake-on-lan">
         <input type="password" placeholder="Password">
-        <button>Wake On LAN</button>
+        <button>Wake On WAN</button>
     </div>
 </header>
 
@@ -16,7 +16,7 @@ css: projects
         $("button").click(function() {
             $.post("https://api.strempfer.works/blake/wol",{token:$("input[type=password]").val(), value:'1'}, function(data) {
                 if(data == 1) {
-                    alert("Woke!");
+                    alert("That's finna woke");
                 }
             })
         })
