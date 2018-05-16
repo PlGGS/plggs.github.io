@@ -110,24 +110,37 @@ body {
     font-size: 18px;
 }
 
-body header div nav ul li a {
-    font-size: 40%;
-    padding-left: 5px;
+body {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #36922a;
+    font-size: 18px;
+
+    header div nav ul li a {
+        font-size: 40%;
+        padding-left: 5px;
+    }
 }
 
 @media (min-width: 1024px) {
 
-    body header div nav ul li a {
-        font-size: 90%;
-        padding-right: 30px;
+    body header div nav ul li {
+        padding-left: auto;
+
+        a {
+            font-size: 90%;
+            padding-right: 30px;
+        }
     }
 
     .bar h2 {
         font-size: 30px;
     }
 
-    body header div nav ul li {
-        padding-left: auto;
+    .projects table tr {
+        padding-bottom: 1em;
+        width: 90%;
+        height: 180px;
     }
 
     /* CSS rules here for screens above px */
@@ -144,17 +157,25 @@ body header div nav ul li a {
         font-size: 25px;
     }
 
+    .projects table tr td a img {
+        padding-bottom: 1em;
+    }
+
+    .projects table tr td a {
+        padding: 0;
+    }
+
     /* CSS rules here for screens lower than px */
 }
 
 @media (max-width: 800px) {
 
-    body header div nav ul li a {
-        font-size: 50%;
-    }
-
     body header div nav ul li {
         padding-left: 5em;
+
+        a {
+            font-size: 50%;
+        }
     }
 
     .bar h2 {

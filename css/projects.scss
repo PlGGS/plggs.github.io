@@ -1,4 +1,4 @@
-﻿---
+---
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
@@ -64,18 +64,22 @@ body {
     margin-right: auto;
     background-color: #36922a;
     font-size: 18px;
-}
-
-body header div nav ul li a {
-    font-size: 40%;
-    padding-left: 5px;
+    
+    header div nav ul li a {
+        font-size: 40%;
+        padding-left: 5px;
+    }
 }
 
 @media (min-width: 1024px) {
 
-    body header div nav ul li a {
-        font-size: 90%;
-        padding-right: 30px;
+    body header div nav ul li {
+        padding-left: auto;
+
+        a {
+            font-size: 90%;
+            padding-right: 30px;
+        }
     }
 
     .bar h2 {
@@ -124,18 +128,15 @@ body header div nav ul li a {
 }
 */
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
 
     body header div nav ul li a {
-        font-size: 50%;
-    }
-
-    body header div nav ul li {
-        padding-left: 5em;
+        font-size: 70%;
+        padding-right: 10px;
     }
 
     .bar h2 {
-        font-size: 30px;
+        font-size: 25px;
         /*TODO set lower text size and lower image sizes here*/
     }
 
@@ -145,6 +146,24 @@ body header div nav ul li a {
 
     .projects table tr td a {
         padding: 0;
+    }
+
+    /* CSS rules here for screens lower than px */
+}
+
+@media (max-width: 800px) {
+
+    body header div nav ul li {
+        padding-left: 5em;
+
+        a {
+            font-size: 50%;
+        }
+    }
+
+    .bar h2 {
+        font-size: 30px;
+        /*TODO set lower text size and lower image sizes here*/
     }
 
     /* CSS rules here for screens lower than px */
