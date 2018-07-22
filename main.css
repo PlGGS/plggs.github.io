@@ -1,7 +1,4 @@
----
----
-
-@import url('https://fonts.googleapis.com/css?family=Rubik');
+﻿@import url('https://fonts.googleapis.com/css?family=Rubik');
 @charset "UTF-8";
 
 article, aside, footer, header, main, nav, section {
@@ -13,7 +10,7 @@ html, body, footer, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, a
     margin: 0;
 }
 
-* { 
+* {
     font-family: 'Rubik';
     text-align: center;
     color: white;
@@ -23,9 +20,11 @@ ul {
     list-style-type: none;
 }
 
+/*
 p {
     font-family: "Comic Sans MS", Helvetica, sans-serif;
 }
+*/
 
 .bar {
     background-color: #276f1e;
@@ -70,22 +69,22 @@ body {
     margin-right: auto;
     background-color: #36922a;
     font-size: 18px;
+}
 
-    header div nav ul li a {
-        font-size: 40%;
-        padding-left: 5px;
-    }
+body header div nav ul li a {
+    font-size: 40%;
+    padding-left: 5px;
 }
 
 @media (min-width: 1024px) {
 
+    body header div nav ul li a {
+        font-size: 90%;
+        padding-right: 30px;
+    }
+
     body header div nav ul li {
         padding-left: auto;
-
-        a {
-            font-size: 90%;
-            padding-right: 30px;
-        }
     }
 
     .bar h2 {
@@ -111,17 +110,16 @@ body {
 
 @media (max-width: 800px) {
 
+    body header div nav ul li a {
+        font-size: 50%;
+    }
+
     body header div nav ul li {
         padding-left: 5em;
-
-        a {
-            font-size: 50%;
-        }
     }
 
     .bar h2 {
-        font-size: 30px;
-        /*TODO set lower text size and lower image sizes here*/
+        font-size: 20px;
     }
 
     /* CSS rules here for screens lower than px */
@@ -146,24 +144,24 @@ body header table {
     padding-top: 2em;
     padding-bottom: 4em;
     width: 95%;
+}
 
-    td {
-        padding-top: 2em;
-        padding-left: 1em;
-        padding-right: 2em;
+body header table td {
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 2em;
+}
 
-        a h3 {
-            padding-top: 1.5em;
-        }
-    }
+body header table td a h3 {
+    padding-top: 1.5em;
+}
 
-    img {
-        transform: scale(0.9, 0.9);
-    }
+body header table img {
+    transform: scale(0.9, 0.9);
+}
 
-    a img:hover {
-        transform: scale(1.0, 1.0);
-    }
+body header table a img:hover {
+    transform: scale(1.0, 1.0);
 }
 
 a img:hover {
@@ -179,9 +177,9 @@ iframe {
     padding-right: 4em;
     margin-left: auto; 
     margin-right: 0px;
+}
 
-    ul li a {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
+.footerLinks nav ul li a {
+    padding-left: 2em;
+    padding-right: 2em;
 }
