@@ -1,264 +1,233 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Blake Boris</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>GTA Voice Commands</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: GTA Voice Commands
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/GTAVoiceCommands" class="btn pri">GitHub Project Page</a>
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/GTAVoiceCommands" class="btn pri">GitHub Project Page</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://www.gta5-mods.com/scripts/gta-voice-commands" class="btn pri">gta5-mods.com Page</a>
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            GTA V Voice Commands what I would consider to be my first real mod for GTA V.
-                            Using the same method as Blake Voice Commands, I was able to successfully
-                            spawn vehicles, get weapons, and toggle settings by speaking into my
-                            computer's microphone! The application is admittedly overcomplicated
-                            because I had to call the GTA specific methods through the script's update
-                            loop.
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-            <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                <span class="Statement">Imports</span>&nbsp;GTA<br />
-                <span class="Statement">Imports</span>&nbsp;Microsoft.Speech<br />
-                <span class="Statement">Imports</span>&nbsp;GTAVoiceCommands.Main<br />
-                <br />
-                <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;VehicleSettings<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Inherits</span>&nbsp;Script<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;reco&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Keyword">New</span>&nbsp;Recognition.SpeechRecognitionEngine<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;boolRepairVehicle&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;boolToggleVehicleInvincibility&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;boolToggleVehicleStrongWheels&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Load</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;<span class="Keyword">New</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco&nbsp;=&nbsp;Main.reco<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;reco_SpeechRecognized(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;Recognition.RecognitionEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;reco.SpeechRecognized<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolBVCEnabled&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Select</span>&nbsp;<span class="Keyword">Case</span>&nbsp;e.Result.Text<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Case</span>&nbsp;strKeyWord&nbsp;&amp;&nbsp;<span class="String">",&nbsp;repair&nbsp;vehicle"</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolRepairVehicle&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Case</span>&nbsp;strKeyWord&nbsp;&amp;&nbsp;<span class="String">",&nbsp;toggle&nbsp;vehicle&nbsp;invincibility"</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Case</span>&nbsp;strKeyWord&nbsp;&amp;&nbsp;<span class="String">",&nbsp;toggle&nbsp;vehicle&nbsp;strong&nbsp;wheels"</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Select</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;Update(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.Tick<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Try</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Game.Player.Character.IsAlive&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Game.Player.Character.IsInVehicle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;veh&nbsp;<span class="Keyword">As</span>&nbsp;Vehicle&nbsp;=&nbsp;GTA.Game.Player.Character.CurrentVehicle<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolRepairVehicle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.Repair()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Vehicle&nbsp;repaired"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Vehicle&nbsp;repaired"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolRepairVehicle&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.IsInvincible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;false"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;false"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.IsInvincible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.IsInvincible&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;true"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;true"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.IsInvincible&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;false"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;false"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;true"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;true"</span>)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Catch</span>&nbsp;ex&nbsp;<span class="Keyword">As</span>&nbsp;NullReferenceException<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Try</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <div class="buttons">
+                    <a href="https://www.gta5-mods.com/scripts/gta-voice-commands" class="btn pri">gta5-mods.com Page</a>
+                </div>
+            </td>
+            <td>
+                <h4>
+                    GTA V Voice Commands what I would consider to be my first real mod for GTA V.
+                    Using the same method as Blake Voice Commands, I was able to successfully
+                    spawn vehicles, get weapons, and toggle settings by speaking into my
+                    computer's microphone! The application is admittedly overcomplicated
+                    because I had to call the GTA specific methods through the script's update
+                    loop.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        <span class="Statement">Imports</span>&nbsp;GTA<br />
+        <span class="Statement">Imports</span>&nbsp;Microsoft.Speech<br />
+        <span class="Statement">Imports</span>&nbsp;GTAVoiceCommands.Main<br />
+        <br />
+        <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;VehicleSettings<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Inherits</span>&nbsp;Script<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;reco&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Keyword">New</span>&nbsp;Recognition.SpeechRecognitionEngine<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;boolRepairVehicle&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;boolToggleVehicleInvincibility&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;boolToggleVehicleStrongWheels&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span>&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'Load</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;<span class="Keyword">New</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reco&nbsp;=&nbsp;Main.reco<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;reco_SpeechRecognized(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;Recognition.RecognitionEventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;reco.SpeechRecognized<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolBVCEnabled&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Select</span>&nbsp;<span class="Keyword">Case</span>&nbsp;e.Result.Text<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Case</span>&nbsp;strKeyWord&nbsp;&amp;&nbsp;<span class="String">",&nbsp;repair&nbsp;vehicle"</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolRepairVehicle&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Case</span>&nbsp;strKeyWord&nbsp;&amp;&nbsp;<span class="String">",&nbsp;toggle&nbsp;vehicle&nbsp;invincibility"</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Case</span>&nbsp;strKeyWord&nbsp;&amp;&nbsp;<span class="String">",&nbsp;toggle&nbsp;vehicle&nbsp;strong&nbsp;wheels"</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Select</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;Update(<span class="Keyword">ByVal</span>&nbsp;sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;<span class="Keyword">ByVal</span>&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;<span class="Keyword">MyBase</span>.Tick<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Try</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Game.Player.Character.IsAlive&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;Game.Player.Character.IsInVehicle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;veh&nbsp;<span class="Keyword">As</span>&nbsp;Vehicle&nbsp;=&nbsp;GTA.Game.Player.Character.CurrentVehicle<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolRepairVehicle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.Repair()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Vehicle&nbsp;repaired"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Vehicle&nbsp;repaired"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolRepairVehicle&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.IsInvincible&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;false"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;false"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.IsInvincible&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.IsInvincible&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;true"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;invincibility:&nbsp;true"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.IsInvincible&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleInvincibility&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;false"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;false"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Operator">And</span>&nbsp;GTA.Game.Player.Character.CurrentVehicle.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSubtitle&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;true"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;boolSettingChangedSpeak&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synth.SpeakAsync(<span class="String">"Current&nbsp;vehicle&nbsp;[HasStrongWheels]:&nbsp;true"</span>)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;veh.CanTiresBurst&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolToggleVehicleStrongWheels&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Catch</span>&nbsp;ex&nbsp;<span class="Keyword">As</span>&nbsp;NullReferenceException<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Try</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
+    </div>
+</header>

@@ -1,137 +1,106 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Blake Boris</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>Toggle FPS</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: GTA Voice Commands
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/ToggleFPS" class="btn pri">GitHub Project Page</a>
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/ToggleFPS" class="btn pri">GitHub Project Page</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://www.gta5-mods.com/scripts/toggle-fps" class="btn pri">gta5-mods.com Page</a>
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            Toggle FPS was my first attempt at modding GTA V. Originally, I had written the
-                            application in VB.NET, but after growing tired of VB, I decided to rewrite it in
-                            C# for fun. In the process, I made the mod more stable and fixed an issue that I
-                            previously hadn't noticed. I uploaded the mod to a surprising amount of positive 
-                            feedback that encouraged me to write a couple more mods for the game.
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-            <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                <span class="Namespace">using</span>&nbsp;GTA;<br />
-                <span class="Namespace">using</span>&nbsp;System;<br />
-                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
-                <br />
-                <span class="ReferenceType">class</span>&nbsp;ToggleFPS&nbsp;:&nbsp;Script<br />
-                {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">bool</span>&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Keys&nbsp;toggle_fps;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;update;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;ToggleFPS()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ScriptSettings&nbsp;config&nbsp;=&nbsp;ScriptSettings.Load(@<span class="String">"scripts\ToggleFPS.config"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toggle_fps&nbsp;=&nbsp;config.GetValue&lt;Keys&gt;(<span class="String">"SETTINGS"</span>,&nbsp;<span class="String">"toggle_fps"</span>,&nbsp;Keys.F7);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update&nbsp;=&nbsp;config.GetValue&lt;<span class="ValueType">int</span>&gt;(<span class="String">"SETTINGS"</span>,&nbsp;<span class="String">"counter_update_speed"</span>,&nbsp;100);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyUp&nbsp;+=&nbsp;OnKeyUp;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tick&nbsp;+=&nbsp;OnTick;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;update;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;toggle_fps)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(boolKey)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(!boolKey)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;OnTick(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;fps&nbsp;=&nbsp;Convert.ToInt32(Game.FPS);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(boolKey)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"FPS:&nbsp;"</span>&nbsp;+&nbsp;fps,&nbsp;update);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<br />
-                }
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <div class="buttons">
+                    <a href="https://www.gta5-mods.com/scripts/toggle-fps" class="btn pri">gta5-mods.com Page</a>
+                </div>
+            </td>
+            <td>
+                <h4>
+                    Toggle FPS was my first attempt at modding GTA V. Originally, I had written the
+                    application in VB.NET, but after growing tired of VB, I decided to rewrite it in
+                    C# for fun. In the process, I made the mod more stable and fixed an issue that I
+                    previously hadn't noticed. I uploaded the mod to a surprising amount of positive
+                    feedback that encouraged me to write a couple more mods for the game.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        <span class="Namespace">using</span>&nbsp;GTA;<br />
+        <span class="Namespace">using</span>&nbsp;System;<br />
+        <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+        <br />
+        <span class="ReferenceType">class</span>&nbsp;ToggleFPS&nbsp;:&nbsp;Script<br />
+        {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">bool</span>&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Keys&nbsp;toggle_fps;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;update;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;ToggleFPS()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ScriptSettings&nbsp;config&nbsp;=&nbsp;ScriptSettings.Load(@<span class="String">"scripts\ToggleFPS.config"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toggle_fps&nbsp;=&nbsp;config.GetValue&lt;Keys&gt;(<span class="String">"SETTINGS"</span>,&nbsp;<span class="String">"toggle_fps"</span>,&nbsp;Keys.F7);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;update&nbsp;=&nbsp;config.GetValue&lt;<span class="ValueType">int</span>&gt;(<span class="String">"SETTINGS"</span>,&nbsp;<span class="String">"counter_update_speed"</span>,&nbsp;100);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyUp&nbsp;+=&nbsp;OnKeyUp;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tick&nbsp;+=&nbsp;OnTick;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;update;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(e.KeyCode&nbsp;==&nbsp;toggle_fps)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(boolKey)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(!boolKey)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolKey&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;OnTick(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">int</span>&nbsp;fps&nbsp;=&nbsp;Convert.ToInt32(Game.FPS);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(boolKey)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI.ShowSubtitle(<span class="String">"FPS:&nbsp;"</span>&nbsp;+&nbsp;fps,&nbsp;update);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<br />
+        }
+    </div>
+</header>

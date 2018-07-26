@@ -1,130 +1,99 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Blake Boris</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>GTA V Base Script (C#)</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: GTA Base Script C#
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/GTA-V-Base-Script-C-Sharp" class="btn pri">GitHub Project Page</a>
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/GTA-V-Base-Script-C-Sharp" class="btn pri">GitHub Project Page</a>
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            This base script is just that. It's a file that people can use to create GTA V mods in C#! 
-                            It's what I've based a couple mods off of and a great resource for those looking into GTA 
-                            V modding. I've included a link to ScriptHookV's GitHub page to make sure people aren't 
-                            downloading sketchy ScriptHookV DLLs!
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-            <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                <span class="Namespace">using</span>&nbsp;GTA;<br />
-                <span class="Namespace">using</span>&nbsp;System;<br />
-                <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
-                <br />
-                <span class="BlockComment">
-                    /*<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;properly&nbsp;use&nbsp;this&nbsp;application&nbsp;as&nbsp;a&nbsp;starting&nbsp;point&nbsp;for<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;your&nbsp;own&nbsp;work,&nbsp;please&nbsp;reference&nbsp;a&nbsp;scripthookdotnet&nbsp;dll&nbsp;file.<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;obtain&nbsp;the&nbsp;newest&nbsp;build&nbsp;from&nbsp;here:&nbsp;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;https://github.com/crosire/scripthookvdotnet/releases&nbsp;<br />
-                    */
-                </span><br />
-                <br />
-                <span class="Modifier">public</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;BaseScript&nbsp;:&nbsp;Script&nbsp;{<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;BaseScript()&nbsp;{<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tick&nbsp;+=&nbsp;OnTick;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyDown&nbsp;+=&nbsp;OnKeyDown;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyUp&nbsp;+=&nbsp;OnKeyUp;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;1;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnTick(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;{<br />
-                <br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyDown(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)&nbsp;{<br />
-                <br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)&nbsp;{<br />
-                <br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                }
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <h4>
+                    This base script is just that. It's a file that people can use to create GTA V mods in C#!
+                    It's what I've based a couple mods off of and a great resource for those looking into GTA
+                    V modding. I've included a link to ScriptHookV's GitHub page to make sure people aren't
+                    downloading sketchy ScriptHookV DLLs!
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        <span class="Namespace">using</span>&nbsp;GTA;<br />
+        <span class="Namespace">using</span>&nbsp;System;<br />
+        <span class="Namespace">using</span>&nbsp;System.Windows.Forms;<br />
+        <br />
+        <span class="BlockComment">
+            /*<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;would&nbsp;like&nbsp;to&nbsp;properly&nbsp;use&nbsp;this&nbsp;application&nbsp;as&nbsp;a&nbsp;starting&nbsp;point&nbsp;for<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;your&nbsp;own&nbsp;work,&nbsp;please&nbsp;reference&nbsp;a&nbsp;scripthookdotnet&nbsp;dll&nbsp;file.<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;can&nbsp;obtain&nbsp;the&nbsp;newest&nbsp;build&nbsp;from&nbsp;here:&nbsp;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;https://github.com/crosire/scripthookvdotnet/releases&nbsp;<br />
+            */
+        </span><br />
+        <br />
+        <span class="Modifier">public</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;BaseScript&nbsp;:&nbsp;Script&nbsp;{<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;BaseScript()&nbsp;{<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tick&nbsp;+=&nbsp;OnTick;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyDown&nbsp;+=&nbsp;OnKeyDown;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyUp&nbsp;+=&nbsp;OnKeyUp;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interval&nbsp;=&nbsp;1;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnTick(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;EventArgs&nbsp;e)&nbsp;{<br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyDown(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)&nbsp;{<br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ValueType">void</span>&nbsp;OnKeyUp(<span class="ReferenceType">object</span>&nbsp;sender,&nbsp;KeyEventArgs&nbsp;e)&nbsp;{<br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        }
+    </div>
+</header>
