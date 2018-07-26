@@ -95,39 +95,6 @@ body {
     /* CSS rules here for screens above px */
 }
 
-/*
-@media (max-width: 1380px) {
-
-    body header div nav ul li a {
-        font-size: 70%;
-        padding-right: 10px;
-    }
-
-    .bar_logo {
-        float: left;
-        max-width: 35%;
-        padding-bottom: 0px;
-    }
-
-    .bar_logo h2 {
-        font-size: 25px;
-        padding-bottom: 7px;
-    }
-
-    .projects table tr a img {
-        padding-bottom: 1em;
-        width: 120px;
-        height: 120px;
-    }
-
-    .projects table tr td a h3 {
-        padding-top: 0;
-    }
-
-    CSS rules here for screens lower than px
-}
-*/
-
 @media (max-width: 1024px) {
 
     body header div nav ul li a {
