@@ -1,202 +1,171 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Blake Boris</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>KODO</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: K0D0
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/KODO" class="btn pri">GitHub Project Page</a>
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/KODO" class="btn pri">GitHub Project Page</a>
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            KODO is a game that my friend and I made for our Final Exam for AP Computer Science. It was our 
-                            first time using a game engine called Unity. After the past two years of working with Visual Basic 
-                            and Java, using C# with Unity was incredible! The advanced capabilities of the Unity engine allowed 
-                            us to add animations and audio/visual effects that we couldn't previously achieve using winforms. 
-                            KODO became a reimagination of our Visual Basic game titled Olah. KODO seemlessly implemented 
-                            features that would've been a nightmare to add into the original Olah such as a kill feed, a timer, 
-                            and mouse/keyboard support.
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-        <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                <span class="Namespace">using</span>&nbsp;System;<br />
-                <span class="Namespace">using</span>&nbsp;UnityEngine;<br />
-                <br />
-                <span class="Namespace">namespace</span>&nbsp;UnityStandardAssets._2D<br />
-                {<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;PlatformerCharacter2D&nbsp;:&nbsp;MonoBehaviour<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">float</span>&nbsp;m_MaxSpeed&nbsp;=&nbsp;10f;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;The&nbsp;fastest&nbsp;the&nbsp;player&nbsp;can&nbsp;travel&nbsp;in&nbsp;the&nbsp;x&nbsp;axis.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">float</span>&nbsp;m_JumpForce&nbsp;=&nbsp;400f;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Amount&nbsp;of&nbsp;force&nbsp;added&nbsp;when&nbsp;the&nbsp;player&nbsp;jumps.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Range(0,&nbsp;1)]&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">float</span>&nbsp;m_CrouchSpeed&nbsp;=&nbsp;.36f;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Amount&nbsp;of&nbsp;maxSpeed&nbsp;applied&nbsp;to&nbsp;crouching&nbsp;movement.&nbsp;1&nbsp;=&nbsp;100%</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">bool</span>&nbsp;m_AirControl&nbsp;=&nbsp;<span class="Keyword">false</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Whether&nbsp;or&nbsp;not&nbsp;a&nbsp;player&nbsp;can&nbsp;steer&nbsp;while&nbsp;jumping;</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;LayerMask&nbsp;m_WhatIsGround;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;A&nbsp;mask&nbsp;determining&nbsp;what&nbsp;is&nbsp;ground&nbsp;to&nbsp;the&nbsp;character</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Transform&nbsp;m_GroundCheck;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;A&nbsp;position&nbsp;marking&nbsp;where&nbsp;to&nbsp;check&nbsp;if&nbsp;the&nbsp;player&nbsp;is&nbsp;grounded.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">float</span>&nbsp;k_GroundedRadius&nbsp;=&nbsp;.2f;&nbsp;<span class="InlineComment">//&nbsp;Radius&nbsp;of&nbsp;the&nbsp;overlap&nbsp;circle&nbsp;to&nbsp;determine&nbsp;if&nbsp;grounded</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">bool</span>&nbsp;m_Grounded;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Whether&nbsp;or&nbsp;not&nbsp;the&nbsp;player&nbsp;is&nbsp;grounded.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Transform&nbsp;m_CeilingCheck;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;A&nbsp;position&nbsp;marking&nbsp;where&nbsp;to&nbsp;check&nbsp;for&nbsp;ceilings</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">float</span>&nbsp;k_CeilingRadius&nbsp;=&nbsp;.01f;&nbsp;<span class="InlineComment">//&nbsp;Radius&nbsp;of&nbsp;the&nbsp;overlap&nbsp;circle&nbsp;to&nbsp;determine&nbsp;if&nbsp;the&nbsp;player&nbsp;can&nbsp;stand&nbsp;up</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Animator&nbsp;m_Anim;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Reference&nbsp;to&nbsp;the&nbsp;player's&nbsp;animator&nbsp;component.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Rigidbody2D&nbsp;m_Rigidbody2D;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">bool</span>&nbsp;m_FacingRight&nbsp;=&nbsp;<span class="Keyword">true</span>;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;For&nbsp;determining&nbsp;which&nbsp;way&nbsp;the&nbsp;player&nbsp;is&nbsp;currently&nbsp;facing.</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;Awake()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Setting&nbsp;up&nbsp;references.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GroundCheck&nbsp;=&nbsp;transform.Find(<span class="String">"GroundCheck"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_CeilingCheck&nbsp;=&nbsp;transform.Find(<span class="String">"CeilingCheck"</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim&nbsp;=&nbsp;GetComponent&lt;Animator&gt;();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Rigidbody2D&nbsp;=&nbsp;GetComponent&lt;Rigidbody2D&gt;();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;FixedUpdate()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Grounded&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;The&nbsp;player&nbsp;is&nbsp;grounded&nbsp;if&nbsp;a&nbsp;circlecast&nbsp;to&nbsp;the&nbsp;groundcheck&nbsp;position&nbsp;hits&nbsp;anything&nbsp;designated&nbsp;as&nbsp;ground</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;This&nbsp;can&nbsp;be&nbsp;done&nbsp;using&nbsp;layers&nbsp;instead&nbsp;but&nbsp;Sample&nbsp;Assets&nbsp;will&nbsp;not&nbsp;overwrite&nbsp;your&nbsp;project&nbsp;settings.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collider2D[]&nbsp;colliders&nbsp;=&nbsp;Physics2D.OverlapCircleAll(m_GroundCheck.position,&nbsp;k_GroundedRadius,&nbsp;m_WhatIsGround);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;colliders.Length;&nbsp;i++)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(colliders[i].gameObject&nbsp;!=&nbsp;gameObject)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Grounded&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetBool(<span class="String">"Ground"</span>,&nbsp;m_Grounded);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Set&nbsp;the&nbsp;vertical&nbsp;animation</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetFloat(<span class="String">"vSpeed"</span>,&nbsp;m_Rigidbody2D.velocity.y);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Move(<span class="ValueType">float</span>&nbsp;move,&nbsp;<span class="ValueType">bool</span>&nbsp;crouch,&nbsp;<span class="ValueType">bool</span>&nbsp;jump)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;crouching,&nbsp;check&nbsp;to&nbsp;see&nbsp;if&nbsp;the&nbsp;character&nbsp;can&nbsp;stand&nbsp;up</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!crouch&nbsp;&amp;&amp;&nbsp;m_Anim.GetBool(<span class="String">"Crouch"</span>))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;the&nbsp;character&nbsp;has&nbsp;a&nbsp;ceiling&nbsp;preventing&nbsp;them&nbsp;from&nbsp;standing&nbsp;up,&nbsp;keep&nbsp;them&nbsp;crouching</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(Physics2D.OverlapCircle(m_CeilingCheck.position,&nbsp;k_CeilingRadius,&nbsp;m_WhatIsGround))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crouch&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Set&nbsp;whether&nbsp;or&nbsp;not&nbsp;the&nbsp;character&nbsp;is&nbsp;crouching&nbsp;in&nbsp;the&nbsp;animator</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetBool(<span class="String">"Crouch"</span>,&nbsp;crouch);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//only&nbsp;control&nbsp;the&nbsp;player&nbsp;if&nbsp;grounded&nbsp;or&nbsp;airControl&nbsp;is&nbsp;turned&nbsp;on</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(m_Grounded&nbsp;||&nbsp;m_AirControl)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Reduce&nbsp;the&nbsp;speed&nbsp;if&nbsp;crouching&nbsp;by&nbsp;the&nbsp;crouchSpeed&nbsp;multiplier</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move&nbsp;=&nbsp;(crouch&nbsp;?&nbsp;move*m_CrouchSpeed&nbsp;:&nbsp;move);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;The&nbsp;Speed&nbsp;animator&nbsp;parameter&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;the&nbsp;horizontal&nbsp;input.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetFloat(<span class="String">"Speed"</span>,&nbsp;Mathf.Abs(move));<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Move&nbsp;the&nbsp;character</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Rigidbody2D.velocity&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Vector2(move*m_MaxSpeed,&nbsp;m_Rigidbody2D.velocity.y);<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;the&nbsp;input&nbsp;is&nbsp;moving&nbsp;the&nbsp;player&nbsp;right&nbsp;and&nbsp;the&nbsp;player&nbsp;is&nbsp;facing&nbsp;left...</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(move&nbsp;&gt;&nbsp;0&nbsp;&amp;&amp;&nbsp;!m_FacingRight)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;...&nbsp;flip&nbsp;the&nbsp;player.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flip();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Otherwise&nbsp;if&nbsp;the&nbsp;input&nbsp;is&nbsp;moving&nbsp;the&nbsp;player&nbsp;left&nbsp;and&nbsp;the&nbsp;player&nbsp;is&nbsp;facing&nbsp;right...</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(move&nbsp;&lt;&nbsp;0&nbsp;&amp;&amp;&nbsp;m_FacingRight)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;...&nbsp;flip&nbsp;the&nbsp;player.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flip();<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;the&nbsp;player&nbsp;should&nbsp;jump...</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(m_Grounded&nbsp;&amp;&amp;&nbsp;jump&nbsp;&amp;&amp;&nbsp;m_Anim.GetBool(<span class="String">"Ground"</span>))<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Add&nbsp;a&nbsp;vertical&nbsp;force&nbsp;to&nbsp;the&nbsp;player.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Grounded&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetBool(<span class="String">"Ground"</span>,&nbsp;<span class="Keyword">false</span>);<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Rigidbody2D.AddForce(<span class="Keyword">new</span>&nbsp;Vector2(0f,&nbsp;m_JumpForce));<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                <br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;Flip()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Switch&nbsp;the&nbsp;way&nbsp;the&nbsp;player&nbsp;is&nbsp;labelled&nbsp;as&nbsp;facing.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_FacingRight&nbsp;=&nbsp;!m_FacingRight;<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Multiply&nbsp;the&nbsp;player's&nbsp;x&nbsp;local&nbsp;scale&nbsp;by&nbsp;-1.</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3&nbsp;theScale&nbsp;=&nbsp;transform.localScale;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theScale.x&nbsp;*=&nbsp;-1;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform.localScale&nbsp;=&nbsp;theScale;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                }
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <h4>
+                    KODO is a game that my friend and I made for our Final Exam for AP Computer Science. It was our
+                    first time using a game engine called Unity. After the past two years of working with Visual Basic
+                    and Java, using C# with Unity was incredible! The advanced capabilities of the Unity engine allowed
+                    us to add animations and audio/visual effects that we couldn't previously achieve using winforms.
+                    KODO became a reimagination of our Visual Basic game titled Olah. KODO seemlessly implemented
+                    features that would've been a nightmare to add into the original Olah such as a kill feed, a timer,
+                    and mouse/keyboard support.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        <span class="Namespace">using</span>&nbsp;System;<br />
+        <span class="Namespace">using</span>&nbsp;UnityEngine;<br />
+        <br />
+        <span class="Namespace">namespace</span>&nbsp;UnityStandardAssets._2D<br />
+        {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ReferenceType">class</span>&nbsp;PlatformerCharacter2D&nbsp;:&nbsp;MonoBehaviour<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">float</span>&nbsp;m_MaxSpeed&nbsp;=&nbsp;10f;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;The&nbsp;fastest&nbsp;the&nbsp;player&nbsp;can&nbsp;travel&nbsp;in&nbsp;the&nbsp;x&nbsp;axis.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">float</span>&nbsp;m_JumpForce&nbsp;=&nbsp;400f;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Amount&nbsp;of&nbsp;force&nbsp;added&nbsp;when&nbsp;the&nbsp;player&nbsp;jumps.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Range(0,&nbsp;1)]&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">float</span>&nbsp;m_CrouchSpeed&nbsp;=&nbsp;.36f;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Amount&nbsp;of&nbsp;maxSpeed&nbsp;applied&nbsp;to&nbsp;crouching&nbsp;movement.&nbsp;1&nbsp;=&nbsp;100%</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">bool</span>&nbsp;m_AirControl&nbsp;=&nbsp;<span class="Keyword">false</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Whether&nbsp;or&nbsp;not&nbsp;a&nbsp;player&nbsp;can&nbsp;steer&nbsp;while&nbsp;jumping;</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SerializeField]&nbsp;<span class="Modifier">private</span>&nbsp;LayerMask&nbsp;m_WhatIsGround;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;A&nbsp;mask&nbsp;determining&nbsp;what&nbsp;is&nbsp;ground&nbsp;to&nbsp;the&nbsp;character</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Transform&nbsp;m_GroundCheck;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;A&nbsp;position&nbsp;marking&nbsp;where&nbsp;to&nbsp;check&nbsp;if&nbsp;the&nbsp;player&nbsp;is&nbsp;grounded.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">float</span>&nbsp;k_GroundedRadius&nbsp;=&nbsp;.2f;&nbsp;<span class="InlineComment">//&nbsp;Radius&nbsp;of&nbsp;the&nbsp;overlap&nbsp;circle&nbsp;to&nbsp;determine&nbsp;if&nbsp;grounded</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">bool</span>&nbsp;m_Grounded;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Whether&nbsp;or&nbsp;not&nbsp;the&nbsp;player&nbsp;is&nbsp;grounded.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Transform&nbsp;m_CeilingCheck;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;A&nbsp;position&nbsp;marking&nbsp;where&nbsp;to&nbsp;check&nbsp;for&nbsp;ceilings</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">const</span>&nbsp;<span class="ValueType">float</span>&nbsp;k_CeilingRadius&nbsp;=&nbsp;.01f;&nbsp;<span class="InlineComment">//&nbsp;Radius&nbsp;of&nbsp;the&nbsp;overlap&nbsp;circle&nbsp;to&nbsp;determine&nbsp;if&nbsp;the&nbsp;player&nbsp;can&nbsp;stand&nbsp;up</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Animator&nbsp;m_Anim;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Reference&nbsp;to&nbsp;the&nbsp;player's&nbsp;animator&nbsp;component.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;Rigidbody2D&nbsp;m_Rigidbody2D;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">bool</span>&nbsp;m_FacingRight&nbsp;=&nbsp;<span class="Keyword">true</span>;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;For&nbsp;determining&nbsp;which&nbsp;way&nbsp;the&nbsp;player&nbsp;is&nbsp;currently&nbsp;facing.</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;Awake()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Setting&nbsp;up&nbsp;references.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_GroundCheck&nbsp;=&nbsp;transform.Find(<span class="String">"GroundCheck"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_CeilingCheck&nbsp;=&nbsp;transform.Find(<span class="String">"CeilingCheck"</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim&nbsp;=&nbsp;GetComponent&lt;Animator&gt;();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Rigidbody2D&nbsp;=&nbsp;GetComponent&lt;Rigidbody2D&gt;();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;FixedUpdate()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Grounded&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;The&nbsp;player&nbsp;is&nbsp;grounded&nbsp;if&nbsp;a&nbsp;circlecast&nbsp;to&nbsp;the&nbsp;groundcheck&nbsp;position&nbsp;hits&nbsp;anything&nbsp;designated&nbsp;as&nbsp;ground</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;This&nbsp;can&nbsp;be&nbsp;done&nbsp;using&nbsp;layers&nbsp;instead&nbsp;but&nbsp;Sample&nbsp;Assets&nbsp;will&nbsp;not&nbsp;overwrite&nbsp;your&nbsp;project&nbsp;settings.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Collider2D[]&nbsp;colliders&nbsp;=&nbsp;Physics2D.OverlapCircleAll(m_GroundCheck.position,&nbsp;k_GroundedRadius,&nbsp;m_WhatIsGround);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">for</span>&nbsp;(<span class="ValueType">int</span>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;colliders.Length;&nbsp;i++)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(colliders[i].gameObject&nbsp;!=&nbsp;gameObject)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Grounded&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetBool(<span class="String">"Ground"</span>,&nbsp;m_Grounded);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Set&nbsp;the&nbsp;vertical&nbsp;animation</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetFloat(<span class="String">"vSpeed"</span>,&nbsp;m_Rigidbody2D.velocity.y);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="ValueType">void</span>&nbsp;Move(<span class="ValueType">float</span>&nbsp;move,&nbsp;<span class="ValueType">bool</span>&nbsp;crouch,&nbsp;<span class="ValueType">bool</span>&nbsp;jump)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;crouching,&nbsp;check&nbsp;to&nbsp;see&nbsp;if&nbsp;the&nbsp;character&nbsp;can&nbsp;stand&nbsp;up</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(!crouch&nbsp;&amp;&amp;&nbsp;m_Anim.GetBool(<span class="String">"Crouch"</span>))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;the&nbsp;character&nbsp;has&nbsp;a&nbsp;ceiling&nbsp;preventing&nbsp;them&nbsp;from&nbsp;standing&nbsp;up,&nbsp;keep&nbsp;them&nbsp;crouching</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(Physics2D.OverlapCircle(m_CeilingCheck.position,&nbsp;k_CeilingRadius,&nbsp;m_WhatIsGround))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;crouch&nbsp;=&nbsp;<span class="Keyword">true</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Set&nbsp;whether&nbsp;or&nbsp;not&nbsp;the&nbsp;character&nbsp;is&nbsp;crouching&nbsp;in&nbsp;the&nbsp;animator</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetBool(<span class="String">"Crouch"</span>,&nbsp;crouch);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//only&nbsp;control&nbsp;the&nbsp;player&nbsp;if&nbsp;grounded&nbsp;or&nbsp;airControl&nbsp;is&nbsp;turned&nbsp;on</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(m_Grounded&nbsp;||&nbsp;m_AirControl)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Reduce&nbsp;the&nbsp;speed&nbsp;if&nbsp;crouching&nbsp;by&nbsp;the&nbsp;crouchSpeed&nbsp;multiplier</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move&nbsp;=&nbsp;(crouch&nbsp;?&nbsp;move*m_CrouchSpeed&nbsp;:&nbsp;move);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;The&nbsp;Speed&nbsp;animator&nbsp;parameter&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;the&nbsp;horizontal&nbsp;input.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetFloat(<span class="String">"Speed"</span>,&nbsp;Mathf.Abs(move));<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Move&nbsp;the&nbsp;character</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Rigidbody2D.velocity&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;Vector2(move*m_MaxSpeed,&nbsp;m_Rigidbody2D.velocity.y);<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;the&nbsp;input&nbsp;is&nbsp;moving&nbsp;the&nbsp;player&nbsp;right&nbsp;and&nbsp;the&nbsp;player&nbsp;is&nbsp;facing&nbsp;left...</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(move&nbsp;&gt;&nbsp;0&nbsp;&amp;&amp;&nbsp;!m_FacingRight)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;...&nbsp;flip&nbsp;the&nbsp;player.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flip();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Otherwise&nbsp;if&nbsp;the&nbsp;input&nbsp;is&nbsp;moving&nbsp;the&nbsp;player&nbsp;left&nbsp;and&nbsp;the&nbsp;player&nbsp;is&nbsp;facing&nbsp;right...</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">else</span>&nbsp;<span class="Statement">if</span>&nbsp;(move&nbsp;&lt;&nbsp;0&nbsp;&amp;&amp;&nbsp;m_FacingRight)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;...&nbsp;flip&nbsp;the&nbsp;player.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flip();<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;If&nbsp;the&nbsp;player&nbsp;should&nbsp;jump...</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">if</span>&nbsp;(m_Grounded&nbsp;&amp;&amp;&nbsp;jump&nbsp;&amp;&amp;&nbsp;m_Anim.GetBool(<span class="String">"Ground"</span>))<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Add&nbsp;a&nbsp;vertical&nbsp;force&nbsp;to&nbsp;the&nbsp;player.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Grounded&nbsp;=&nbsp;<span class="Keyword">false</span>;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Anim.SetBool(<span class="String">"Ground"</span>,&nbsp;<span class="Keyword">false</span>);<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_Rigidbody2D.AddForce(<span class="Keyword">new</span>&nbsp;Vector2(0f,&nbsp;m_JumpForce));<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">private</span>&nbsp;<span class="ValueType">void</span>&nbsp;Flip()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Switch&nbsp;the&nbsp;way&nbsp;the&nbsp;player&nbsp;is&nbsp;labelled&nbsp;as&nbsp;facing.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m_FacingRight&nbsp;=&nbsp;!m_FacingRight;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//&nbsp;Multiply&nbsp;the&nbsp;player's&nbsp;x&nbsp;local&nbsp;scale&nbsp;by&nbsp;-1.</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3&nbsp;theScale&nbsp;=&nbsp;transform.localScale;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theScale.x&nbsp;*=&nbsp;-1;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform.localScale&nbsp;=&nbsp;theScale;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+        }
+    </div>
+</header>

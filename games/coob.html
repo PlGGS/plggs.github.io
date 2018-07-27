@@ -1,394 +1,363 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Blake Boris</title>
-		<link rel="stylesheet" type="text/css" href="../projects.css">
-    </head>
-    <body>
-        <header class="bar">
-            <div class="headerBar wrap clearfix">
-                <div class="bar_logo">
-                    <h2>Coob</h2>
-                    <a href="https://plggs.github.io">
-                        <img src="../assets/BlakeSurprisedCircle.png" alt="blake" height="75" width="75">
+---
+layout: default
+title: Coob
+css: projects
+---
+
+<header class="project">
+    <div class="gallery">
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
                     </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+                <td>
+                    <a href="../assets/GTAVoiceCommands.png">
+                        <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
+                    </a>
+                    <h3 class="img desc">Image description</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="projectDesc">
+        <tr>
+            <td>
+                <div class="buttons">
+                    <a href="https://github.com/PlGGS/Coob" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
                 </div>
-                <nav class="bar_nav">
-                    <ul class="nav">
-                        <li class="nav_item">
-                            <ul>
-                                <img src="../assets/SiteCircle.png" alt="blake" height="20" width="20" />
-                                <a href="../about.html">About</a>
-                                <img src="../assets/SiteSquare.png" alt="blake" height="20" width="20" />
-                                <a href="../apps/apps.html">Applications</a>
-                                <img src="../assets/SiteRhombus.png" alt="blake" height="20" width="20" />
-                                <a href="../games/games.html">Games</a>
-                                <img src="../assets/SiteTriangle.png" alt="blake" height="20" width="20" />
-                                <a href="../mods/mods.html">Mods</a>
-                                <a href="https://github.com/PlGGS">GitHub</a>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <header class="project">
-            <div class="gallery">
-                <table align="center">
-                    <tr>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                        <td>
-                            <a href="../assets/GTAVoiceCommands.png">
-                                <img src="../assets/GTAVoiceCommands.png" alt="Blake Voice Commands">
-                            </a>
-                            <h3 class="img desc">Image description</h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <table class="projectDesc">
-                <tr>
-                    <td>
-                        <div class="buttons">
-                            <a href="https://github.com/PlGGS/Coob" class="btn pri">GitHub Project Page</a><!--TODO update location and move to all project files-->
-                        </div>
-                    </td>
-                    <td>
-                        <h4>
-                            Coob is a puzzle platformer that my friend and I created using only one Windows Form object. 
-                            It was the first game in the history of our Computer Science course to create all of it's objects 
-                            and screens via code. While it didn't turn into the most beautiful game we had ever created, it 
-                            didn't have to pop open a new window each and every time the player wanted to see something other 
-                            than the title screen. The screen management system took us so long to create that the actual game 
-                            didn't end up being anything too spectacular, but it was a game.
-                        </h4>
-                    </td>
-                </tr>
-            </table>
-        </header>
-        <h2>Code Preview</h2>
-        <header class="codePreview">
-            <div class="code">
-                <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;Level1<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Inherits</span>&nbsp;Screen<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;k_left&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;k_right&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;coobImg&nbsp;<span class="Keyword">As</span>&nbsp;Image&nbsp;=&nbsp;My.Resources.CoobCharacterFront<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;coobBounds&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround1&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround2&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround3&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround4&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround5&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround6&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;cooblocation&nbsp;<span class="Keyword">As</span>&nbsp;Point<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;OnGround&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;timJumped&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Property">Timer</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;timOnGround&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Property">Timer</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;timGravity&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Property">Timer</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;<span class="Keyword">New</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;<span class="Property">Timer</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Interval&nbsp;=&nbsp;1<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;<span class="Property">Timer</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'hai</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Interval&nbsp;=&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;<span class="Property">Timer</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Interval&nbsp;=&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Point(460,&nbsp;100)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.DoubleBuffered&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;hideScreen()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;keyDownHandler(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.A&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.D&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_right&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.F&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;timGravity.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.<span class="Function">Space</span>&nbsp;<span class="Operator">And</span>&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Start()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;keyUpHandler(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.A&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.D&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_right&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;showScreen()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;Screen_Paint(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;PaintEventArgs)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;drawing&nbsp;background</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.backgrounds,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(0,&nbsp;0,&nbsp;<span class="Keyword">Me</span>.Width,&nbsp;<span class="Keyword">Me</span>.Height),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(0,&nbsp;0,&nbsp;230,&nbsp;62),&nbsp;GraphicsUnit.Pixel)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;"drawing"&nbsp;coobBounds</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coobBounds&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(cooblocation.X,&nbsp;cooblocation.Y,&nbsp;coobImg.Width,&nbsp;coobImg.Height)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;drawing&nbsp;hearts</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.coobing,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(35,&nbsp;30,&nbsp;38,&nbsp;32),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(302,&nbsp;281,&nbsp;19,&nbsp;16),&nbsp;GraphicsUnit.Pixel)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.coobing,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(75,&nbsp;30,&nbsp;38,&nbsp;32),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(302,&nbsp;281,&nbsp;19,&nbsp;16),&nbsp;GraphicsUnit.Pixel)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.coobing,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(115,&nbsp;30,&nbsp;38,&nbsp;32),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(302,&nbsp;281,&nbsp;19,&nbsp;16),&nbsp;GraphicsUnit.Pixel)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(coobImg,&nbsp;cooblocation.X,&nbsp;cooblocation.Y,&nbsp;74,&nbsp;64)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;creation&nbsp;of&nbsp;blocks&nbsp;n'&nbsp;stoof</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround1&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(100,&nbsp;500,&nbsp;1000,&nbsp;200)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround1)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround2&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(100,&nbsp;300,&nbsp;100,&nbsp;200)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround2)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround3&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(200,&nbsp;300,&nbsp;100,&nbsp;200)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround3)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround4&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(300,&nbsp;300,&nbsp;100,&nbsp;200)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround4)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround5&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(400,&nbsp;300,&nbsp;100,&nbsp;200)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround5)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround6&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(500,&nbsp;300,&nbsp;100,&nbsp;200)<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround6)<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;updateScreen()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.X&nbsp;-=&nbsp;12.5<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coobImg&nbsp;=&nbsp;My.Resources.CoobCharacterLeft<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;k_right&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.X&nbsp;+=&nbsp;12.5<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coobImg&nbsp;=&nbsp;My.Resources.CoobCharacterRight<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timGravity_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timGravity.Tick<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround6)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.X&nbsp;+=&nbsp;5<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;jumping&nbsp;on&nbsp;blocks</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround1)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround2)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround3)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround4)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround5)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround6)&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.Y&nbsp;+=&nbsp;10<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timJumped_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timJumped.Tick<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Static</span>&nbsp;jumpTime&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Single</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.Y&nbsp;-=&nbsp;20<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpTime&nbsp;+=&nbsp;1<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;jumpTime&nbsp;=&nbsp;10&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpTime&nbsp;=&nbsp;0<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timOnGround_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timOnGround.Tick<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround1)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround2)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround3)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround4)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround5)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround6)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
-                <br />
-                <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
-            </div>
-        </header>
-	</body>
-</html>
+            </td>
+            <td>
+                <h4>
+                    Coob is a puzzle platformer that my friend and I created using only one Windows Form object.
+                    It was the first game in the history of our Computer Science course to create all of it's objects
+                    and screens via code. While it didn't turn into the most beautiful game we had ever created, it
+                    didn't have to pop open a new window each and every time the player wanted to see something other
+                    than the title screen. The screen management system took us so long to create that the actual game
+                    didn't end up being anything too spectacular, but it was a game.
+                </h4>
+            </td>
+        </tr>
+    </table>
+</header>
+<h2>Code Preview</h2>
+<header class="codePreview">
+    <div class="code">
+        <span class="Keyword">Public</span>&nbsp;<span class="Statement">Class</span>&nbsp;Level1<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Inherits</span>&nbsp;Screen<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;k_left&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;k_right&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;coobImg&nbsp;<span class="Keyword">As</span>&nbsp;Image&nbsp;=&nbsp;My.Resources.CoobCharacterFront<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;coobBounds&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround1&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround2&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround3&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround4&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround5&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;recGround6&nbsp;<span class="Keyword">As</span>&nbsp;Rectangle<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;cooblocation&nbsp;<span class="Keyword">As</span>&nbsp;Point<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;OnGround&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Boolean</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;timJumped&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Property">Timer</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;timOnGround&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Property">Timer</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">Dim</span>&nbsp;<span class="Keyword">WithEvents</span>&nbsp;timGravity&nbsp;<span class="Keyword">As</span>&nbsp;<span class="Property">Timer</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Statement">Sub</span>&nbsp;<span class="Keyword">New</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;<span class="Property">Timer</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Interval&nbsp;=&nbsp;1<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;<span class="Property">Timer</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'hai</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Interval&nbsp;=&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;<span class="Property">Timer</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Interval&nbsp;=&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Point(460,&nbsp;100)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Me</span>.DoubleBuffered&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;hideScreen()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;keyDownHandler(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.A&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.D&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_right&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.F&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;timGravity.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Else</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.<span class="Function">Space</span>&nbsp;<span class="Operator">And</span>&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Start()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;keyUpHandler(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;KeyEventArgs)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.A&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;e.KeyCode&nbsp;=&nbsp;Keys.D&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_right&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;showScreen()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;Screen_Paint(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;PaintEventArgs)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;drawing&nbsp;background</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.backgrounds,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(0,&nbsp;0,&nbsp;<span class="Keyword">Me</span>.Width,&nbsp;<span class="Keyword">Me</span>.Height),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(0,&nbsp;0,&nbsp;230,&nbsp;62),&nbsp;GraphicsUnit.Pixel)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;"drawing"&nbsp;coobBounds</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coobBounds&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(cooblocation.X,&nbsp;cooblocation.Y,&nbsp;coobImg.Width,&nbsp;coobImg.Height)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;drawing&nbsp;hearts</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.coobing,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(35,&nbsp;30,&nbsp;38,&nbsp;32),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(302,&nbsp;281,&nbsp;19,&nbsp;16),&nbsp;GraphicsUnit.Pixel)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.coobing,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(75,&nbsp;30,&nbsp;38,&nbsp;32),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(302,&nbsp;281,&nbsp;19,&nbsp;16),&nbsp;GraphicsUnit.Pixel)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(My.Resources.coobing,&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(115,&nbsp;30,&nbsp;38,&nbsp;32),&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(302,&nbsp;281,&nbsp;19,&nbsp;16),&nbsp;GraphicsUnit.Pixel)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawImage(coobImg,&nbsp;cooblocation.X,&nbsp;cooblocation.Y,&nbsp;74,&nbsp;64)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;creation&nbsp;of&nbsp;blocks&nbsp;n'&nbsp;stoof</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround1&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(100,&nbsp;500,&nbsp;1000,&nbsp;200)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround1)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround2&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(100,&nbsp;300,&nbsp;100,&nbsp;200)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround2)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround3&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(200,&nbsp;300,&nbsp;100,&nbsp;200)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround3)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround4&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(300,&nbsp;300,&nbsp;100,&nbsp;200)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround4)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround5&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(400,&nbsp;300,&nbsp;100,&nbsp;200)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround5)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recGround6&nbsp;=&nbsp;<span class="Keyword">New</span>&nbsp;Rectangle(500,&nbsp;300,&nbsp;100,&nbsp;200)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Graphics.DrawRectangle(Pens.DarkSlateBlue,&nbsp;recGround6)<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Public</span>&nbsp;<span class="Keyword">Overrides</span>&nbsp;<span class="Statement">Sub</span>&nbsp;updateScreen()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.X&nbsp;-=&nbsp;12.5<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coobImg&nbsp;=&nbsp;My.Resources.CoobCharacterLeft<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;k_right&nbsp;=&nbsp;<span class="Keyword">True</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.X&nbsp;+=&nbsp;12.5<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coobImg&nbsp;=&nbsp;My.Resources.CoobCharacterRight<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timGravity_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timGravity.Tick<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround6)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k_left&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.X&nbsp;+=&nbsp;5<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">'below&nbsp;is&nbsp;jumping&nbsp;on&nbsp;blocks</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround1)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround2)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround3)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround4)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround5)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround6)&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">True</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.Y&nbsp;+=&nbsp;10<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timJumped_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timJumped.Tick<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Static</span>&nbsp;jumpTime&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Single</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cooblocation.Y&nbsp;-=&nbsp;20<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpTime&nbsp;+=&nbsp;1<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;jumpTime&nbsp;=&nbsp;10&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jumpTime&nbsp;=&nbsp;0<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timJumped.Enabled&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">Private</span>&nbsp;<span class="Statement">Sub</span>&nbsp;timOnGround_Tick(sender&nbsp;<span class="Keyword">As</span>&nbsp;<span class="DataType">Object</span>,&nbsp;e&nbsp;<span class="Keyword">As</span>&nbsp;EventArgs)&nbsp;<span class="Keyword">Handles</span>&nbsp;timOnGround.Tick<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround1)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround2)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround3)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround4)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround5)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Statement">If</span>&nbsp;coobBounds.IntersectsWith(recGround6)&nbsp;=&nbsp;<span class="Keyword">False</span>&nbsp;<span class="Keyword">Then</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OnGround&nbsp;=&nbsp;<span class="Keyword">False</span><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timGravity.Start()<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timOnGround.<span class="Statement">Stop</span>()<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">If</span><br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="Keyword">End</span>&nbsp;<span class="Statement">Sub</span><br />
+        <br />
+        <span class="Keyword">End</span>&nbsp;<span class="Statement">Class</span>
+    </div>
+</header>
