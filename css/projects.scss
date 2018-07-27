@@ -23,10 +23,6 @@ ul {
     list-style-type: none;
 }
 
-p {
-    font-family: "Comic Sans MS", Helvetica, sans-serif;
-}
-
 .bar {
     background-color: #276f1e;
     font-size: 30px;
@@ -76,20 +72,15 @@ body {
     body header div nav ul li {
         padding-left: auto;
 
-        a {
+        a img {
             font-size: 90%;
             padding-right: 30px;
         }
-    }
 
-    .bar h2 {
-        font-size: 25px;
-    }
-
-    .projects table tr {
-        padding-bottom: 1em;
-        width: 90%;
-        height: 180px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     /* CSS rules here for screens above px */
@@ -97,22 +88,16 @@ body {
 
 @media (max-width: 1024px) {
 
-    body header div nav ul li a {
-        font-size: 70%;
-        padding-right: 10px;
-    }
+    body header div nav ul li {
+        a {
+            font-size: 70%;
+            padding-right: 10px;
+        }
 
-    .bar h2 {
-        font-size: 20px;
-        /*TODO set lower text size and lower image sizes here*/
-    }
-
-    .projects table tr td a img {
-        padding-bottom: 1em;
-    }
-
-    .projects table tr td a {
-        padding: 0;
+        img {
+            height: 70%;
+            width: 70%;
+        }
     }
 
     /* CSS rules here for screens lower than px */
@@ -126,11 +111,11 @@ body {
         a {
             font-size: 50%;
         }
-    }
 
-    .bar h2 {
-        font-size: 30px;
-        /*TODO set lower text size and lower image sizes here*/
+        img {
+            height: 50%;
+            width: 50%;
+        }
     }
 
     /* CSS rules here for screens lower than px */

@@ -8,7 +8,7 @@ article, aside, footer, header, main, nav, section {
     display: block;
 }
 
-html, body, footer, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
+html, body, h1, h2, h3, h4, h5, h6, ui, li, a, p, img, iframe article, aside, footer, header, main, nav, section {
     padding: 0;
     margin: 0;
 }
@@ -84,14 +84,15 @@ body {
     body header div nav ul li {
         padding-left: auto;
 
-        a {
+        a img {
             font-size: 90%;
             padding-right: 30px;
         }
-    }
 
-    .bar h2 {
-        font-size: 30px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     /* CSS rules here for screens above px */
@@ -99,13 +100,16 @@ body {
 
 @media (max-width: 1024px) {
 
-    body header div nav ul li a {
-        font-size: 70%;
-        padding-right: 10px;
-    }
+    body header div nav ul li {
+        a {
+            font-size: 70%;
+            padding-right: 10px;
+        }
 
-    .bar h2 {
-        font-size: 25px;
+        img {
+            height: 70%;
+            width: 70%;
+        }
     }
 
     /* CSS rules here for screens lower than px */
@@ -119,11 +123,11 @@ body {
         a {
             font-size: 50%;
         }
-    }
 
-    .bar h2 {
-        font-size: 30px;
-        /*TODO set lower text size and lower image sizes here*/
+        img {
+            height: 50%;
+            width: 50%;
+        }
     }
 
     /* CSS rules here for screens lower than px */
