@@ -88,36 +88,20 @@ body {
         }
     }
 
-    .bar h2 {
-        font-size: 30px;
-    }
-
-    .projects table tr {
-        padding-bottom: 1em;
-        width: 90%;
-        height: 180px;
-    }
-
     /* CSS rules here for screens above px */
 }
 
 @media (max-width: 1024px) {
 
-    body header div nav ul li a {
-        font-size: 70%;
-        padding-right: 10px;
-    }
+    body header div nav ul li {
+        a {
+            font-size: 70%;
+            padding-right: 10px;
+        }
 
-    .bar h2 {
-        font-size: 25px;
-    }
-
-    .projects table tr td a img {
-        padding-bottom: 1em;
-    }
-
-    .projects table tr td a {
-        padding: 0;
+        ul img {
+            transform: scale(0.7, 0.7);
+        }
     }
 
     /* CSS rules here for screens lower than px */
@@ -131,11 +115,10 @@ body {
         a {
             font-size: 50%;
         }
-    }
 
-    .bar h2 {
-        font-size: 30px;
-        /*TODO set lower text size and lower image sizes here*/
+        ul img {
+            transform: scale(0.5, 0.5);
+        }
     }
 
     /* CSS rules here for screens lower than px */

@@ -89,9 +89,8 @@ body {
             padding-right: 10px;
         }
 
-        img {
-            height: 70%;
-            width: 70%;
+        ul img {
+            transform: scale(0.7, 0.7);
         }
     }
 
@@ -107,9 +106,8 @@ body {
             font-size: 50%;
         }
 
-        img {
-            height: 50%;
-            width: 50%;
+        ul img {
+            transform: scale(0.5, 0.5);
         }
     }
 
