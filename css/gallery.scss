@@ -1,4 +1,4 @@
----
+﻿---
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
@@ -174,11 +174,11 @@ iframe {
     font-size: 12px;
     padding-top: 3em;
     padding-right: 4em;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 0px;
-}
 
-.footerLinks nav ul li a {
-    padding-left: 2em;
-    padding-right: 2em;
+    ul li a {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
 }

@@ -5,11 +5,12 @@
     "\\apps",
     "\\assets",
     "\\css",
+    "\\gallery",
     "\\games",
     "\\mods",
     "\\script",
     "\\_layouts"
   ],
-  "SelectedNode": "\\css\\about.scss",
+  "SelectedNode": "\\gallery\\index.html",
   "PreviewInSolutionExplorer": false
 }
