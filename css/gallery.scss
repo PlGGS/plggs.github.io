@@ -163,6 +163,11 @@ body header table a img:hover {
     transform: scale(1.0, 1.0);
 }
 
+.pa-image-gallery {
+    position: center;
+    align-self: center;
+}
+
 a img:hover {
     transform: scale(1.1, 1.1);
 }
