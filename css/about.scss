@@ -128,10 +128,6 @@ body {
         }
     }
 
-    .footerLinks nav {
-        font-size: 7px;
-    }
-
     /* CSS rules here for screens above px */
 }
 
@@ -148,9 +144,6 @@ body {
         }
     }
 
-    .footerLinks nav {
-        font-size: 75%;
-    }
     /* CSS rules here for screens lower than px */
 }
 
@@ -166,10 +159,6 @@ body {
         ul img {
             transform: scale(0.5, 0.5);
         }
-    }
-
-    .footerLinks nav {
-        font-size: 35%;
     }
 
     /* CSS rules here for screens lower than px */
@@ -211,18 +200,4 @@ h4 {
 
 .media table td a h3 {
     padding-top: 1.5em;
-}
-
-.footerLinks nav {
-    font-size: 7px;
-    padding-top: 3em;
-    padding-bottom: 1em;
-    padding-right: 4em;
-    margin-left: auto;
-    margin-right: 0px;
-
-    ul li a {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
 }
