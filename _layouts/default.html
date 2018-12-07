@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="/css/{{ item }}.css?{{site.time | date: '%s%N'}}">
         {% endfor %}
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <!--<script src="{{ "/script/page-loader.js" | prepend: site.baseurl }}?{{site.time | date: '%s%N'}}"></script>-->
+        <!--<script src="{{ "/script/page-loader.js" | prepend: site.baseurl }}"></script>-->
         {% for item in page.js %}
         <script src="/script/{{ item }}.js"></script>
         {% endfor %}
