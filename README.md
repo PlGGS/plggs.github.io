@@ -16,5 +16,5 @@ js: [js, file, names, from, /script/, without, .js]
 will be wrapped in it.<br>
 *Note: variables can be left blank when not used*
 
-> Be careful what file encoding you use. `UTF-8 with BOM` / 'UTF 8 with signature' will NOT work. 
+> Be careful what file encoding you use. `UTF-8 with BOM` / `UTF 8 with signature` will NOT work. 
 > I would suggest using `UTF-8` / `UTF-8 without signature`.
