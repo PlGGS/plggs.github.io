@@ -1,0 +1,31 @@
+
+@media (min-width: 1024px) {
+    .footerLinks nav {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footerLinks nav {
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 800px) {
+    .footerLinks nav {
+        font-size: 35%;
+    }
+}
+
+.footerLinks nav {
+    padding-top: 3em;
+    padding-bottom: 1em;
+    padding-right: 4em;
+    margin-left: auto;
+    margin-right: 0px;
+
+    ul li a {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}

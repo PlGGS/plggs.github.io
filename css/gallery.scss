@@ -2,6 +2,7 @@
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import 'footer';
 @charset "UTF-8";
 
 article, aside, footer, header, main, nav, section {
@@ -88,10 +89,6 @@ body {
         }
     }
 
-    .footerLinks nav {
-        font-size: 12px;
-    }
-
     /* CSS rules here for screens above px */
 }
 
@@ -107,11 +104,7 @@ body {
             transform: scale(0.7, 0.7);
         }
     }
-
-    .footerLinks nav {
-        font-size: 75%;
-    }
-
+    
     /* CSS rules here for screens lower than px */
 }
 
@@ -127,10 +120,6 @@ body {
         ul img {
             transform: scale(0.5, 0.5);
         }
-    }
-
-    .footerLinks nav {
-        font-size: 35%;
     }
 
     /* CSS rules here for screens lower than px */
@@ -182,17 +171,4 @@ body header table a img:hover {
 
 a img:hover {
     transform: scale(1.1, 1.1);
-}
-
-.footerLinks nav {
-    padding-top: 3em;
-    padding-bottom: 1em;
-    padding-right: 4em;
-    margin-left: auto;
-    margin-right: 0px;
-
-    ul li a {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
 }
