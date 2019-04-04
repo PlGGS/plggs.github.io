@@ -68,14 +68,15 @@ a:hover {
     padding-bottom: 0.75em;
 }
 
-table tr {
+banner.table tr {
+    float: left;
     padding-top: 1em;
     padding-bottom: 1em;
     height: auto;
 }
 
-table tr td ul li h1 {
-    text-align: right;
+banner.table tr td ul li img {
+    float: right;
 }
 
 .skills {
