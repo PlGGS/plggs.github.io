@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="./">
+  <title data-ice="title">Manual</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/index.html"><a href="manual/index.html" data-ice="link">Manual</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/index.html"><a href="manual/index.html#general-formatting" data-ice="link">General Formatting</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#constants" data-ice="link">Constants</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/index.html"><a href="manual/index.html#enumerated-constants" data-ice="link">Enumerated Constants</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#cevntfeed-feedstep" data-ice="link">CEvntFeed.FeedStep</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#kevent-type" data-ice="link">kEvent.Type</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#kevent-trade-aggressor" data-ice="link">kEvent.Trade.Aggressor</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#kevent-bid-type" data-ice="link">kEvent.Bid.Type</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#kevent-ask-type" data-ice="link">kEvent.Ask.Type</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/index.html"><a href="manual/index.html#cevntpane-wave" data-ice="link">CEvntPane.Wave</a></li>
+<li data-ice="manualNav" class="indent-h5" data-link="manual/index.html"><a href="manual/index.html#usage" data-ice="link">Usage</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><p><img src="https://c.smartrecruiters.com/sr-company-logo-prod/59b85cbfe4b0081548fcf4d6/huge?r=s3&amp;_1507067621421" alt="possibly use other image"></p>
+<h1 id="vertex-analytics---evntscript">Vertex Analytics | EVNTScript</h1><p>Production: <a href="https://vnine.vertex-analytics.com">vnine.vertex-analytics.com</a><br>Contact: <a href="mailto:contact@vertex-analytics.com">contact@vertex-analytics.com</a></p>
+<p>General product description  </p>
+<p>List of features with links to their documentation</p>
+<p>Other resources</p>
+<h6 id="documentation-by-blake-boris">Documentation by Blake Boris</h6></div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Manual</h1><h2>General Formatting</h2><h3>Constants</h3><p>Constants used for distinguishing variable roles</p><ul>
+<li><code>k</code> | K denotes a constant variable</li>
+<li><code>g</code> | G denotes a global variable</li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
+var gPaneFeed;
+var kSymbolName = &quot;ESM9&quot;;</code>
+</code></pre><h2>Enumerated Constants</h2><h3>CEvntFeed.FeedStep</h3><p>Constants used for CEvntFeed.FeedStep</p><ul>
+<li><code>kStepShow</code> | Shows the event aggregating by time</li>
+<li><code>kStepHide</code> | Withholds the even from the Symbol viewport</li>
+<li><code>kStepHalt</code> | Shows the previous event</li>
+<li><code>kStepNext</code> | Advances the step position</li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">gPaneFeed.FeedStep = kStepHide; //This will hide the current event in the feed</code>
+</code></pre><h3>kEvent.Type</h3><p>Enumerated types of events</p><ul>
+<li><code>kEvent.Type.Trade</code> | </li>
+<li><code>kEvent.Type.Bid</code> | </li>
+<li><code>kEvent.Type.Ask</code> | </li>
+<li><code>kEvent.Type.ImpliedBid</code> | </li>
+<li><code>kEvent.Type.ImpliedAsk</code> | </li>
+<li><code>kEvent.Type.BookReset</code> | </li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Type == kEvent.Type.Trade)
+{
+    //Do something based on event being a trade
+}</code>
+</code></pre><h3>kEvent.Trade.Aggressor</h3><p>Enumerated values for getting the type of aggressor of a trade event</p><ul>
+<li><code>kEvent.Trade.Aggressor.Buy</code> | </li>
+<li><code>kEvent.Trade.Aggressor.Sell</code> | </li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Type == kEvent.Type.Trade)
+{
+    if (tTick.Trade.Aggressor == kEvent.Trade.Aggressor.Buy)
+    {
+        //Do something based on trade&apos;s aggressor being a buyer
+    }
+}</code>
+</code></pre><h3>kEvent.Bid.Type</h3><p>Enumerated values for getting the type of a bid event</p><ul>
+<li><code>kEvent.Bid.Type.New</code> | </li>
+<li><code>kEvent.Bid.Type.Change</code> | </li>
+<li><code>kEvent.Bid.Type.Delete</code> | </li>
+<li><code>kEvent.Bid.Type.DeleteThru</code> | </li>
+<li><code>kEvent.Bid.Type.DeleteFrom</code> | </li>
+<li><code>kEvent.Bid.Type.Overlay</code> | </li>
+<li><code>kEvent.Bid.Type.Replace</code> | </li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Bid.Type == kEvent.Bid.Type.New)
+{
+    //Do something based on bid&apos;s type being new
+}</code>
+</code></pre><h3>kEvent.Ask.Type</h3><p>Enumerated values for getting the type of an ask event</p><ul>
+<li><code>kEvent.Ask.Type.New</code> | </li>
+<li><code>kEvent.Ask.Type.Change</code> | </li>
+<li><code>kEvent.Ask.Type.Delete</code> | </li>
+<li><code>kEvent.Ask.Type.DeleteThru</code> | </li>
+<li><code>kEvent.Ask.Type.DeleteFrom</code> | </li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Ask.Type == kEvent.Ask.Type.New)
+{
+    //Do something based on ask&apos;s type being new
+}</code>
+</code></pre><h3>CEvntPane.Wave</h3><p>Enumerated values for playing different audio files</p><ul>
+<li><code>Bang</code> | </li>
+<li><code>Clang</code> | </li>
+<li><code>Punch</code> | </li>
+<li><code>Ring_1</code> | </li>
+<li><code>Ring_2</code> | </li>
+<li><code>Ring_3</code> | </li>
+<li><code>Ring_4</code> | </li>
+<li><code>Ring_5</code> | </li>
+<li><code>Ring_6</code> | </li>
+<li><code>Ring_7</code> | </li>
+<li><code>Slap</code> | </li>
+</ul><h5>Usage</h5><pre><code class="lang-js"><code class="source-code prettyprint">CEvntPane.PlayWave(0); //Plays a bang!</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/index.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
