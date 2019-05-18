@@ -310,11 +310,5 @@ window.esdocSearchIndex = [
     "class/src/index.js~Trade.html#instance-constructor-constructor",
     "src/index.js~Trade#constructor",
     "method"
-  ],
-  [
-    "src/test.js",
-    "file/src/test.js.html",
-    "src/test.js",
-    "file"
   ]
 ]

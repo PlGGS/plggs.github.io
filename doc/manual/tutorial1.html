@@ -9,7 +9,7 @@
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
 </head>
-<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+<body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
   <a href="./">Home</a>
@@ -60,100 +60,18 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown">
-  <div class="manual-user-index" data-ice="manualUserIndex"><p><img src="https://c.smartrecruiters.com/sr-company-logo-prod/59b85cbfe4b0081548fcf4d6/huge?r=s3&amp;_1507067621421" alt="possibly use other image"></p>
-<h1 id="vertex-analytics---evntscript">Vertex Analytics | EVNTScript</h1><p>Production: <a href="https://vnine.vertex-analytics.com">vnine.vertex-analytics.com</a><br>Contact: <a href="mailto:contact@vertex-analytics.com">contact@vertex-analytics.com</a></p>
-<p>General product description  </p>
-<p>List of features with links to their documentation</p>
-<p>Other resources</p>
-<h6 id="documentation-by-blake-boris">Documentation by Blake Boris</h6></div>
-
-  
-
-  <div class="manual-cards">
-    
-  <div class="manual-card-wrap" data-ice="cards">
-      <div class="manual-card">
-        <div data-ice="card"><h1>Manual</h1><h2>General Formatting</h2><h3>Notation</h3><p>Constants used for distinguishing variable roles</p><ul>
-<li><code>k</code> | K denotes a constant variable</li>
-<li><code>g</code> | G denotes a global variable</li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="tutorial--the-basics">Tutorial: The Basics</h1><h2 id="step-1--pane-creation">Step 1: Pane creation</h2><p>Drag a new pane into your vNine dashboard</p>
+<p><img src="./manual/drag_pane.png" alt="drag pane"></p>
+<h2 id="step-2--opening-the-editor">Step 2: Opening the editor</h2><p>Click the JS button to open up the Javascript-esc editor. 
+You should be presented with an empty sample script corresponding to your new pane</p>
+<p><img src="./manual/click_js.png" alt="click js"></p>
+<h2 id="step-3--variable-declaration">Step 3: Variable declaration</h2><p>Once you&apos;ve opened your Javascript editor, you should see your main CEVNTPane and CEVNTFeed variables. 
+These are most commonly defined as gEvntPane and gPaneFeed.  </p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
 var gPaneFeed;
 var kSymbolName = &quot;ESM9&quot;;</code>
-</code></pre><h2>Enumerated Constants</h2><h3>CEvntFeed.FeedStep</h3><p>Constants used for CEvntFeed.FeedStep</p><ul>
-<li><code>kStepShow</code> | Shows the event aggregating by time</li>
-<li><code>kStepHide</code> | Withholds the even from the Symbol viewport</li>
-<li><code>kStepHalt</code> | Shows the previous event</li>
-<li><code>kStepNext</code> | Advances the step position</li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">gPaneFeed.FeedStep = kStepHide; //This will hide the current event in the feed</code>
-</code></pre><h3>kEvent.Type</h3><p>Enumerated types of events</p><ul>
-<li><code>kEvent.Type.Trade</code></li>
-<li><code>kEvent.Type.Bid</code></li>
-<li><code>kEvent.Type.Ask</code></li>
-<li><code>kEvent.Type.ImpliedBid</code></li>
-<li><code>kEvent.Type.ImpliedAsk</code></li>
-<li><code>kEvent.Type.BookReset</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Type == kEvent.Type.Trade)
-{
-    //Do something based on event being a trade
-}</code>
-</code></pre><h3>kEvent.Trade.Aggressor</h3><p>Enumerated values for getting the type of aggressor of a trade event</p><ul>
-<li><code>kEvent.Trade.Aggressor.Buy</code></li>
-<li><code>kEvent.Trade.Aggressor.Sell</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Type == kEvent.Type.Trade)
-{
-    if (tTick.Trade.Aggressor == kEvent.Trade.Aggressor.Buy)
-    {
-        //Do something based on trade&apos;s aggressor being a buyer
-    }
-}</code>
-</code></pre><h3>kEvent.Bid.Type</h3><p>Enumerated values for getting the type of a bid event</p><ul>
-<li><code>kEvent.Bid.Type.New</code></li>
-<li><code>kEvent.Bid.Type.Change</code></li>
-<li><code>kEvent.Bid.Type.Delete</code></li>
-<li><code>kEvent.Bid.Type.DeleteThru</code></li>
-<li><code>kEvent.Bid.Type.DeleteFrom</code></li>
-<li><code>kEvent.Bid.Type.Overlay</code></li>
-<li><code>kEvent.Bid.Type.Replace</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Bid.Type == kEvent.Bid.Type.New)
-{
-    //Do something based on bid&apos;s type being new
-}</code>
-</code></pre><h3>kEvent.Ask.Type</h3><p>Enumerated values for getting the type of an ask event</p><ul>
-<li><code>kEvent.Ask.Type.New</code></li>
-<li><code>kEvent.Ask.Type.Change</code></li>
-<li><code>kEvent.Ask.Type.Delete</code></li>
-<li><code>kEvent.Ask.Type.DeleteThru</code></li>
-<li><code>kEvent.Ask.Type.DeleteFrom</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Ask.Type == kEvent.Ask.Type.New)
-{
-    //Do something based on ask&apos;s type being new
-}</code>
-</code></pre><h3>CEvntPane.Wave</h3><p>Enumerated values for playing different audio files</p><ul>
-<li><code>Bang</code> | 0</li>
-<li><code>Clang</code> | 1</li>
-<li><code>Punch</code> | 2</li>
-<li><code>Ring_1</code> | 3</li>
-<li><code>Ring_2</code> | 4</li>
-<li><code>Ring_3</code> | 5</li>
-<li><code>Ring_4</code> | 6</li>
-<li><code>Ring_5</code> | 7</li>
-<li><code>Ring_6</code> | 8</li>
-<li><code>Ring_7</code> | 9</li>
-<li><code>Slap</code> | 10</li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">CEvntPane.PlayWave(0); //Plays a bang!</code>
-</code></pre></div>
-        <a data-ice="link" href="manual/formatting.html"></a>
-      </div>
-    </div>
-<div class="manual-card-wrap" data-ice="cards">
-      <div class="manual-card">
-        <div data-ice="card"><h1>Tutorial: The Basics</h1><h2>Step 1: Pane creation</h2><p>Drag a new pane into your vNine dashboard</p><p><img src="./manual/drag_pane.png" alt="drag pane"></p><h2>Step 2: Opening the editor</h2><p>Click the JS button to open up the Javascript-esc editor. 
-You should be presented with an empty sample script corresponding to your new pane</p><p><img src="./manual/click_js.png" alt="click js"></p><h2>Step 3: Variable declaration</h2><p>Once you&apos;ve opened your Javascript editor, you should see your main CEVNTPane and CEVNTFeed variables. 
-These are most commonly defined as gEvntPane and gPaneFeed.  </p><pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
-var gPaneFeed;
-var kSymbolName = &quot;ESM9&quot;;</code>
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><a href="https://bblake.info/doc/class/src/index.js~CEvntPane.html">CEVNTPane</a> <code>gEvntPane</code> | 
 Our pane variable allows us to create just about everything else we&apos;re going to need 
 to make use of our script</li>
@@ -163,22 +81,22 @@ that has occured since the exchange last opened</li>
 <li><a href="//TODO link to string type">string</a> <code>kSymbolName</code> | 
 The symbol name is the technical name of the symbol we want to interpret. 
 A list of symbol names can be found at <a href="//TODO link to symbol names">symbols</a></li>
-</ul><h2>Step 4: onLoad</h2><p>The built in onLoad function is called when the user clicks the run button shown below</p><p><img src="./manual/click_run.png" alt="click run"></p><pre><code class="lang-js"><code class="source-code prettyprint">function onLoad ()
+</ul>
+<h2 id="step-4--onload">Step 4: onLoad</h2><p>The built in onLoad function is called when the user clicks the run button shown below</p>
+<p><img src="./manual/click_run.png" alt="click run"></p>
+<pre><code class="lang-js"><code class="source-code prettyprint">function onLoad ()
 {
     gEvntPane = MakePane();
     gPaneFeed = gEvntPane.MakeFeed(gSymbolName);
     gDrawFeed = gEvntPane.MakeDraw(gPaneFeed);    
 }</code>
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><code>MakePane()</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEvntPane.html">CEVNTPane</a> object</li>
 <li><code>gEvntPane.MakeFeed(gSymbolName)</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEvntFeed.html">CEVNTFeed</a> object based on the specified symbol name </li>
 <li><code>gEvntPane.MakeDraw(gPaneFeed)</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEVNTDraw.html">CEVNTDraw</a> object</li>
-</ul><h2>Step 5: onOpen</h2><h2>Step 6: onEvent</h2><h2>Step 7: onStop</h2><h2>Results</h2><h6>Thank you</h6><h6>Troublingshooting</h6><h6>Contact</h6></div>
-        <a data-ice="link" href="manual/tutorial1.html"></a>
-      </div>
-    </div>
-</div>
-</div>
+</ul>
+<h2 id="step-5--onopen">Step 5: onOpen</h2><h2 id="step-6--onevent">Step 6: onEvent</h2><h2 id="step-7--onstop">Step 7: onStop</h2><h2 id="results">Results</h2><h6 id="thank-you">Thank you</h6><h6 id="troublingshooting">Troublingshooting</h6><h6 id="contact">Contact</h6></div>
 </div>
 
 <footer class="footer">
