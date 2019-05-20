@@ -424,7 +424,7 @@ export class Ask extends Event
  */
 export function onLoad()
 {
-    console.log(&quot;lmao&quot;);
+    
 }
 
 /**
@@ -447,8 +447,8 @@ export function MakePane()
 
 /**
  * This is a built in function which triggers for each event in the pFeed stream.
- * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision
- * @param {int} pSequ - Amount of events within this sequence
+ * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision
+ * @param {int} pSequ - Amount of events to read within this sequence
  */
 export function onEvent(pFeed, pSequ)
 {

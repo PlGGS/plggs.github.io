@@ -49,23 +49,26 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html" data-ice="link">Tutorial: The Basics</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-1--pane-creation" data-ice="link">Step 1: Pane creation</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-2--opening-the-editor" data-ice="link">Step 2: Opening the editor</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-3--variable-declaration" data-ice="link">Step 3: Variable declaration</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-4--onload" data-ice="link">Step 4: onLoad</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-5--onopen" data-ice="link">Step 5: onOpen</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-6--onevent" data-ice="link">Step 6: onEvent</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-7--onstop" data-ice="link">Step 7: onStop</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-3--declaring-your-variables" data-ice="link">Step 3: Declaring your variables</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-4--understanding-onload" data-ice="link">Step 4: Understanding onLoad</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-5--understanding-onopen" data-ice="link">Step 5: Understanding onOpen</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-6--understanding-onevent" data-ice="link">Step 6: Understanding onEvent</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#step-7--understanding-onstop" data-ice="link">Step 7: Understanding onStop</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#results" data-ice="link">Results</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#congratulations" data-ice="link">Congratulations</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#troubleshooting" data-ice="link">Troubleshooting</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#contact" data-ice="link">Contact</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="tutorial--the-basics">Tutorial: The Basics</h1><h2 id="step-1--pane-creation">Step 1: Pane creation</h2><p>Drag a new pane into your vNine dashboard</p>
-<p><img src="./manual/drag_pane.png" alt="drag pane"></p>
+<p><img src="./manual/asset/drag_pane.png" alt="drag pane"></p>
 <h2 id="step-2--opening-the-editor">Step 2: Opening the editor</h2><p>Click the JS button to open up the Javascript-esc editor. 
 You should be presented with an empty sample script corresponding to your new pane</p>
-<p><img src="./manual/click_js.png" alt="click js"></p>
-<h2 id="step-3--variable-declaration">Step 3: Variable declaration</h2><p>Once you&apos;ve opened your Javascript editor, you should see your main CEVNTPane and CEVNTFeed variables. 
+<p><img src="./manual/asset/click_js.png" alt="click js"></p>
+<h2 id="step-3--declaring-your-variables">Step 3: Declaring your variables</h2><p>Once you&apos;ve opened your Javascript editor, you should see your main CEVNTPane and CEVNTFeed variables. 
 These are most commonly defined as gEvntPane and gPaneFeed.  </p>
 <pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
 var gPaneFeed;
@@ -73,17 +76,16 @@ var kSymbolName = &quot;ESM9&quot;;</code>
 </code></pre>
 <ul>
 <li><a href="https://bblake.info/doc/class/src/index.js~CEvntPane.html">CEVNTPane</a> <code>gEvntPane</code> | 
-Our pane variable allows us to create just about everything else we&apos;re going to need 
-to make use of our script</li>
+Your pane variable allows you to create just about everything else we&apos;re going to need 
+to make use of your script.</li>
 <li><a href="https://bblake.info/doc/class/src/index.js~CEvntFeed.html">CEVNTFeed</a> <code>gPaneFeed</code> | 
-Our feed variable will be used to track and make use of every single <a href="https://bblake.info/doc/class/src/index.js~Event.html">Event</a> 
-that has occured since the exchange last opened</li>
+Your feed variable will be used to track and make use of every single <a href="https://bblake.info/doc/class/src/index.js~Event.html">Event</a> 
+that has occured since the exchange last opened.</li>
 <li><a href="//TODO link to string type">string</a> <code>kSymbolName</code> | 
 The symbol name is the technical name of the symbol we want to interpret. 
-A list of symbol names can be found at <a href="//TODO link to symbol names">symbols</a></li>
+A list of symbol names can be found at ____.</li>
 </ul>
-<h2 id="step-4--onload">Step 4: onLoad</h2><p>The built in onLoad function is called when the user clicks the run button shown below</p>
-<p><img src="./manual/click_run.png" alt="click run"></p>
+<h2 id="step-4--understanding-onload">Step 4: Understanding onLoad</h2><p>The built in onLoad function is called when the user clicks the run button shown below.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">function onLoad ()
 {
     gEvntPane = MakePane();
@@ -96,7 +98,69 @@ A list of symbol names can be found at <a href="//TODO link to symbol names">sym
 <li><code>gEvntPane.MakeFeed(gSymbolName)</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEvntFeed.html">CEVNTFeed</a> object based on the specified symbol name </li>
 <li><code>gEvntPane.MakeDraw(gPaneFeed)</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEVNTDraw.html">CEVNTDraw</a> object</li>
 </ul>
-<h2 id="step-5--onopen">Step 5: onOpen</h2><h2 id="step-6--onevent">Step 6: onEvent</h2><h2 id="step-7--onstop">Step 7: onStop</h2><h2 id="results">Results</h2><h6 id="thank-you">Thank you</h6><h6 id="troublingshooting">Troublingshooting</h6><h6 id="contact">Contact</h6></div>
+<p><img src="./manual/asset/click_run.png" alt="click run"></p>
+<h2 id="step-5--understanding-onopen">Step 5: Understanding onOpen</h2><p>The built in onOpen function is called once the pane has properly loaded and rendered the Symbol information. 
+For now, we won&apos;t make use of this function, but it is important to know what it does for the future.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">function onOpen ()
+{
+
+}</code>
+</code></pre>
+<h2 id="step-6--understanding-onevent">Step 6: Understanding onEvent</h2><p>The built in onEvent function is called once for each timestamp you play back. 
+For now, we won&apos;t make use of this function, but it is important to know what it does for the future.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">function onEvent (pFeed, pSequ)
+{
+
+}</code>
+</code></pre>
+<ul>
+<li><code>pFeed</code> | Parameter: Your <a href="https://bblake.info/doc/class/src/index.js~CEvntPane.html">CEVNTFeed</a> object with timestamps measured in nanoseconds with 56 bit precision</li>
+<li><code>pSequ</code> | Parameter: An integer that defaults to 0 that is used for Amount of events within this sequence</li>
+</ul>
+<h2 id="step-7--understanding-onstop">Step 7: Understanding onStop</h2><p>The built in onStop function is called when the user clicks the stop button shown below. 
+For now, we won&apos;t make use of this function, but it is important to know what it does for the future.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">function onStop ()
+{
+
+}</code>
+</code></pre>
+<p><img src="./manual/asset/click_stop.png" alt="click stop"></p>
+<h2 id="results">Results</h2><h4 id="congratulations">Congratulations</h4><p>At this point, you should see a chart based off of your selected Symbol for the most recent exchange period like the one shown below! 
+Feel free to zoom in and out and scroll through your newly created chart.</p>
+<p><img src="./manual/asset/view_chart.png" alt="view chart"></p>
+<h4 id="troubleshooting">Troubleshooting</h4><p>For certain periods throughout the day, EVNTScript will not be able to generate charts. 
+This is because the vNine platform makes use of the time in which the exchange is down to process and archive data. 
+Below is a chart containing weekly hours of downtime.</p>
+<table>
+<thead>
+<tr>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+<th>Thursday</th>
+<th>Friday</th>
+<th>Saturday</th>
+<th>Sunday</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-</td>
+<td>-</td>
+<td>-5:00pm</td>
+</tr>
+</tbody>
+</table>
+<p>Also, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.</p>
+<h4 id="contact">Contact</h4><p>If you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to 
+<a href="./manual/mailto:contact@vertex-analytics.com">contact@vertex-analytics.com</a>.</p>
+<p>Additionally, if there is something that you think we could improve about this documentation, 
+please create a new issue at our repository&apos;s <a href="https://github.com/PlGGS/xva-doc/issues">issues page</a>.</p>
+</div>
 </div>
 
 <footer class="footer">

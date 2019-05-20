@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 8740,
+  "end": 8768,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 8740,
+    "end": 8768,
     "loc": {
       "start": {
         "line": 1,
@@ -6931,7 +6931,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 8077,
-        "end": 8133,
+        "end": 8113,
         "loc": {
           "start": {
             "line": 375,
@@ -6947,7 +6947,7 @@
         "declaration": {
           "type": "FunctionDeclaration",
           "start": 8084,
-          "end": 8133,
+          "end": 8113,
           "loc": {
             "start": {
               "line": 375,
@@ -6983,7 +6983,7 @@
           "body": {
             "type": "BlockStatement",
             "start": 8103,
-            "end": 8133,
+            "end": 8113,
             "loc": {
               "start": {
                 "line": 376,
@@ -6994,111 +6994,9 @@
                 "column": 1
               }
             },
-            "body": [
-              {
-                "type": "ExpressionStatement",
-                "start": 8110,
-                "end": 8130,
-                "loc": {
-                  "start": {
-                    "line": 377,
-                    "column": 4
-                  },
-                  "end": {
-                    "line": 377,
-                    "column": 24
-                  }
-                },
-                "expression": {
-                  "type": "CallExpression",
-                  "start": 8110,
-                  "end": 8129,
-                  "loc": {
-                    "start": {
-                      "line": 377,
-                      "column": 4
-                    },
-                    "end": {
-                      "line": 377,
-                      "column": 23
-                    }
-                  },
-                  "callee": {
-                    "type": "MemberExpression",
-                    "start": 8110,
-                    "end": 8121,
-                    "loc": {
-                      "start": {
-                        "line": 377,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 377,
-                        "column": 15
-                      }
-                    },
-                    "object": {
-                      "type": "Identifier",
-                      "start": 8110,
-                      "end": 8117,
-                      "loc": {
-                        "start": {
-                          "line": 377,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 377,
-                          "column": 11
-                        },
-                        "identifierName": "console"
-                      },
-                      "name": "console"
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "start": 8118,
-                      "end": 8121,
-                      "loc": {
-                        "start": {
-                          "line": 377,
-                          "column": 12
-                        },
-                        "end": {
-                          "line": 377,
-                          "column": 15
-                        },
-                        "identifierName": "log"
-                      },
-                      "name": "log"
-                    },
-                    "computed": false
-                  },
-                  "arguments": [
-                    {
-                      "type": "StringLiteral",
-                      "start": 8122,
-                      "end": 8128,
-                      "loc": {
-                        "start": {
-                          "line": 377,
-                          "column": 16
-                        },
-                        "end": {
-                          "line": 377,
-                          "column": 22
-                        }
-                      },
-                      "extra": {
-                        "rawValue": "lmao",
-                        "raw": "\"lmao\""
-                      },
-                      "value": "lmao"
-                    }
-                  ]
-                }
-              }
-            ],
+            "body": [],
             "directives": [],
+            "leadingComments": null,
             "trailingComments": null
           },
           "leadingComments": [
@@ -7123,8 +7021,8 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.\r\n ",
-              "start": 8137,
-              "end": 8273,
+              "start": 8117,
+              "end": 8253,
               "loc": {
                 "start": {
                   "line": 380,
@@ -7160,8 +7058,8 @@
           {
             "type": "CommentBlock",
             "value": "*\r\n * This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.\r\n ",
-            "start": 8137,
-            "end": 8273,
+            "start": 8117,
+            "end": 8253,
             "loc": {
               "start": {
                 "line": 380,
@@ -7177,8 +7075,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 8275,
-        "end": 8307,
+        "start": 8255,
+        "end": 8287,
         "loc": {
           "start": {
             "line": 383,
@@ -7193,8 +7091,8 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 8282,
-          "end": 8307,
+          "start": 8262,
+          "end": 8287,
           "loc": {
             "start": {
               "line": 383,
@@ -7207,8 +7105,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 8291,
-            "end": 8297,
+            "start": 8271,
+            "end": 8277,
             "loc": {
               "start": {
                 "line": 383,
@@ -7229,8 +7127,8 @@
           "params": [],
           "body": {
             "type": "BlockStatement",
-            "start": 8301,
-            "end": 8307,
+            "start": 8281,
+            "end": 8287,
             "loc": {
               "start": {
                 "line": 384,
@@ -7250,8 +7148,8 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.\r\n ",
-              "start": 8137,
-              "end": 8273,
+              "start": 8117,
+              "end": 8253,
               "loc": {
                 "start": {
                   "line": 380,
@@ -7268,8 +7166,8 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * This public function is critical to creating your main pane.\r\n * @example\r\n * gEvntPane = MakePane();\r\n ",
-              "start": 8311,
-              "end": 8425,
+              "start": 8291,
+              "end": 8405,
               "loc": {
                 "start": {
                   "line": 388,
@@ -7287,8 +7185,8 @@
           {
             "type": "CommentBlock",
             "value": "*\r\n * This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.\r\n ",
-            "start": 8137,
-            "end": 8273,
+            "start": 8117,
+            "end": 8253,
             "loc": {
               "start": {
                 "line": 380,
@@ -7305,8 +7203,8 @@
           {
             "type": "CommentBlock",
             "value": "*\r\n * This public function is critical to creating your main pane.\r\n * @example\r\n * gEvntPane = MakePane();\r\n ",
-            "start": 8311,
-            "end": 8425,
+            "start": 8291,
+            "end": 8405,
             "loc": {
               "start": {
                 "line": 388,
@@ -7322,8 +7220,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 8427,
-        "end": 8461,
+        "start": 8407,
+        "end": 8441,
         "loc": {
           "start": {
             "line": 393,
@@ -7338,8 +7236,8 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 8434,
-          "end": 8461,
+          "start": 8414,
+          "end": 8441,
           "loc": {
             "start": {
               "line": 393,
@@ -7352,8 +7250,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 8443,
-            "end": 8451,
+            "start": 8423,
+            "end": 8431,
             "loc": {
               "start": {
                 "line": 393,
@@ -7374,8 +7272,8 @@
           "params": [],
           "body": {
             "type": "BlockStatement",
-            "start": 8455,
-            "end": 8461,
+            "start": 8435,
+            "end": 8441,
             "loc": {
               "start": {
                 "line": 394,
@@ -7395,8 +7293,8 @@
             {
               "type": "CommentBlock",
               "value": "*\r\n * This public function is critical to creating your main pane.\r\n * @example\r\n * gEvntPane = MakePane();\r\n ",
-              "start": 8311,
-              "end": 8425,
+              "start": 8291,
+              "end": 8405,
               "loc": {
                 "start": {
                   "line": 388,
@@ -7412,9 +7310,9 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision\r\n * @param {int} pSequ - Amount of events within this sequence\r\n ",
-              "start": 8465,
-              "end": 8691,
+              "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision\r\n * @param {int} pSequ - Amount of events to read within this sequence\r\n ",
+              "start": 8445,
+              "end": 8719,
               "loc": {
                 "start": {
                   "line": 398,
@@ -7432,8 +7330,8 @@
           {
             "type": "CommentBlock",
             "value": "*\r\n * This public function is critical to creating your main pane.\r\n * @example\r\n * gEvntPane = MakePane();\r\n ",
-            "start": 8311,
-            "end": 8425,
+            "start": 8291,
+            "end": 8405,
             "loc": {
               "start": {
                 "line": 388,
@@ -7449,9 +7347,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision\r\n * @param {int} pSequ - Amount of events within this sequence\r\n ",
-            "start": 8465,
-            "end": 8691,
+            "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision\r\n * @param {int} pSequ - Amount of events to read within this sequence\r\n ",
+            "start": 8445,
+            "end": 8719,
             "loc": {
               "start": {
                 "line": 398,
@@ -7467,8 +7365,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 8693,
-        "end": 8738,
+        "start": 8721,
+        "end": 8766,
         "loc": {
           "start": {
             "line": 403,
@@ -7483,8 +7381,8 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 8700,
-          "end": 8738,
+          "start": 8728,
+          "end": 8766,
           "loc": {
             "start": {
               "line": 403,
@@ -7497,8 +7395,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 8709,
-            "end": 8716,
+            "start": 8737,
+            "end": 8744,
             "loc": {
               "start": {
                 "line": 403,
@@ -7519,8 +7417,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 8717,
-              "end": 8722,
+              "start": 8745,
+              "end": 8750,
               "loc": {
                 "start": {
                   "line": 403,
@@ -7536,8 +7434,8 @@
             },
             {
               "type": "Identifier",
-              "start": 8724,
-              "end": 8729,
+              "start": 8752,
+              "end": 8757,
               "loc": {
                 "start": {
                   "line": 403,
@@ -7554,8 +7452,8 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 8732,
-            "end": 8738,
+            "start": 8760,
+            "end": 8766,
             "loc": {
               "start": {
                 "line": 404,
@@ -7572,9 +7470,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision\r\n * @param {int} pSequ - Amount of events within this sequence\r\n ",
-              "start": 8465,
-              "end": 8691,
+              "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision\r\n * @param {int} pSequ - Amount of events to read within this sequence\r\n ",
+              "start": 8445,
+              "end": 8719,
               "loc": {
                 "start": {
                   "line": 398,
@@ -7592,9 +7490,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision\r\n * @param {int} pSequ - Amount of events within this sequence\r\n ",
-            "start": 8465,
-            "end": 8691,
+            "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision\r\n * @param {int} pSequ - Amount of events to read within this sequence\r\n ",
+            "start": 8445,
+            "end": 8719,
             "loc": {
               "start": {
                 "line": 398,
@@ -8319,8 +8217,8 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.\r\n ",
-      "start": 8137,
-      "end": 8273,
+      "start": 8117,
+      "end": 8253,
       "loc": {
         "start": {
           "line": 380,
@@ -8335,8 +8233,8 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * This public function is critical to creating your main pane.\r\n * @example\r\n * gEvntPane = MakePane();\r\n ",
-      "start": 8311,
-      "end": 8425,
+      "start": 8291,
+      "end": 8405,
       "loc": {
         "start": {
           "line": 388,
@@ -8350,9 +8248,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision\r\n * @param {int} pSequ - Amount of events within this sequence\r\n ",
-      "start": 8465,
-      "end": 8691,
+      "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision\r\n * @param {int} pSequ - Amount of events to read within this sequence\r\n ",
+      "start": 8445,
+      "end": 8719,
       "loc": {
         "start": {
           "line": 398,
@@ -18963,187 +18861,6 @@
     },
     {
       "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "console",
-      "start": 8110,
-      "end": 8117,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 4
-        },
-        "end": {
-          "line": 377,
-          "column": 11
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ".",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 8117,
-      "end": 8118,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 11
-        },
-        "end": {
-          "line": 377,
-          "column": 12
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "log",
-      "start": 8118,
-      "end": 8121,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 12
-        },
-        "end": {
-          "line": 377,
-          "column": 15
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 8121,
-      "end": 8122,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 15
-        },
-        "end": {
-          "line": 377,
-          "column": 16
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "lmao",
-      "start": 8122,
-      "end": 8128,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 16
-        },
-        "end": {
-          "line": 377,
-          "column": 22
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 8128,
-      "end": 8129,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 22
-        },
-        "end": {
-          "line": 377,
-          "column": 23
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 8129,
-      "end": 8130,
-      "loc": {
-        "start": {
-          "line": 377,
-          "column": 23
-        },
-        "end": {
-          "line": 377,
-          "column": 24
-        }
-      }
-    },
-    {
-      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -19154,8 +18871,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8132,
-      "end": 8133,
+      "start": 8112,
+      "end": 8113,
       "loc": {
         "start": {
           "line": 378,
@@ -19170,8 +18887,8 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.\r\n ",
-      "start": 8137,
-      "end": 8273,
+      "start": 8117,
+      "end": 8253,
       "loc": {
         "start": {
           "line": 380,
@@ -19198,8 +18915,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 8275,
-      "end": 8281,
+      "start": 8255,
+      "end": 8261,
       "loc": {
         "start": {
           "line": 383,
@@ -19225,8 +18942,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 8282,
-      "end": 8290,
+      "start": 8262,
+      "end": 8270,
       "loc": {
         "start": {
           "line": 383,
@@ -19251,8 +18968,8 @@
         "binop": null
       },
       "value": "onOpen",
-      "start": 8291,
-      "end": 8297,
+      "start": 8271,
+      "end": 8277,
       "loc": {
         "start": {
           "line": 383,
@@ -19276,8 +18993,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8297,
-      "end": 8298,
+      "start": 8277,
+      "end": 8278,
       "loc": {
         "start": {
           "line": 383,
@@ -19301,8 +19018,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8298,
-      "end": 8299,
+      "start": 8278,
+      "end": 8279,
       "loc": {
         "start": {
           "line": 383,
@@ -19326,8 +19043,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8301,
-      "end": 8302,
+      "start": 8281,
+      "end": 8282,
       "loc": {
         "start": {
           "line": 384,
@@ -19351,8 +19068,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8306,
-      "end": 8307,
+      "start": 8286,
+      "end": 8287,
       "loc": {
         "start": {
           "line": 386,
@@ -19367,8 +19084,8 @@
     {
       "type": "CommentBlock",
       "value": "*\r\n * This public function is critical to creating your main pane.\r\n * @example\r\n * gEvntPane = MakePane();\r\n ",
-      "start": 8311,
-      "end": 8425,
+      "start": 8291,
+      "end": 8405,
       "loc": {
         "start": {
           "line": 388,
@@ -19395,8 +19112,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 8427,
-      "end": 8433,
+      "start": 8407,
+      "end": 8413,
       "loc": {
         "start": {
           "line": 393,
@@ -19422,8 +19139,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 8434,
-      "end": 8442,
+      "start": 8414,
+      "end": 8422,
       "loc": {
         "start": {
           "line": 393,
@@ -19448,8 +19165,8 @@
         "binop": null
       },
       "value": "MakePane",
-      "start": 8443,
-      "end": 8451,
+      "start": 8423,
+      "end": 8431,
       "loc": {
         "start": {
           "line": 393,
@@ -19473,8 +19190,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8451,
-      "end": 8452,
+      "start": 8431,
+      "end": 8432,
       "loc": {
         "start": {
           "line": 393,
@@ -19498,8 +19215,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8452,
-      "end": 8453,
+      "start": 8432,
+      "end": 8433,
       "loc": {
         "start": {
           "line": 393,
@@ -19523,8 +19240,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8455,
-      "end": 8456,
+      "start": 8435,
+      "end": 8436,
       "loc": {
         "start": {
           "line": 394,
@@ -19548,8 +19265,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8460,
-      "end": 8461,
+      "start": 8440,
+      "end": 8441,
       "loc": {
         "start": {
           "line": 396,
@@ -19563,9 +19280,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - Time in nanosecond with 56 bit precision\r\n * @param {int} pSequ - Amount of events within this sequence\r\n ",
-      "start": 8465,
-      "end": 8691,
+      "value": "*\r\n * This is a built in function which triggers for each event in the pFeed stream.\r\n * @param {CEvntFeed} pFeed - A CEVNTFeed object with timestamps measured in nanoseconds with 56 bit precision\r\n * @param {int} pSequ - Amount of events to read within this sequence\r\n ",
+      "start": 8445,
+      "end": 8719,
       "loc": {
         "start": {
           "line": 398,
@@ -19592,8 +19309,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 8693,
-      "end": 8699,
+      "start": 8721,
+      "end": 8727,
       "loc": {
         "start": {
           "line": 403,
@@ -19619,8 +19336,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 8700,
-      "end": 8708,
+      "start": 8728,
+      "end": 8736,
       "loc": {
         "start": {
           "line": 403,
@@ -19645,8 +19362,8 @@
         "binop": null
       },
       "value": "onEvent",
-      "start": 8709,
-      "end": 8716,
+      "start": 8737,
+      "end": 8744,
       "loc": {
         "start": {
           "line": 403,
@@ -19670,8 +19387,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8716,
-      "end": 8717,
+      "start": 8744,
+      "end": 8745,
       "loc": {
         "start": {
           "line": 403,
@@ -19696,8 +19413,8 @@
         "binop": null
       },
       "value": "pFeed",
-      "start": 8717,
-      "end": 8722,
+      "start": 8745,
+      "end": 8750,
       "loc": {
         "start": {
           "line": 403,
@@ -19722,8 +19439,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 8722,
-      "end": 8723,
+      "start": 8750,
+      "end": 8751,
       "loc": {
         "start": {
           "line": 403,
@@ -19748,8 +19465,8 @@
         "binop": null
       },
       "value": "pSequ",
-      "start": 8724,
-      "end": 8729,
+      "start": 8752,
+      "end": 8757,
       "loc": {
         "start": {
           "line": 403,
@@ -19773,8 +19490,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8729,
-      "end": 8730,
+      "start": 8757,
+      "end": 8758,
       "loc": {
         "start": {
           "line": 403,
@@ -19798,8 +19515,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8732,
-      "end": 8733,
+      "start": 8760,
+      "end": 8761,
       "loc": {
         "start": {
           "line": 404,
@@ -19823,8 +19540,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8737,
-      "end": 8738,
+      "start": 8765,
+      "end": 8766,
       "loc": {
         "start": {
           "line": 406,
@@ -19849,8 +19566,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 8740,
-      "end": 8740,
+      "start": 8768,
+      "end": 8768,
       "loc": {
         "start": {
           "line": 407,
