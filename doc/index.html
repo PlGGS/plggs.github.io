@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="./">
-  <title data-ice="title">Manual</title>
+  <title data-ice="title">Manual | evntscript</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Documentation for Vertex Analytics&apos; EVNTScript JS Parser"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="evntscript"><meta property="twitter:description" content="Documentation for Vertex Analytics&apos; EVNTScript JS Parser"></head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/PlGGS/xva-doc"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
@@ -41,6 +41,11 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#kevent-bid-type" data-ice="link">kEvent.Bid.Type</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#kevent-ask-type" data-ice="link">kEvent.Ask.Type</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#cevntpane-wave" data-ice="link">CEvntPane.Wave</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/formatting.html"><a href="manual/formatting.html#built-in-functions" data-ice="link">Built-in Functions</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#onload--" data-ice="link">onLoad()</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#onopen--" data-ice="link">onOpen()</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#onevent--" data-ice="link">onEvent()</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/formatting.html"><a href="manual/formatting.html#onstop--" data-ice="link">onStop()</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -65,8 +70,8 @@
 
 <div class="content" data-ice="content"><div class="github-markdown">
   <div class="manual-user-index" data-ice="manualUserIndex"><p><img src="https://c.smartrecruiters.com/sr-company-logo-prod/59b85cbfe4b0081548fcf4d6/huge?r=s3&amp;_1507067621421" alt="possibly use other image"></p>
-<h1 id="vertex-analytics---evntscript">Vertex Analytics | EVNTScript</h1><p>Production: <a href="https://vnine.vertex-analytics.com">vnine.vertex-analytics.com</a><br>Contact: <a href="mailto:contact@vertex-analytics.com">contact@vertex-analytics.com</a></p>
-<p>General product description  </p>
+<h1 id="vertex-analytics---evntscript">Vertex Analytics | EVNTScript</h1><p>Production: <a href="https://vnine.vertex-analytics.com">vnine.vertex-analytics.com</a><br>Contact: <a href="mailto:support@vertex-analytics.com">support@vertex-analytics.com</a></p>
+<p>EVNTScript is a Javascript-based parsing tool that allows for easy tracking, _, and _ of futures symbols.</p>
 <p>List of features with links to their documentation</p>
 <p>Other resources</p>
 <h6 id="documentation-by-blake-boris">Documentation by Blake Boris</h6></div>
@@ -145,7 +150,32 @@ var kSymbolName = &quot;ESM9&quot;;</code>
 <li><code>Ring_7</code> | 9</li>
 <li><code>Slap</code> | 10</li>
 </ul><pre><code class="lang-js"><code class="source-code prettyprint">CEvntPane.PlayWave(0); //Plays a bang!</code>
-</code></pre></div>
+</code></pre><h2>Built-in Functions</h2><h3>onLoad()</h3><p>The built in onLoad function is called when the user clicks the run button shown below.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onLoad ()
+{
+    gEvntPane = MakePane();
+    gPaneFeed = gEvntPane.MakeFeed(gSymbolName);
+    gDrawFeed = gEvntPane.MakeDraw(gPaneFeed);    
+}</code>
+</code></pre><ul>
+<li><code>MakePane()</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEvntPane.html">CEVNTPane</a> object</li>
+<li><code>gEvntPane.MakeFeed(gSymbolName)</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEvntFeed.html">CEVNTFeed</a> object based on the specified symbol name </li>
+<li><code>gEvntPane.MakeDraw(gPaneFeed)</code> | Returns a new <a href="https://bblake.info/doc/class/src/index.js~CEVNTDraw.html">CEVNTDraw</a> object</li>
+</ul><p><img src="./manual/asset/click_run.png" alt="click run"></p><h3>onOpen()</h3><p>The built in onOpen function is called once the pane has properly loaded and rendered the Symbol information.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onOpen ()
+{
+
+}</code>
+</code></pre><h3>onEvent()</h3><p>The built in onEvent function is called once for each timestamp you play back.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onEvent (pFeed, pSequ)
+{
+
+}</code>
+</code></pre><ul>
+<li><code>pFeed</code> | Parameter: Your <a href="https://bblake.info/doc/class/src/index.js~CEvntPane.html">CEVNTFeed</a> object with timestamps measured in nanoseconds with 56 bit precision</li>
+<li><code>pSequ</code> | Parameter: An integer that defaults to 0 that is used for Amount of events within this sequence</li>
+</ul><h3>onStop()</h3><p>The built in onStop function is called when the user clicks the stop button shown below.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onStop ()
+{
+
+}</code>
+</code></pre><p><img src="./manual/asset/click_stop.png" alt="click stop"></p></div>
         <a data-ice="link" href="manual/formatting.html"></a>
       </div>
     </div>

@@ -1,16 +1,18 @@
-<html><head>
+<!DOCTYPE html>
+<html>
+<head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Function</title>
+  <title data-ice="title">Function | evntscript</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Documentation for Vertex Analytics&apos; EVNTScript JS Parser"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="evntscript"><meta property="twitter:description" content="Documentation for Vertex Analytics&apos; EVNTScript JS Parser"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
-  <a href="./index.html">Home</a>
+  <a href="./">Home</a>
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
@@ -22,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/PlGGS/xva-doc"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -45,7 +47,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title" class="active inner-link-active">Function</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">Function</h1>
 <div data-ice="summaries"><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Static Public Summary</td></tr></thead>
   <tbody>
@@ -93,7 +95,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-onEvent">onEvent</a></span></span><span class="code" data-ice="signature">(pFeed: <span><a href="class/src/index.js~CEvntFeed.html">CEvntFeed</a></span>, pSequ: <span>int</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-onEvent">onEvent</a></span></span><span class="code" data-ice="signature">(pFeed: <span><a href="class/src/index.js~CEvntFeed.html">CEvntFeed</a></span>, pSequ: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>)</span>
         </p>
       </div>
       <div>
@@ -187,7 +189,7 @@
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint prettyprinted" style=""><code data-ice="importPathCode"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="typ">MakePane</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'</span><span><a href="file/src/index.js.html#lineNumber393"><span class="str">esdoc-try/src/index.js</span></a></span><span class="str">'</span></code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {MakePane} from &apos;<span><a href="file/src/index.js.html#lineNumber393">evntscript/src/index.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>This public function is critical to creating your main pane.</p>
@@ -213,7 +215,7 @@
     
   <div class="example-doc" data-ice="exampleDoc">
       
-      <pre class="prettyprint source-code prettyprinted" style=""><code data-ice="exampleCode"><span class="pln">gEvntPane </span><span class="pun">=</span><span class="pln"> </span><span class="typ">MakePane</span><span class="pun">();</span></code></pre>
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">gEvntPane = MakePane();</code></pre>
     </div>
 </div>
 
@@ -230,7 +232,7 @@
     
     
     
-    <span class="code" data-ice="name">onEvent</span><span class="code" data-ice="signature">(pFeed: <span><a href="class/src/index.js~CEvntFeed.html">CEvntFeed</a></span>, pSequ: <span>int</span>)</span>
+    <span class="code" data-ice="name">onEvent</span><span class="code" data-ice="signature">(pFeed: <span><a href="class/src/index.js~CEvntFeed.html">CEvntFeed</a></span>, pSequ: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>)</span>
     <span class="right-info">
       
       
@@ -238,7 +240,7 @@
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint prettyprinted" style=""><code data-ice="importPathCode"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln">onEvent</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'</span><span><a href="file/src/index.js.html#lineNumber403"><span class="str">esdoc-try/src/index.js</span></a></span><span class="str">'</span></code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {onEvent} from &apos;<span><a href="file/src/index.js.html#lineNumber403">evntscript/src/index.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>This is a built in function which triggers for each event in the pFeed stream.</p>
@@ -263,7 +265,7 @@
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">pSequ</td>
-      <td data-ice="type" class="code"><span>int</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Amount of events to read within this sequence</p>
 </td>
@@ -306,7 +308,7 @@
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint prettyprinted" style=""><code data-ice="importPathCode"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln">onLoad</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'</span><span><a href="file/src/index.js.html#lineNumber375"><span class="str">esdoc-try/src/index.js</span></a></span><span class="str">'</span></code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {onLoad} from &apos;<span><a href="file/src/index.js.html#lineNumber375">evntscript/src/index.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>This is a built in function which triggers when the script starts to get general script parameters, including the primary script symbol.</p>
@@ -350,7 +352,7 @@
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint prettyprinted" style=""><code data-ice="importPathCode"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln">onOpen</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'</span><span><a href="file/src/index.js.html#lineNumber383"><span class="str">esdoc-try/src/index.js</span></a></span><span class="str">'</span></code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {onOpen} from &apos;<span><a href="file/src/index.js.html#lineNumber383">evntscript/src/index.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>This is a built in function which triggers when the symbol is successfully loaded and the EOS and instrument data is ready.</p>
@@ -392,6 +394,5 @@
 <script src="script/test-summary.js"></script>
 <script src="script/inner-link.js"></script>
 <script src="script/patch-for-local.js"></script>
-
-
-</body></html>
+</body>
+</html>
