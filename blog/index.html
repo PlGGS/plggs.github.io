@@ -1,0 +1,111 @@
+---
+layout: default
+title: Blog
+css: main
+---
+
+<header class="banner">
+    <img src="/assets/blapInLeaves300x300.png" alt="blake" height="300" width="300">
+    <h1>SE 475 Blog</h1>
+</header>
+<header class="blogs">
+    <table align="center">
+        <tr>
+            <td>
+                <a href="blogs/week1.html">
+                    <img src="assets/late.png" alt="blog" height="250" width="250">
+                    <h3>Week 1</h3>
+                </a>
+            </td>
+            <td>
+                <a href="blogs/week2.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 2</h3>
+                </a>
+            </td>
+            <td>
+                <a href="blogs/week3.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 3</h3>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="blogs/week4.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 4</h3>
+                </a>
+            </td>
+            <td>
+                <a href="blogs/week5.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 5</h3>
+                </a>
+            </td>
+            <td>
+                <a href="blogs/week6.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 6</h3>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="blogs/week7.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 7</h3>
+                </a>
+            </td>
+            <td>
+                <a href="blogs/week8.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 8</h3>
+                </a>
+            </td>
+            <td>
+                <a href="blogs/week9.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 9</h3>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="blogs/week10.html">
+                    <img src="assets/comingSoon.png" alt="blog" height="250" width="250">
+                    <h3>Week 10</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<script>
+    $(document).ready(function () {
+        $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
+            $("#music-span").html(data["recenttracks"]["track"][0]["name"] + "<br/>By: " + data["recenttracks"]["track"][0]["artist"]["#text"]);
+        });
+        var img = new Image();
+        $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
+            function (data, status) {
+                var img = new Image();
+                img.setAttribute("id", "album-img");
+                img.setAttribute("alt", "album");
+                console.log("adding album art")
+                document.getElementById("album-art-div").appendChild(img);
+                img.setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
+            }
+        );
+        setInterval(function () {
+            $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json", function (data, status) {
+                $("#music-span").html(data["recenttracks"]["track"][0]["name"] + "<br/>By: " + data["recenttracks"]["track"][0]["artist"]["#text"]);
+            });
+            $.get("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=plggs&api_key=b25b959554ed76058ac220b7b2e0a026&limit=1&format=json",
+                function (data, status) {
+                    document.getElementById("album-img").setAttribute("src", data.recenttracks.track[0].image[2]['#text']);
+                }
+            );
+        }, 1000);
+    });
+</script>
