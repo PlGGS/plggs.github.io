@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\about",
     "\\apps",
     "\\assets",
+    "\\assets\\v9",
     "\\blog",
     "\\css",
     "\\games",
@@ -11,6 +11,6 @@
     "\\script",
     "\\_layouts"
   ],
-  "SelectedNode": "\\assets",
+  "SelectedNode": "\\assets\\v9",
   "PreviewInSolutionExplorer": false
 }
