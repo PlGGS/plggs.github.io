@@ -525,15 +525,15 @@ v9.lineItem = class
 v9.cubeItem = class
 {
 
-	constructor (pPane) {
-		try	{
-			this.fCalcEnum		=	gHome.MakeCalc (gUniq,this);
-			this.fCubeMaps		=	new Map();
-        }  
-		catch (e)	{
-			gHome._pageerro (gUniq,"MakeCalc",e);
-        }
-    }
+	// constructor (pPane) {
+	// 	try	{
+	// 		this.fCalcEnum		=	gHome.MakeCalc (gUniq,this);
+	// 		this.fCubeMaps		=	new Map();
+    //     }  
+	// 	catch (e)	{
+	// 		gHome._pageerro (gUniq,"MakeCalc",e);
+    //     }
+    // }
 
     constructor (bodyStyle, strokeStyle) {
 		try	{
